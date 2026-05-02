@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apeswico | 홈</title>
+    <meta
+      name="description"
+      content="Korean-speaking B1-B2 learners를 위한 정적 스페인어 학습 앱 셸입니다."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f4efe8;
+        --bg-deep: #eadfce;
+        --surface: rgba(255, 255, 255, 0.8);
+        --surface-strong: rgba(255, 255, 255, 0.96);
+        --text: #201910;
+        --muted: #66594d;
+        --accent: #8a4f1d;
+        --accent-strong: #6c3d15;
+        --border: rgba(32, 25, 16, 0.12);
+        --shadow: 0 18px 40px rgba(72, 44, 18, 0.12);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #14110f;
+          --bg-deep: #1d1714;
+          --surface: rgba(32, 26, 22, 0.84);
+          --surface-strong: rgba(40, 33, 28, 0.98);
+          --text: #f5ece2;
+          --muted: #c9b8aa;
+          --accent: #ef9b54;
+          --accent-strong: #ffb46f;
+          --border: rgba(245, 236, 226, 0.12);
+          --shadow: 0 18px 40px rgba(0, 0, 0, 0.34);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Apple SD Gothic Neo",
+          "Noto Sans KR",
+          sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(138, 79, 29, 0.18), transparent 34%),
+          radial-gradient(circle at top right, rgba(239, 155, 84, 0.12), transparent 28%),
+          linear-gradient(180deg, var(--bg), var(--bg-deep));
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 24px 0 48px;
+      }
+
+      .masthead {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1.3fr 1fr;
+        align-items: start;
+        margin-bottom: 24px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.76rem;
+        color: var(--muted);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 12px;
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        line-height: 0.96;
+      }
+
+      .lede {
+        max-width: 60ch;
+        margin-bottom: 0;
+        font-size: 1.02rem;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+      }
+
+      .nav a {
+        padding: 0.76rem 1rem;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 10px 24px rgba(32, 25, 16, 0.06);
+        font-weight: 650;
+      }
+
+      .nav a[aria-current="page"] {
+        background: var(--accent);
+        border-color: transparent;
+        color: white;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: var(--surface-strong);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        grid-column: 1 / -1;
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero .tag {
+        display: inline-flex;
+        width: fit-content;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        background: rgba(138, 79, 29, 0.12);
+        color: var(--accent-strong);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .mode-grid {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .mode-card {
+        display: grid;
+        gap: 14px;
+      }
+
+      .mode-card p,
+      .support-card p,
+      .support-card li {
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .mode-card h2,
+      .support-card h2 {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+      }
+
+      .chip {
+        display: inline-flex;
+        width: fit-content;
+        padding: 0.34rem 0.68rem;
+        border-radius: 999px;
+        background: rgba(138, 79, 29, 0.1);
+        color: var(--accent-strong);
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        width: fit-content;
+        padding: 0.72rem 1rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: white;
+        font-weight: 700;
+      }
+
+      .support-card {
+        grid-column: 1 / -1;
+      }
+
+      .support-card ol {
+        margin: 0;
+        padding-left: 1.25rem;
+      }
+
+      @media (max-width: 980px) {
+        .masthead,
+        .mode-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .page {
+          width: min(100% - 20px, 1120px);
+          padding-top: 14px;
+        }
+
+        .card {
+          border-radius: 20px;
+          padding: 18px;
+        }
+
+        h1 {
+          font-size: clamp(1.9rem, 12vw, 3rem);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">GitHub Pages · Static learning shell</p>
+          <h1>Apeswico</h1>
+          <p class="lede">
+            한국어 화자를 위한 B1-B2 스페인어 학습 앱의 첫 셸입니다.
+            다음 단계에서 공통 스타일, 저장소, 데이터 로딩을 붙여 학습
+            흐름을 완성합니다.
+          </p>
+        </div>
+        <nav class="nav" aria-label="주요 모드">
+          <a href="index.html" aria-current="page">홈</a>
+          <a href="flashcards.html">플래시카드</a>
+          <a href="grammar.html">문법</a>
+          <a href="reading.html">독해</a>
+          <a href="situations.html">상황극</a>
+        </nav>
+      </header>
+
+      <main class="grid" id="home-shell">
+        <section class="card hero" aria-labelledby="home-hero-title">
+          <span class="tag">app-shell</span>
+          <h2 id="home-hero-title">학습 모드 네 개를 하나의 진입점으로 연결</h2>
+          <p class="lede">
+            지금은 셸만 존재하지만, 각 모드의 마운트 지점과 네비게이션을 미리
+            잡아 두어 다음 작업에서 바로 기능을 붙일 수 있게 했습니다.
+          </p>
+        </section>
+
+        <section class="mode-grid" aria-label="학습 모드">
+          <article class="card mode-card">
+            <span class="chip">모드 01</span>
+            <h2>Flashcards</h2>
+            <p>어휘 SRS 학습 영역. 앞/뒤 카드와 평가 버튼이 붙을 자리입니다.</p>
+            <a class="link" href="flashcards.html">플래시카드 열기</a>
+          </article>
+          <article class="card mode-card">
+            <span class="chip">모드 02</span>
+            <h2>Grammar</h2>
+            <p>토픽 선택과 문항 풀이가 들어갈 문법 학습 영역입니다.</p>
+            <a class="link" href="grammar.html">문법 열기</a>
+          </article>
+          <article class="card mode-card">
+            <span class="chip">모드 03</span>
+            <h2>Reading</h2>
+            <p>토큰 클릭 번역과 전체 번역 토글이 들어갈 독해 영역입니다.</p>
+            <a class="link" href="reading.html">독해 열기</a>
+          </article>
+          <article class="card mode-card">
+            <span class="chip">모드 04</span>
+            <h2>Situations</h2>
+            <p>대화, 핵심 표현, 새도잉 연습이 모이는 상황극 영역입니다.</p>
+            <a class="link" href="situations.html">상황극 열기</a>
+          </article>
+        </section>
+
+        <section class="card support-card">
+          <h2>다음에 붙는 공통 레이어</h2>
+          <ol>
+            <li>공용 스타일 시스템과 다크 모드</li>
+            <li>localStorage 래퍼와 JSON 데이터 로더</li>
+            <li>SM-2 lite SRS와 학습 상태 저장</li>
+            <li>각 학습 모드의 기능 스크립트</li>
+          </ol>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

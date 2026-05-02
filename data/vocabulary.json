@@ -1,0 +1,2553 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "v001",
+      "es": "aprovechar",
+      "ko": "활용하다, 잘 이용하다",
+      "pos": "verbo",
+      "example_es": "Aprovecho el fin de semana para estudiar.",
+      "example_ko": "주말을 활용해 공부합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "common"
+      ]
+    },
+    {
+      "id": "v002",
+      "es": "barrio",
+      "ko": "동네, 구역",
+      "pos": "sustantivo",
+      "example_es": "Vivo en un barrio tranquilo cerca del parque.",
+      "example_ko": "저는 공원 근처 조용한 동네에 삽니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "city"
+      ]
+    },
+    {
+      "id": "v003",
+      "es": "acogedor",
+      "ko": "아늑한, 편안한",
+      "pos": "adjetivo",
+      "example_es": "La cafetería es pequeña pero muy acogedora.",
+      "example_ko": "그 카페는 작지만 매우 아늑합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "place"
+      ]
+    },
+    {
+      "id": "v004",
+      "es": "sin embargo",
+      "ko": "그럼에도 불구하고, 하지만",
+      "pos": "conector",
+      "example_es": "Quería salir; sin embargo, empezó a llover.",
+      "example_ko": "나가고 싶었지만, 그럼에도 비가 내리기 시작했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "contrast"
+      ]
+    },
+    {
+      "id": "v005",
+      "es": "reunirse",
+      "ko": "모이다, 만나다",
+      "pos": "verbo",
+      "example_es": "Nos reunimos con el equipo el lunes por la mañana.",
+      "example_ko": "우리는 월요일 아침에 팀과 만납니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "meeting"
+      ]
+    },
+    {
+      "id": "v006",
+      "es": "resolver",
+      "ko": "해결하다",
+      "pos": "verbo",
+      "example_es": "Intento resolver el problema antes de pedir ayuda.",
+      "example_ko": "도움을 요청하기 전에 문제를 해결하려고 합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "problem"
+      ]
+    },
+    {
+      "id": "v007",
+      "es": "elegir",
+      "ko": "선택하다",
+      "pos": "verbo",
+      "example_es": "Elegimos un restaurante cerca de la estación.",
+      "example_ko": "우리는 역 근처 식당을 선택했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "daily"
+      ]
+    },
+    {
+      "id": "v008",
+      "es": "explicar",
+      "ko": "설명하다",
+      "pos": "verbo",
+      "example_es": "La profesora explicó la diferencia con ejemplos claros.",
+      "example_ko": "선생님은 명확한 예시로 차이를 설명했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "school"
+      ]
+    },
+    {
+      "id": "v009",
+      "es": "compartir",
+      "ko": "공유하다, 나누다",
+      "pos": "verbo",
+      "example_es": "Comparto mis apuntes con una compañera de clase.",
+      "example_ko": "저는 수업 친구와 필기를 공유합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "school"
+      ]
+    },
+    {
+      "id": "v010",
+      "es": "acostumbrarse",
+      "ko": "익숙해지다",
+      "pos": "verbo",
+      "example_es": "Me acostumbré al horario español después de una semana.",
+      "example_ko": "일주일 뒤에 스페인식 시간표에 익숙해졌습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "v011",
+      "es": "atreverse",
+      "ko": "감히 하다, 용기를 내다",
+      "pos": "verbo",
+      "example_es": "No me atreví a hablar en público al principio.",
+      "example_ko": "처음에는 사람들 앞에서 말할 용기가 나지 않았습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v012",
+      "es": "darse cuenta",
+      "ko": "깨닫다, 알아차리다",
+      "pos": "verbo",
+      "example_es": "Me di cuenta de que había olvidado la cartera.",
+      "example_ko": "지갑을 잊고 왔다는 것을 알아차렸습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "awareness"
+      ]
+    },
+    {
+      "id": "v013",
+      "es": "llevarse bien",
+      "ko": "사이가 좋다",
+      "pos": "verbo",
+      "example_es": "Me llevo bien con mis vecinos.",
+      "example_ko": "저는 이웃들과 사이가 좋습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "relationship"
+      ]
+    },
+    {
+      "id": "v014",
+      "es": "quejarse",
+      "ko": "불평하다",
+      "pos": "verbo",
+      "example_es": "Los clientes se quejaron del ruido de la obra.",
+      "example_ko": "손님들은 공사 소음에 대해 불평했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "complaint"
+      ]
+    },
+    {
+      "id": "v015",
+      "es": "proponer",
+      "ko": "제안하다",
+      "pos": "verbo",
+      "example_es": "Propuse cambiar la reunión al viernes.",
+      "example_ko": "저는 회의를 금요일로 바꾸자고 제안했습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "work"
+      ]
+    },
+    {
+      "id": "v016",
+      "es": "conseguir",
+      "ko": "얻다, 해내다",
+      "pos": "verbo",
+      "example_es": "Conseguí entradas para el concierto.",
+      "example_ko": "콘서트 표를 구했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "achievement"
+      ]
+    },
+    {
+      "id": "v017",
+      "es": "mejorar",
+      "ko": "개선하다, 나아지다",
+      "pos": "verbo",
+      "example_es": "Mi pronunciación mejora cuando escucho podcasts.",
+      "example_ko": "팟캐스트를 들으면 제 발음이 좋아집니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "learning"
+      ]
+    },
+    {
+      "id": "v018",
+      "es": "empeorar",
+      "ko": "악화되다",
+      "pos": "verbo",
+      "example_es": "El tráfico empeoró por la lluvia.",
+      "example_ko": "비 때문에 교통 상황이 악화되었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "change"
+      ]
+    },
+    {
+      "id": "v019",
+      "es": "evitar",
+      "ko": "피하다",
+      "pos": "verbo",
+      "example_es": "Evito tomar café por la noche.",
+      "example_ko": "저는 밤에는 커피를 마시는 것을 피합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "habit"
+      ]
+    },
+    {
+      "id": "v020",
+      "es": "ahorrar",
+      "ko": "절약하다, 저축하다",
+      "pos": "verbo",
+      "example_es": "Ahorro dinero para viajar en verano.",
+      "example_ko": "여름에 여행하려고 돈을 모읍니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "money"
+      ]
+    },
+    {
+      "id": "v021",
+      "es": "gastar",
+      "ko": "쓰다, 소비하다",
+      "pos": "verbo",
+      "example_es": "Gasté demasiado en ropa este mes.",
+      "example_ko": "이번 달에는 옷에 돈을 너무 많이 썼습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "money"
+      ]
+    },
+    {
+      "id": "v022",
+      "es": "alquilar",
+      "ko": "빌리다, 임대하다",
+      "pos": "verbo",
+      "example_es": "Queremos alquilar un piso cerca del metro.",
+      "example_ko": "우리는 지하철 근처 아파트를 빌리고 싶습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "housing"
+      ]
+    },
+    {
+      "id": "v023",
+      "es": "mudarse",
+      "ko": "이사하다",
+      "pos": "verbo",
+      "example_es": "Me mudé a Valencia por trabajo.",
+      "example_ko": "저는 일 때문에 발렌시아로 이사했습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "housing"
+      ]
+    },
+    {
+      "id": "v024",
+      "es": "solicitar",
+      "ko": "신청하다, 요청하다",
+      "pos": "verbo",
+      "example_es": "Solicité una beca para estudiar en Madrid.",
+      "example_ko": "마드리드에서 공부하려고 장학금을 신청했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "formal"
+      ]
+    },
+    {
+      "id": "v025",
+      "es": "entregar",
+      "ko": "제출하다, 전달하다",
+      "pos": "verbo",
+      "example_es": "Entregamos el informe antes del plazo.",
+      "example_ko": "우리는 마감 전에 보고서를 제출했습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "work"
+      ]
+    },
+    {
+      "id": "v026",
+      "es": "comprobar",
+      "ko": "확인하다",
+      "pos": "verbo",
+      "example_es": "Comprueba la dirección antes de salir.",
+      "example_ko": "나가기 전에 주소를 확인하세요.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "instruction"
+      ]
+    },
+    {
+      "id": "v027",
+      "es": "apuntarse",
+      "ko": "등록하다, 신청하다",
+      "pos": "verbo",
+      "example_es": "Me apunté a un curso de conversación.",
+      "example_ko": "저는 회화 수업에 등록했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "learning"
+      ]
+    },
+    {
+      "id": "v028",
+      "es": "cancelar",
+      "ko": "취소하다",
+      "pos": "verbo",
+      "example_es": "Cancelaron el vuelo por mal tiempo.",
+      "example_ko": "악천후 때문에 항공편이 취소되었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "travel"
+      ]
+    },
+    {
+      "id": "v029",
+      "es": "reservar",
+      "ko": "예약하다",
+      "pos": "verbo",
+      "example_es": "Reservé una mesa para cuatro personas.",
+      "example_ko": "네 명 자리 테이블을 예약했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "restaurant"
+      ]
+    },
+    {
+      "id": "v030",
+      "es": "retrasarse",
+      "ko": "늦어지다, 지연되다",
+      "pos": "verbo",
+      "example_es": "El tren se retrasó veinte minutos.",
+      "example_ko": "기차가 20분 지연되었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "travel"
+      ]
+    },
+    {
+      "id": "v031",
+      "es": "perderse",
+      "ko": "길을 잃다",
+      "pos": "verbo",
+      "example_es": "Nos perdimos en el casco antiguo.",
+      "example_ko": "우리는 구시가지에서 길을 잃었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "travel"
+      ]
+    },
+    {
+      "id": "v032",
+      "es": "fijarse",
+      "ko": "주의해서 보다",
+      "pos": "verbo",
+      "example_es": "Fíjate en los acentos de estas palabras.",
+      "example_ko": "이 단어들의 악센트에 주의해서 보세요.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "learning"
+      ]
+    },
+    {
+      "id": "v033",
+      "es": "confiar",
+      "ko": "신뢰하다",
+      "pos": "verbo",
+      "example_es": "Confío en mis amigos cuando necesito consejo.",
+      "example_ko": "조언이 필요할 때 친구들을 신뢰합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "relationship"
+      ]
+    },
+    {
+      "id": "v034",
+      "es": "dudar",
+      "ko": "의심하다, 망설이다",
+      "pos": "verbo",
+      "example_es": "Dudo que tengamos tiempo suficiente.",
+      "example_ko": "우리에게 시간이 충분할지 의심스럽습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "subjunctive"
+      ]
+    },
+    {
+      "id": "v035",
+      "es": "insistir",
+      "ko": "고집하다, insist하다",
+      "pos": "verbo",
+      "example_es": "Insistió en pagar la cena.",
+      "example_ko": "그는 저녁값을 내겠다고 고집했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "communication"
+      ]
+    },
+    {
+      "id": "v036",
+      "es": "lograr",
+      "ko": "이루다, 달성하다",
+      "pos": "verbo",
+      "example_es": "Logramos terminar el proyecto a tiempo.",
+      "example_ko": "우리는 프로젝트를 제시간에 끝냈습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "achievement"
+      ]
+    },
+    {
+      "id": "v037",
+      "es": "reconocer",
+      "ko": "인정하다, 알아보다",
+      "pos": "verbo",
+      "example_es": "Reconozco que cometí un error.",
+      "example_ko": "제가 실수했다는 것을 인정합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "communication"
+      ]
+    },
+    {
+      "id": "v038",
+      "es": "rechazar",
+      "ko": "거절하다",
+      "pos": "verbo",
+      "example_es": "Rechazó la oferta porque el horario era difícil.",
+      "example_ko": "그는 근무 시간이 어려워서 제안을 거절했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "work"
+      ]
+    },
+    {
+      "id": "v039",
+      "es": "admitir",
+      "ko": "인정하다, 받아들이다",
+      "pos": "verbo",
+      "example_es": "El museo admite visitas hasta las seis.",
+      "example_ko": "그 박물관은 6시까지 입장을 받습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "formal"
+      ]
+    },
+    {
+      "id": "v040",
+      "es": "mantener",
+      "ko": "유지하다",
+      "pos": "verbo",
+      "example_es": "Mantengo una rutina de estudio diaria.",
+      "example_ko": "저는 매일 공부 루틴을 유지합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "habit"
+      ]
+    },
+    {
+      "id": "v041",
+      "es": "apoyar",
+      "ko": "지지하다, 돕다",
+      "pos": "verbo",
+      "example_es": "Mis compañeros me apoyaron durante la entrevista.",
+      "example_ko": "동료들이 면접 동안 저를 도와주었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "relationship"
+      ]
+    },
+    {
+      "id": "v042",
+      "es": "afectar",
+      "ko": "영향을 미치다",
+      "pos": "verbo",
+      "example_es": "La falta de sueño afecta a la concentración.",
+      "example_ko": "수면 부족은 집중력에 영향을 줍니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "health"
+      ]
+    },
+    {
+      "id": "v043",
+      "es": "surgir",
+      "ko": "발생하다, 생기다",
+      "pos": "verbo",
+      "example_es": "Surgió un problema con la reserva.",
+      "example_ko": "예약에 문제가 생겼습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "problem"
+      ]
+    },
+    {
+      "id": "v044",
+      "es": "pertenecer",
+      "ko": "속하다",
+      "pos": "verbo",
+      "example_es": "Este documento pertenece al archivo del curso.",
+      "example_ko": "이 문서는 수업 자료 파일에 속합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "formal"
+      ]
+    },
+    {
+      "id": "v045",
+      "es": "encargarse",
+      "ko": "담당하다",
+      "pos": "verbo",
+      "example_es": "Me encargo de preparar las invitaciones.",
+      "example_ko": "제가 초대장 준비를 담당합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "verb",
+        "responsibility"
+      ]
+    },
+    {
+      "id": "v046",
+      "es": "enterarse",
+      "ko": "알게 되다",
+      "pos": "verbo",
+      "example_es": "Me enteré de la noticia por un mensaje.",
+      "example_ko": "저는 메시지로 그 소식을 알게 되었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "information"
+      ]
+    },
+    {
+      "id": "v047",
+      "es": "despedirse",
+      "ko": "작별 인사를 하다",
+      "pos": "verbo",
+      "example_es": "Nos despedimos en la estación.",
+      "example_ko": "우리는 역에서 작별 인사를 했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "social"
+      ]
+    },
+    {
+      "id": "v048",
+      "es": "arrepentirse",
+      "ko": "후회하다",
+      "pos": "verbo",
+      "example_es": "Me arrepentí de no preguntar antes.",
+      "example_ko": "미리 물어보지 않은 것을 후회했습니다.",
+      "level": "B2",
+      "sublevel": "B2.2",
+      "tags": [
+        "verb",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v049",
+      "es": "disfrutar",
+      "ko": "즐기다",
+      "pos": "verbo",
+      "example_es": "Disfrutamos mucho de la comida casera.",
+      "example_ko": "우리는 집밥을 아주 즐겼습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "daily"
+      ]
+    },
+    {
+      "id": "v050",
+      "es": "opinar",
+      "ko": "의견을 말하다",
+      "pos": "verbo",
+      "example_es": "Cada estudiante opinó sobre el tema.",
+      "example_ko": "각 학생이 주제에 대해 의견을 말했습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "communication"
+      ]
+    },
+    {
+      "id": "v051",
+      "es": "negociar",
+      "ko": "협상하다",
+      "pos": "verbo",
+      "example_es": "Negociamos el precio del alquiler.",
+      "example_ko": "우리는 월세 가격을 협상했습니다.",
+      "level": "B2",
+      "sublevel": "B2.2",
+      "tags": [
+        "verb",
+        "money"
+      ]
+    },
+    {
+      "id": "v052",
+      "es": "organizar",
+      "ko": "정리하다, 기획하다",
+      "pos": "verbo",
+      "example_es": "Organizamos una cena para despedir a Marta.",
+      "example_ko": "우리는 마르타를 배웅하려고 저녁 모임을 준비했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "planning"
+      ]
+    },
+    {
+      "id": "v053",
+      "es": "cita",
+      "ko": "약속, 예약",
+      "pos": "sustantivo",
+      "example_es": "Tengo una cita con el dentista mañana.",
+      "example_ko": "내일 치과 예약이 있습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "daily"
+      ]
+    },
+    {
+      "id": "v054",
+      "es": "factura",
+      "ko": "영수증, 청구서",
+      "pos": "sustantivo",
+      "example_es": "La factura de la luz llegó más alta este mes.",
+      "example_ko": "이번 달 전기 요금 청구서가 더 높게 나왔습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "money"
+      ]
+    },
+    {
+      "id": "v055",
+      "es": "presupuesto",
+      "ko": "예산",
+      "pos": "sustantivo",
+      "example_es": "Necesitamos un presupuesto claro para el viaje.",
+      "example_ko": "여행을 위한 명확한 예산이 필요합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "money"
+      ]
+    },
+    {
+      "id": "v056",
+      "es": "ventaja",
+      "ko": "장점",
+      "pos": "sustantivo",
+      "example_es": "Una ventaja de vivir aquí es el transporte público.",
+      "example_ko": "여기에 사는 장점 하나는 대중교통입니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "opinion"
+      ]
+    },
+    {
+      "id": "v057",
+      "es": "desventaja",
+      "ko": "단점",
+      "pos": "sustantivo",
+      "example_es": "La principal desventaja es el ruido por la noche.",
+      "example_ko": "가장 큰 단점은 밤의 소음입니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "opinion"
+      ]
+    },
+    {
+      "id": "v058",
+      "es": "costumbre",
+      "ko": "습관, 관습",
+      "pos": "sustantivo",
+      "example_es": "Tengo la costumbre de leer antes de dormir.",
+      "example_ko": "저는 자기 전에 책을 읽는 습관이 있습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "habit"
+      ]
+    },
+    {
+      "id": "v059",
+      "es": "reto",
+      "ko": "도전, 과제",
+      "pos": "sustantivo",
+      "example_es": "Hablar por teléfono en español sigue siendo un reto.",
+      "example_ko": "스페인어로 전화하는 것은 여전히 도전입니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "learning"
+      ]
+    },
+    {
+      "id": "v060",
+      "es": "consejo",
+      "ko": "조언",
+      "pos": "sustantivo",
+      "example_es": "Tu consejo me ayudó a decidir.",
+      "example_ko": "네 조언이 결정하는 데 도움이 되었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "communication"
+      ]
+    },
+    {
+      "id": "v061",
+      "es": "encuesta",
+      "ko": "설문 조사",
+      "pos": "sustantivo",
+      "example_es": "Completamos una encuesta sobre hábitos de estudio.",
+      "example_ko": "우리는 공부 습관에 관한 설문 조사를 작성했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "study"
+      ]
+    },
+    {
+      "id": "v062",
+      "es": "experiencia",
+      "ko": "경험",
+      "pos": "sustantivo",
+      "example_es": "Fue una experiencia inolvidable.",
+      "example_ko": "잊을 수 없는 경험이었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "travel"
+      ]
+    },
+    {
+      "id": "v063",
+      "es": "empleo",
+      "ko": "일자리, 고용",
+      "pos": "sustantivo",
+      "example_es": "Busca empleo en una empresa internacional.",
+      "example_ko": "그는 국제 회사에서 일자리를 찾고 있습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "work"
+      ]
+    },
+    {
+      "id": "v064",
+      "es": "entrevista",
+      "ko": "면접, 인터뷰",
+      "pos": "sustantivo",
+      "example_es": "La entrevista duró casi una hora.",
+      "example_ko": "면접은 거의 한 시간 동안 이어졌습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "work"
+      ]
+    },
+    {
+      "id": "v065",
+      "es": "contrato",
+      "ko": "계약서, 계약",
+      "pos": "sustantivo",
+      "example_es": "Leí el contrato antes de firmarlo.",
+      "example_ko": "서명하기 전에 계약서를 읽었습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "formal"
+      ]
+    },
+    {
+      "id": "v066",
+      "es": "horario",
+      "ko": "시간표, 일정",
+      "pos": "sustantivo",
+      "example_es": "El horario de la biblioteca cambia en verano.",
+      "example_ko": "도서관 운영 시간이 여름에는 바뀝니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "time"
+      ]
+    },
+    {
+      "id": "v067",
+      "es": "plazo",
+      "ko": "기한",
+      "pos": "sustantivo",
+      "example_es": "El plazo para enviar la solicitud termina hoy.",
+      "example_ko": "신청서를 보내는 기한은 오늘 끝납니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "formal"
+      ]
+    },
+    {
+      "id": "v068",
+      "es": "beca",
+      "ko": "장학금",
+      "pos": "sustantivo",
+      "example_es": "Recibí una beca para estudiar en Granada.",
+      "example_ko": "그라나다에서 공부할 장학금을 받았습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "study"
+      ]
+    },
+    {
+      "id": "v069",
+      "es": "requisito",
+      "ko": "요건, 필요 조건",
+      "pos": "sustantivo",
+      "example_es": "Uno de los requisitos es tener nivel B1.",
+      "example_ko": "요건 중 하나는 B1 수준을 갖추는 것입니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "formal"
+      ]
+    },
+    {
+      "id": "v070",
+      "es": "vivienda",
+      "ko": "주거, 주택",
+      "pos": "sustantivo",
+      "example_es": "La vivienda es cara en el centro.",
+      "example_ko": "도심의 주거비는 비쌉니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "housing"
+      ]
+    },
+    {
+      "id": "v071",
+      "es": "alquiler",
+      "ko": "월세, 임대",
+      "pos": "sustantivo",
+      "example_es": "El alquiler incluye agua e internet.",
+      "example_ko": "월세에는 물과 인터넷이 포함됩니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "housing"
+      ]
+    },
+    {
+      "id": "v072",
+      "es": "vecino",
+      "ko": "이웃",
+      "pos": "sustantivo",
+      "example_es": "Mi vecino me ayudó con las cajas.",
+      "example_ko": "이웃이 상자 옮기는 것을 도와주었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "housing"
+      ]
+    },
+    {
+      "id": "v073",
+      "es": "ruido",
+      "ko": "소음",
+      "pos": "sustantivo",
+      "example_es": "El ruido de la calle no me deja dormir.",
+      "example_ko": "거리의 소음 때문에 잠을 잘 수 없습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "housing"
+      ]
+    },
+    {
+      "id": "v074",
+      "es": "transporte",
+      "ko": "교통, 운송",
+      "pos": "sustantivo",
+      "example_es": "El transporte público funciona bien en esta ciudad.",
+      "example_ko": "이 도시의 대중교통은 잘 운영됩니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "city"
+      ]
+    },
+    {
+      "id": "v075",
+      "es": "atasco",
+      "ko": "교통 체증",
+      "pos": "sustantivo",
+      "example_es": "Llegamos tarde por un atasco enorme.",
+      "example_ko": "심한 교통 체증 때문에 늦게 도착했습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "city"
+      ]
+    },
+    {
+      "id": "v076",
+      "es": "billete",
+      "ko": "표, 승차권",
+      "pos": "sustantivo",
+      "example_es": "Compré un billete de ida y vuelta.",
+      "example_ko": "왕복 승차권을 샀습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "travel"
+      ]
+    },
+    {
+      "id": "v077",
+      "es": "destino",
+      "ko": "목적지",
+      "pos": "sustantivo",
+      "example_es": "Nuestro destino final es Bilbao.",
+      "example_ko": "우리의 최종 목적지는 빌바오입니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "travel"
+      ]
+    },
+    {
+      "id": "v078",
+      "es": "alojamiento",
+      "ko": "숙소",
+      "pos": "sustantivo",
+      "example_es": "Encontramos alojamiento cerca de la playa.",
+      "example_ko": "해변 근처에서 숙소를 찾았습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "travel"
+      ]
+    },
+    {
+      "id": "v079",
+      "es": "equipaje",
+      "ko": "짐, 수하물",
+      "pos": "sustantivo",
+      "example_es": "Mi equipaje pesa demasiado.",
+      "example_ko": "제 짐은 너무 무겁습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "travel"
+      ]
+    },
+    {
+      "id": "v080",
+      "es": "receta",
+      "ko": "요리법, 처방전",
+      "pos": "sustantivo",
+      "example_es": "Esta receta lleva pocos ingredientes.",
+      "example_ko": "이 요리법에는 재료가 많이 들어가지 않습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "food"
+      ]
+    },
+    {
+      "id": "v081",
+      "es": "ingrediente",
+      "ko": "재료",
+      "pos": "sustantivo",
+      "example_es": "El ajo es un ingrediente básico en esta salsa.",
+      "example_ko": "마늘은 이 소스의 기본 재료입니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "food"
+      ]
+    },
+    {
+      "id": "v082",
+      "es": "sabor",
+      "ko": "맛",
+      "pos": "sustantivo",
+      "example_es": "El sabor es suave pero interesante.",
+      "example_ko": "맛은 부드럽지만 흥미롭습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "food"
+      ]
+    },
+    {
+      "id": "v083",
+      "es": "salud",
+      "ko": "건강",
+      "pos": "sustantivo",
+      "example_es": "Dormir bien es importante para la salud.",
+      "example_ko": "잘 자는 것은 건강에 중요합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "health"
+      ]
+    },
+    {
+      "id": "v084",
+      "es": "resfriado",
+      "ko": "감기",
+      "pos": "sustantivo",
+      "example_es": "Tengo un resfriado desde el lunes.",
+      "example_ko": "월요일부터 감기에 걸렸습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "health"
+      ]
+    },
+    {
+      "id": "v085",
+      "es": "síntoma",
+      "ko": "증상",
+      "pos": "sustantivo",
+      "example_es": "El médico preguntó por mis síntomas.",
+      "example_ko": "의사는 제 증상에 대해 물었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "health"
+      ]
+    },
+    {
+      "id": "v086",
+      "es": "reunión",
+      "ko": "회의, 모임",
+      "pos": "sustantivo",
+      "example_es": "La reunión empieza a las diez en punto.",
+      "example_ko": "회의는 정각 10시에 시작합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "work"
+      ]
+    },
+    {
+      "id": "v087",
+      "es": "acuerdo",
+      "ko": "합의, 동의",
+      "pos": "sustantivo",
+      "example_es": "Llegamos a un acuerdo después de hablar.",
+      "example_ko": "우리는 이야기한 뒤 합의에 도달했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "work"
+      ]
+    },
+    {
+      "id": "v088",
+      "es": "informe",
+      "ko": "보고서",
+      "pos": "sustantivo",
+      "example_es": "El informe resume los resultados del mes.",
+      "example_ko": "보고서는 이번 달 결과를 요약합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "work"
+      ]
+    },
+    {
+      "id": "v089",
+      "es": "noticia",
+      "ko": "뉴스, 소식",
+      "pos": "sustantivo",
+      "example_es": "Leí una noticia sobre el cambio climático.",
+      "example_ko": "기후 변화에 관한 뉴스를 읽었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "media"
+      ]
+    },
+    {
+      "id": "v090",
+      "es": "artículo",
+      "ko": "기사, 글",
+      "pos": "sustantivo",
+      "example_es": "El artículo explica varias soluciones posibles.",
+      "example_ko": "그 글은 가능한 여러 해결책을 설명합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "media"
+      ]
+    },
+    {
+      "id": "v091",
+      "es": "pantalla",
+      "ko": "화면",
+      "pos": "sustantivo",
+      "example_es": "La pantalla del móvil se rompió.",
+      "example_ko": "휴대폰 화면이 깨졌습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "technology"
+      ]
+    },
+    {
+      "id": "v092",
+      "es": "contraseña",
+      "ko": "비밀번호",
+      "pos": "sustantivo",
+      "example_es": "Olvidé la contraseña de mi correo.",
+      "example_ko": "이메일 비밀번호를 잊어버렸습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "technology"
+      ]
+    },
+    {
+      "id": "v093",
+      "es": "archivo",
+      "ko": "파일, 자료",
+      "pos": "sustantivo",
+      "example_es": "Guarda el archivo antes de cerrar el programa.",
+      "example_ko": "프로그램을 닫기 전에 파일을 저장하세요.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "technology"
+      ]
+    },
+    {
+      "id": "v094",
+      "es": "aplicación",
+      "ko": "앱, 애플리케이션",
+      "pos": "sustantivo",
+      "example_es": "Uso una aplicación para practicar vocabulario.",
+      "example_ko": "어휘를 연습하려고 앱을 사용합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "technology"
+      ]
+    },
+    {
+      "id": "v095",
+      "es": "red",
+      "ko": "네트워크, 망",
+      "pos": "sustantivo",
+      "example_es": "La red del hotel es lenta por la noche.",
+      "example_ko": "호텔 와이파이 네트워크는 밤에 느립니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "technology"
+      ]
+    },
+    {
+      "id": "v096",
+      "es": "relación",
+      "ko": "관계",
+      "pos": "sustantivo",
+      "example_es": "Tenemos una relación de confianza.",
+      "example_ko": "우리는 신뢰 관계를 가지고 있습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "relationship"
+      ]
+    },
+    {
+      "id": "v097",
+      "es": "confianza",
+      "ko": "신뢰, 자신감",
+      "pos": "sustantivo",
+      "example_es": "Hablar más me dio confianza.",
+      "example_ko": "더 많이 말하면서 자신감이 생겼습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v098",
+      "es": "oportunidad",
+      "ko": "기회",
+      "pos": "sustantivo",
+      "example_es": "Esta práctica es una buena oportunidad.",
+      "example_ko": "이번 연습은 좋은 기회입니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "abstract"
+      ]
+    },
+    {
+      "id": "v099",
+      "es": "esfuerzo",
+      "ko": "노력",
+      "pos": "sustantivo",
+      "example_es": "Tu esfuerzo se nota en la pronunciación.",
+      "example_ko": "네 노력은 발음에서 드러납니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "learning"
+      ]
+    },
+    {
+      "id": "v100",
+      "es": "meta",
+      "ko": "목표",
+      "pos": "sustantivo",
+      "example_es": "Mi meta es mantener una conversación natural.",
+      "example_ko": "제 목표는 자연스러운 대화를 유지하는 것입니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "learning"
+      ]
+    },
+    {
+      "id": "v101",
+      "es": "resultado",
+      "ko": "결과",
+      "pos": "sustantivo",
+      "example_es": "El resultado fue mejor de lo esperado.",
+      "example_ko": "결과는 예상보다 좋았습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "abstract"
+      ]
+    },
+    {
+      "id": "v102",
+      "es": "disponible",
+      "ko": "이용 가능한, 시간이 되는",
+      "pos": "adjetivo",
+      "example_es": "Estoy disponible después de las cinco.",
+      "example_ko": "저는 5시 이후에 시간이 됩니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "time"
+      ]
+    },
+    {
+      "id": "v103",
+      "es": "útil",
+      "ko": "유용한",
+      "pos": "adjetivo",
+      "example_es": "Este diccionario es muy útil para escribir.",
+      "example_ko": "이 사전은 글쓰기에는 매우 유용합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "learning"
+      ]
+    },
+    {
+      "id": "v104",
+      "es": "cómodo",
+      "ko": "편안한, 편리한",
+      "pos": "adjetivo",
+      "example_es": "El sofá es cómodo para leer.",
+      "example_ko": "그 소파는 책 읽기에 편안합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "daily"
+      ]
+    },
+    {
+      "id": "v105",
+      "es": "puntual",
+      "ko": "시간을 잘 지키는, 정시의",
+      "pos": "adjetivo",
+      "example_es": "El autobús suele ser puntual por la mañana.",
+      "example_ko": "아침에는 버스가 보통 정시에 옵니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "time"
+      ]
+    },
+    {
+      "id": "v106",
+      "es": "probable",
+      "ko": "가능성이 있는",
+      "pos": "adjetivo",
+      "example_es": "Es probable que llueva esta tarde.",
+      "example_ko": "오늘 오후에 비가 올 가능성이 있습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adjective",
+        "subjunctive"
+      ]
+    },
+    {
+      "id": "v107",
+      "es": "necesario",
+      "ko": "필요한",
+      "pos": "adjetivo",
+      "example_es": "Es necesario traer el pasaporte.",
+      "example_ko": "여권을 가져오는 것이 필요합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "formal"
+      ]
+    },
+    {
+      "id": "v108",
+      "es": "complicado",
+      "ko": "복잡한, 어려운",
+      "pos": "adjetivo",
+      "example_es": "El formulario parece complicado al principio.",
+      "example_ko": "그 양식은 처음에는 복잡해 보입니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "formal"
+      ]
+    },
+    {
+      "id": "v109",
+      "es": "sencillo",
+      "ko": "간단한, 쉬운",
+      "pos": "adjetivo",
+      "example_es": "La explicación fue sencilla y clara.",
+      "example_ko": "설명은 간단하고 명확했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "learning"
+      ]
+    },
+    {
+      "id": "v110",
+      "es": "seguro",
+      "ko": "안전한, 확실한",
+      "pos": "adjetivo",
+      "example_es": "Este barrio es seguro por la noche.",
+      "example_ko": "이 동네는 밤에도 안전합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "city"
+      ]
+    },
+    {
+      "id": "v111",
+      "es": "responsable",
+      "ko": "책임감 있는",
+      "pos": "adjetivo",
+      "example_es": "Buscan una persona responsable para el puesto.",
+      "example_ko": "그들은 그 직책에 책임감 있는 사람을 찾고 있습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adjective",
+        "work"
+      ]
+    },
+    {
+      "id": "v112",
+      "es": "atento",
+      "ko": "친절한, 세심한",
+      "pos": "adjetivo",
+      "example_es": "El camarero fue muy atento con nosotros.",
+      "example_ko": "웨이터는 우리에게 매우 세심하게 대해 주었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "service"
+      ]
+    },
+    {
+      "id": "v113",
+      "es": "cansado",
+      "ko": "피곤한",
+      "pos": "adjetivo",
+      "example_es": "Estoy cansado después del viaje.",
+      "example_ko": "여행 후에 피곤합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "health"
+      ]
+    },
+    {
+      "id": "v114",
+      "es": "orgulloso",
+      "ko": "자랑스러운",
+      "pos": "adjetivo",
+      "example_es": "Estoy orgulloso de mi progreso.",
+      "example_ko": "저는 제 발전이 자랑스럽습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v115",
+      "es": "preocupado",
+      "ko": "걱정하는",
+      "pos": "adjetivo",
+      "example_es": "Estoy preocupado por el examen oral.",
+      "example_ko": "말하기 시험이 걱정됩니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v116",
+      "es": "sorprendido",
+      "ko": "놀란",
+      "pos": "adjetivo",
+      "example_es": "Me quedé sorprendido por la respuesta.",
+      "example_ko": "그 대답에 놀랐습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v117",
+      "es": "adecuado",
+      "ko": "적절한",
+      "pos": "adjetivo",
+      "example_es": "Este nivel es adecuado para estudiantes B1.",
+      "example_ko": "이 수준은 B1 학습자에게 적절합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adjective",
+        "formal"
+      ]
+    },
+    {
+      "id": "v118",
+      "es": "caro",
+      "ko": "비싼",
+      "pos": "adjetivo",
+      "example_es": "El alquiler es caro en esta zona.",
+      "example_ko": "이 지역의 월세는 비쌉니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "money"
+      ]
+    },
+    {
+      "id": "v119",
+      "es": "barato",
+      "ko": "저렴한",
+      "pos": "adjetivo",
+      "example_es": "Encontré un billete barato para Málaga.",
+      "example_ko": "말라가행 저렴한 표를 찾았습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "money"
+      ]
+    },
+    {
+      "id": "v120",
+      "es": "gratuito",
+      "ko": "무료의",
+      "pos": "adjetivo",
+      "example_es": "La entrada al museo es gratuita los domingos.",
+      "example_ko": "일요일에는 박물관 입장이 무료입니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "travel"
+      ]
+    },
+    {
+      "id": "v121",
+      "es": "local",
+      "ko": "현지의, 지역의",
+      "pos": "adjetivo",
+      "example_es": "Probamos comida local en el mercado.",
+      "example_ko": "우리는 시장에서 현지 음식을 먹어 보았습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "culture"
+      ]
+    },
+    {
+      "id": "v122",
+      "es": "internacional",
+      "ko": "국제적인",
+      "pos": "adjetivo",
+      "example_es": "Trabajo en un equipo internacional.",
+      "example_ko": "저는 국제적인 팀에서 일합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adjective",
+        "work"
+      ]
+    },
+    {
+      "id": "v123",
+      "es": "sostenible",
+      "ko": "지속 가능한",
+      "pos": "adjetivo",
+      "example_es": "Quiero tener hábitos más sostenibles.",
+      "example_ko": "더 지속 가능한 습관을 갖고 싶습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adjective",
+        "environment"
+      ]
+    },
+    {
+      "id": "v124",
+      "es": "saludable",
+      "ko": "건강한",
+      "pos": "adjetivo",
+      "example_es": "Caminar cada día es un hábito saludable.",
+      "example_ko": "매일 걷는 것은 건강한 습관입니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "health"
+      ]
+    },
+    {
+      "id": "v125",
+      "es": "lleno",
+      "ko": "가득 찬",
+      "pos": "adjetivo",
+      "example_es": "El tren estaba lleno de turistas.",
+      "example_ko": "기차는 관광객들로 가득 차 있었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "travel"
+      ]
+    },
+    {
+      "id": "v126",
+      "es": "vacío",
+      "ko": "비어 있는",
+      "pos": "adjetivo",
+      "example_es": "La sala estaba casi vacía.",
+      "example_ko": "그 방은 거의 비어 있었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "place"
+      ]
+    },
+    {
+      "id": "v127",
+      "es": "ruidoso",
+      "ko": "시끄러운",
+      "pos": "adjetivo",
+      "example_es": "El apartamento es ruidoso por la noche.",
+      "example_ko": "그 아파트는 밤에 시끄럽습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "housing"
+      ]
+    },
+    {
+      "id": "v128",
+      "es": "tranquilo",
+      "ko": "조용한, 평온한",
+      "pos": "adjetivo",
+      "example_es": "Busco una zona tranquila para vivir.",
+      "example_ko": "살기 좋은 조용한 지역을 찾고 있습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "housing"
+      ]
+    },
+    {
+      "id": "v129",
+      "es": "urgente",
+      "ko": "긴급한",
+      "pos": "adjetivo",
+      "example_es": "Tengo una pregunta urgente sobre la reserva.",
+      "example_ko": "예약에 관해 긴급한 질문이 있습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adjective",
+        "formal"
+      ]
+    },
+    {
+      "id": "v130",
+      "es": "reciente",
+      "ko": "최근의",
+      "pos": "adjetivo",
+      "example_es": "Una noticia reciente cambió nuestra opinión.",
+      "example_ko": "최근 뉴스 하나가 우리의 의견을 바꾸었습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adjective",
+        "media"
+      ]
+    },
+    {
+      "id": "v131",
+      "es": "antiguo",
+      "ko": "오래된, 고대의",
+      "pos": "adjetivo",
+      "example_es": "Visitamos un puente antiguo en la ciudad.",
+      "example_ko": "우리는 그 도시의 오래된 다리를 방문했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adjective",
+        "travel"
+      ]
+    },
+    {
+      "id": "v132",
+      "es": "además",
+      "ko": "게다가",
+      "pos": "conector",
+      "example_es": "El curso es barato; además, está cerca de casa.",
+      "example_ko": "그 수업은 저렴합니다. 게다가 집에서 가깝습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "connector",
+        "addition"
+      ]
+    },
+    {
+      "id": "v133",
+      "es": "aunque",
+      "ko": "비록 ...이지만",
+      "pos": "conector",
+      "example_es": "Aunque estaba cansado, salí a caminar.",
+      "example_ko": "피곤했지만 산책하러 나갔습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "connector",
+        "contrast"
+      ]
+    },
+    {
+      "id": "v134",
+      "es": "mientras",
+      "ko": "...하는 동안, 반면에",
+      "pos": "conector",
+      "example_es": "Escucho música mientras cocino.",
+      "example_ko": "요리하는 동안 음악을 듣습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "connector",
+        "time"
+      ]
+    },
+    {
+      "id": "v135",
+      "es": "por eso",
+      "ko": "그래서",
+      "pos": "conector",
+      "example_es": "No dormí bien; por eso estoy cansado.",
+      "example_ko": "잠을 잘 못 잤습니다. 그래서 피곤합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "connector",
+        "cause"
+      ]
+    },
+    {
+      "id": "v136",
+      "es": "de hecho",
+      "ko": "사실은",
+      "pos": "conector",
+      "example_es": "De hecho, ya he visitado ese museo.",
+      "example_ko": "사실 저는 이미 그 박물관을 방문했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "emphasis"
+      ]
+    },
+    {
+      "id": "v137",
+      "es": "en cambio",
+      "ko": "반면에",
+      "pos": "conector",
+      "example_es": "Yo prefiero el tren; mi hermana, en cambio, prefiere el coche.",
+      "example_ko": "저는 기차를 선호합니다. 반면 제 여동생은 자동차를 선호합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "contrast"
+      ]
+    },
+    {
+      "id": "v138",
+      "es": "por lo tanto",
+      "ko": "그러므로",
+      "pos": "conector",
+      "example_es": "El plazo termina hoy; por lo tanto, debemos enviarlo ya.",
+      "example_ko": "기한이 오늘 끝납니다. 그러므로 지금 보내야 합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "consequence"
+      ]
+    },
+    {
+      "id": "v139",
+      "es": "a pesar de",
+      "ko": "...에도 불구하고",
+      "pos": "conector",
+      "example_es": "A pesar del frío, la plaza estaba llena.",
+      "example_ko": "추위에도 불구하고 광장은 가득 차 있었습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "contrast"
+      ]
+    },
+    {
+      "id": "v140",
+      "es": "en cuanto a",
+      "ko": "...에 관해서는",
+      "pos": "conector",
+      "example_es": "En cuanto al alojamiento, prefiero algo céntrico.",
+      "example_ko": "숙소에 관해서는 저는 중심가에 있는 곳을 선호합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "topic"
+      ]
+    },
+    {
+      "id": "v141",
+      "es": "cuanto antes",
+      "ko": "가능한 한 빨리",
+      "pos": "expresión",
+      "example_es": "Llámame cuanto antes, por favor.",
+      "example_ko": "가능한 한 빨리 전화해 주세요.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "expression",
+        "time"
+      ]
+    },
+    {
+      "id": "v142",
+      "es": "a menudo",
+      "ko": "자주",
+      "pos": "adverbio",
+      "example_es": "A menudo desayuno fuera de casa.",
+      "example_ko": "저는 자주 밖에서 아침을 먹습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "frequency"
+      ]
+    },
+    {
+      "id": "v143",
+      "es": "de vez en cuando",
+      "ko": "가끔",
+      "pos": "adverbio",
+      "example_es": "De vez en cuando escribo un diario en español.",
+      "example_ko": "가끔 스페인어로 일기를 씁니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "frequency"
+      ]
+    },
+    {
+      "id": "v144",
+      "es": "casi",
+      "ko": "거의",
+      "pos": "adverbio",
+      "example_es": "Casi perdimos el último autobús.",
+      "example_ko": "우리는 마지막 버스를 거의 놓칠 뻔했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "quantity"
+      ]
+    },
+    {
+      "id": "v145",
+      "es": "apenas",
+      "ko": "거의 ...않다",
+      "pos": "adverbio",
+      "example_es": "Apenas entendí la primera explicación.",
+      "example_ko": "첫 번째 설명은 거의 이해하지 못했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adverb",
+        "quantity"
+      ]
+    },
+    {
+      "id": "v146",
+      "es": "todavía",
+      "ko": "아직, 여전히",
+      "pos": "adverbio",
+      "example_es": "Todavía no he terminado el ejercicio.",
+      "example_ko": "아직 연습문제를 끝내지 못했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "time"
+      ]
+    },
+    {
+      "id": "v147",
+      "es": "ya",
+      "ko": "이미, 벌써",
+      "pos": "adverbio",
+      "example_es": "Ya compré los billetes para mañana.",
+      "example_ko": "내일 표를 이미 샀습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "time"
+      ]
+    },
+    {
+      "id": "v148",
+      "es": "incluso",
+      "ko": "심지어",
+      "pos": "adverbio",
+      "example_es": "Incluso los vecinos vinieron a la fiesta.",
+      "example_ko": "심지어 이웃들도 파티에 왔습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adverb",
+        "emphasis"
+      ]
+    },
+    {
+      "id": "v149",
+      "es": "tal vez",
+      "ko": "아마도",
+      "pos": "adverbio",
+      "example_es": "Tal vez lleguemos un poco tarde.",
+      "example_ko": "아마 우리가 조금 늦게 도착할지도 모릅니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "adverb",
+        "possibility"
+      ]
+    },
+    {
+      "id": "v150",
+      "es": "quizá",
+      "ko": "아마도",
+      "pos": "adverbio",
+      "example_es": "Quizá sea mejor esperar aquí.",
+      "example_ko": "아마 여기서 기다리는 편이 더 나을지도 모릅니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "adverb",
+        "subjunctive"
+      ]
+    },
+    {
+      "id": "v151",
+      "es": "en realidad",
+      "ko": "사실은, 실제로는",
+      "pos": "conector",
+      "example_es": "En realidad, no conozco bien esta zona.",
+      "example_ko": "사실 저는 이 지역을 잘 모릅니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "connector",
+        "clarification"
+      ]
+    },
+    {
+      "id": "v152",
+      "es": "sobre todo",
+      "ko": "무엇보다도, 특히",
+      "pos": "conector",
+      "example_es": "Me gusta leer, sobre todo novelas cortas.",
+      "example_ko": "저는 읽는 것을 좋아합니다. 특히 짧은 소설을 좋아합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "connector",
+        "emphasis"
+      ]
+    },
+    {
+      "id": "v153",
+      "es": "al menos",
+      "ko": "적어도",
+      "pos": "adverbio",
+      "example_es": "Necesitamos al menos dos horas para llegar.",
+      "example_ko": "도착하려면 적어도 두 시간이 필요합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "quantity"
+      ]
+    },
+    {
+      "id": "v154",
+      "es": "por supuesto",
+      "ko": "물론",
+      "pos": "expresión",
+      "example_es": "Por supuesto, puedes usar mi diccionario.",
+      "example_ko": "물론 제 사전을 사용해도 됩니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "expression",
+        "politeness"
+      ]
+    },
+    {
+      "id": "v155",
+      "es": "desde luego",
+      "ko": "물론, 확실히",
+      "pos": "expresión",
+      "example_es": "Desde luego, la vista merece la pena.",
+      "example_ko": "물론 그 전망은 볼 가치가 있습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "expression",
+        "emphasis"
+      ]
+    },
+    {
+      "id": "v156",
+      "es": "en vez de",
+      "ko": "...대신에",
+      "pos": "conector",
+      "example_es": "Tomé té en vez de café.",
+      "example_ko": "커피 대신 차를 마셨습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "connector",
+        "choice"
+      ]
+    },
+    {
+      "id": "v157",
+      "es": "en lugar de",
+      "ko": "...대신에",
+      "pos": "conector",
+      "example_es": "Fuimos en autobús en lugar de ir en taxi.",
+      "example_ko": "택시를 타는 대신 버스를 탔습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "choice"
+      ]
+    },
+    {
+      "id": "v158",
+      "es": "cada vez más",
+      "ko": "점점 더",
+      "pos": "expresión",
+      "example_es": "Cada vez más personas estudian español en línea.",
+      "example_ko": "점점 더 많은 사람들이 온라인으로 스페인어를 공부합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "expression",
+        "trend"
+      ]
+    },
+    {
+      "id": "v159",
+      "es": "por si acaso",
+      "ko": "혹시 모르니",
+      "pos": "expresión",
+      "example_es": "Lleva un paraguas por si acaso.",
+      "example_ko": "혹시 모르니 우산을 가져가세요.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "expression",
+        "planning"
+      ]
+    },
+    {
+      "id": "v160",
+      "es": "hasta que",
+      "ko": "...할 때까지",
+      "pos": "conector",
+      "example_es": "Esperé hasta que llegó el autobús.",
+      "example_ko": "버스가 올 때까지 기다렸습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "connector",
+        "time"
+      ]
+    },
+    {
+      "id": "v161",
+      "es": "siempre que",
+      "ko": "...하는 한, ...할 때마다",
+      "pos": "conector",
+      "example_es": "Puedes venir siempre que avises antes.",
+      "example_ko": "미리 알려주기만 하면 와도 됩니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "condition"
+      ]
+    },
+    {
+      "id": "v162",
+      "es": "con tal de que",
+      "ko": "...하기만 한다면",
+      "pos": "conector",
+      "example_es": "Te ayudo con tal de que practiques después.",
+      "example_ko": "나중에 연습하기만 한다면 도와줄게요.",
+      "level": "B2",
+      "sublevel": "B2.2",
+      "tags": [
+        "connector",
+        "condition"
+      ]
+    },
+    {
+      "id": "v163",
+      "es": "debido a",
+      "ko": "...때문에",
+      "pos": "conector",
+      "example_es": "El evento se canceló debido a la lluvia.",
+      "example_ko": "비 때문에 행사가 취소되었습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "cause"
+      ]
+    },
+    {
+      "id": "v164",
+      "es": "gracias a",
+      "ko": "...덕분에",
+      "pos": "conector",
+      "example_es": "Gracias a tu ayuda, terminé el formulario.",
+      "example_ko": "네 도움 덕분에 양식을 끝냈습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "connector",
+        "cause"
+      ]
+    },
+    {
+      "id": "v165",
+      "es": "a causa de",
+      "ko": "...때문에",
+      "pos": "conector",
+      "example_es": "Llegamos tarde a causa del tráfico.",
+      "example_ko": "교통 체증 때문에 늦게 도착했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "cause"
+      ]
+    },
+    {
+      "id": "v166",
+      "es": "aun así",
+      "ko": "그럼에도 불구하고",
+      "pos": "conector",
+      "example_es": "Estaba nervioso; aun así, hablé con claridad.",
+      "example_ko": "긴장했지만 그럼에도 분명하게 말했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "contrast"
+      ]
+    },
+    {
+      "id": "v167",
+      "es": "por un lado",
+      "ko": "한편으로는",
+      "pos": "conector",
+      "example_es": "Por un lado, el piso es caro; por otro, está muy bien situado.",
+      "example_ko": "한편으로 그 아파트는 비쌉니다. 다른 한편으로 위치가 아주 좋습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "argument"
+      ]
+    },
+    {
+      "id": "v168",
+      "es": "por otro lado",
+      "ko": "다른 한편으로는",
+      "pos": "conector",
+      "example_es": "Por otro lado, podríamos buscar otra fecha.",
+      "example_ko": "다른 한편으로는 다른 날짜를 찾아볼 수도 있습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "argument"
+      ]
+    },
+    {
+      "id": "v169",
+      "es": "en resumen",
+      "ko": "요약하면",
+      "pos": "conector",
+      "example_es": "En resumen, necesitamos practicar más la conversación.",
+      "example_ko": "요약하면 우리는 회화를 더 연습해야 합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "connector",
+        "summary"
+      ]
+    },
+    {
+      "id": "v170",
+      "es": "al final",
+      "ko": "결국, 마지막에",
+      "pos": "adverbio",
+      "example_es": "Al final decidimos quedarnos en casa.",
+      "example_ko": "결국 우리는 집에 머물기로 했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "time"
+      ]
+    },
+    {
+      "id": "v171",
+      "es": "al principio",
+      "ko": "처음에는",
+      "pos": "adverbio",
+      "example_es": "Al principio me costaba entender los acentos.",
+      "example_ko": "처음에는 억양을 이해하는 것이 어려웠습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "time"
+      ]
+    },
+    {
+      "id": "v172",
+      "es": "de repente",
+      "ko": "갑자기",
+      "pos": "adverbio",
+      "example_es": "De repente empezó a sonar el teléfono.",
+      "example_ko": "갑자기 전화가 울리기 시작했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "time"
+      ]
+    },
+    {
+      "id": "v173",
+      "es": "poco a poco",
+      "ko": "조금씩",
+      "pos": "adverbio",
+      "example_es": "Poco a poco hablo con más seguridad.",
+      "example_ko": "조금씩 더 자신 있게 말합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "adverb",
+        "progress"
+      ]
+    },
+    {
+      "id": "v174",
+      "es": "merecer la pena",
+      "ko": "할 가치가 있다",
+      "pos": "expresión",
+      "example_es": "Merece la pena visitar el mercado temprano.",
+      "example_ko": "일찍 시장을 방문할 가치가 있습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "expression",
+        "opinion"
+      ]
+    },
+    {
+      "id": "v175",
+      "es": "tener ganas de",
+      "ko": "...하고 싶다",
+      "pos": "expresión",
+      "example_es": "Tengo ganas de probar comida mexicana.",
+      "example_ko": "멕시코 음식을 먹어 보고 싶습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "expression",
+        "desire"
+      ]
+    },
+    {
+      "id": "v176",
+      "es": "echar de menos",
+      "ko": "그리워하다",
+      "pos": "expresión",
+      "example_es": "Echo de menos la comida de mi casa.",
+      "example_ko": "집밥이 그립습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "expression",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v177",
+      "es": "hacer falta",
+      "ko": "필요하다",
+      "pos": "expresión",
+      "example_es": "Hace falta más práctica antes del examen.",
+      "example_ko": "시험 전에 더 많은 연습이 필요합니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "expression",
+        "need"
+      ]
+    },
+    {
+      "id": "v178",
+      "es": "tener en cuenta",
+      "ko": "고려하다",
+      "pos": "expresión",
+      "example_es": "Debemos tener en cuenta el presupuesto.",
+      "example_ko": "우리는 예산을 고려해야 합니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "expression",
+        "planning"
+      ]
+    },
+    {
+      "id": "v179",
+      "es": "ponerse de acuerdo",
+      "ko": "합의하다",
+      "pos": "expresión",
+      "example_es": "Nos pusimos de acuerdo sobre la hora.",
+      "example_ko": "우리는 시간에 대해 합의했습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "expression",
+        "communication"
+      ]
+    },
+    {
+      "id": "v180",
+      "es": "estar de acuerdo",
+      "ko": "동의하다",
+      "pos": "expresión",
+      "example_es": "Estoy de acuerdo con tu propuesta.",
+      "example_ko": "네 제안에 동의합니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "expression",
+        "opinion"
+      ]
+    },
+    {
+      "id": "v181",
+      "es": "estar harto de",
+      "ko": "...에 질리다",
+      "pos": "expresión",
+      "example_es": "Estoy harto del ruido de la calle.",
+      "example_ko": "거리 소음에 질렸습니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "expression",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v182",
+      "es": "tener lugar",
+      "ko": "열리다, 발생하다",
+      "pos": "expresión",
+      "example_es": "La reunión tendrá lugar en la sala grande.",
+      "example_ko": "회의는 큰 회의실에서 열릴 예정입니다.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "expression",
+        "formal"
+      ]
+    }
+  ]
+}

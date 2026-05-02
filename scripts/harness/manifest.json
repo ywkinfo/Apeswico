@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "project": {
+    "name": "Apeswico Spanish Learning App",
+    "kind": "github-pages-project"
+  },
+  "stateFile": ".omx/state/harness-state.json",
+  "tasks": [
+    {
+      "id": "bootstrap-docs",
+      "stage": 1,
+      "owner": "executor",
+      "dependsOn": [],
+      "outputs": [
+        "AGENTS.md",
+        "README.md",
+        ".nojekyll",
+        ".gitignore"
+      ],
+      "verify": [
+        "test -f AGENTS.md",
+        "test -f README.md",
+        "test -f .nojekyll"
+      ],
+      "doneWhen": [
+        "project rules are documented",
+        "Pages-safe metadata exists"
+      ]
+    },
+    {
+      "id": "harness-core",
+      "stage": 1,
+      "owner": "executor",
+      "dependsOn": [
+        "bootstrap-docs"
+      ],
+      "outputs": [
+        "scripts/harness/manifest.json",
+        "scripts/harness/run.mjs",
+        "scripts/harness/verify.mjs",
+        "scripts/harness/recover.mjs",
+        "scripts/content-prompts.md",
+        "scripts/validate-data.mjs"
+      ],
+      "verify": [
+        "node scripts/harness/verify.mjs"
+      ],
+      "doneWhen": [
+        "manifest loads cleanly",
+        "runner can report the next task",
+        "validator handles missing future data files gracefully"
+      ]
+    },
+    {
+      "id": "app-shell",
+      "stage": 2,
+      "owner": "executor",
+      "dependsOn": [
+        "bootstrap-docs",
+        "harness-core"
+      ],
+      "outputs": [
+        "index.html",
+        "flashcards.html",
+        "grammar.html",
+        "reading.html",
+        "situations.html"
+      ],
+      "verify": [
+        "node scripts/harness/verify.mjs"
+      ],
+      "doneWhen": [
+        "all page shells exist",
+        "navigation is wired"
+      ]
+    },
+    {
+      "id": "shared-core",
+      "stage": 2,
+      "owner": "executor",
+      "dependsOn": [
+        "app-shell"
+      ],
+      "outputs": [
+        "css/style.css",
+        "js/storage.js",
+        "js/data.js",
+        "js/srs.js"
+      ],
+      "verify": [
+        "node scripts/harness/verify.mjs"
+      ],
+      "doneWhen": [
+        "shared utilities are reusable",
+        "styles are Pages-safe"
+      ]
+    },
+    {
+      "id": "feature-pages",
+      "stage": 3,
+      "owner": "executor",
+      "dependsOn": [
+        "shared-core"
+      ],
+      "outputs": [
+        "js/flashcards.js",
+        "js/grammar.js",
+        "js/reading.js",
+        "js/situations.js"
+      ],
+      "verify": [
+        "node scripts/harness/verify.mjs"
+      ],
+      "doneWhen": [
+        "each learning mode has isolated logic",
+        "shared state survives reloads"
+      ]
+    },
+    {
+      "id": "seed-data",
+      "stage": 3,
+      "owner": "executor",
+      "dependsOn": [
+        "shared-core"
+      ],
+      "outputs": [
+        "data/vocabulary.json",
+        "data/grammar.json",
+        "data/reading.json",
+        "data/situations.json"
+      ],
+      "verify": [
+        "node scripts/validate-data.mjs"
+      ],
+      "doneWhen": [
+        "sample content is valid",
+        "schemas are stable enough for expansion"
+      ]
+    },
+    {
+      "id": "validation-and-qa",
+      "stage": 4,
+      "owner": "verifier",
+      "dependsOn": [
+        "feature-pages",
+        "seed-data"
+      ],
+      "outputs": [],
+      "verify": [
+        "node scripts/harness/verify.mjs",
+        "node scripts/validate-data.mjs"
+      ],
+      "doneWhen": [
+        "functional checks pass",
+        "no obvious regressions remain"
+      ]
+    },
+    {
+      "id": "bulk-content",
+      "stage": 5,
+      "owner": "executor",
+      "dependsOn": [
+        "validation-and-qa"
+      ],
+      "outputs": [],
+      "verify": [
+        "node scripts/validate-data.mjs --min-vocabulary=150 --min-grammar=10 --min-reading=6 --min-situations=10"
+      ],
+      "doneWhen": [
+        "full content set is generated",
+        "spot checks are clean"
+      ]
+    },
+    {
+      "id": "publish-ready",
+      "stage": 6,
+      "owner": "verifier",
+      "dependsOn": [
+        "bulk-content"
+      ],
+      "outputs": [],
+      "verify": [
+        "node scripts/harness/verify.mjs"
+      ],
+      "doneWhen": [
+        "GitHub Pages deployment can be pushed safely"
+      ]
+    }
+  ]
+}

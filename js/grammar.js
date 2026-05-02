@@ -1,0 +1,381 @@
+import { loadGrammar } from './data.js';
+import { get, namespace, set } from './storage.js';
+
+const root = document.getElementById('grammar-app');
+const scoreKey = namespace('grammar', 1, 'scores');
+
+if (root) {
+  init().catch((error) => {
+    root.innerHTML = `
+      <section class="card">
+        <span class="chip">오류</span>
+        <h2>문법을 불러오지 못했습니다</h2>
+        <p>${escapeHtml(error.message)}</p>
+      </section>
+    `;
+  });
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (character) => {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+    return map[character] || character;
+  });
+}
+
+function stripAccents(text) {
+  return String(text ?? '').normalize('NFD').replace(/\p{M}/gu, '');
+}
+
+function normalizeAnswer(text, { caseSensitive, accentSensitive }) {
+  let value = String(text ?? '').trim().replace(/\s+/g, ' ');
+  if (!caseSensitive) {
+    value = value.toLowerCase();
+  }
+  if (!accentSensitive) {
+    value = stripAccents(value);
+  }
+  return value;
+}
+
+function loadScores() {
+  return get(scoreKey, {});
+}
+
+function saveScores(scores) {
+  set(scoreKey, scores);
+}
+
+function updateScore(topicId, correct) {
+  const scores = loadScores();
+  const current = scores[topicId] || { correct: 0, total: 0 };
+  const next = {
+    correct: current.correct + (correct ? 1 : 0),
+    total: current.total + 1
+  };
+  scores[topicId] = next;
+  saveScores(scores);
+  return next;
+}
+
+function topicAccuracy(topicId) {
+  const score = loadScores()[topicId];
+  if (!score || !score.total) {
+    return null;
+  }
+  return Math.round((score.correct / score.total) * 100);
+}
+
+function renderStem(question) {
+  return `
+    <p class="lede">${escapeHtml(question.stem)}</p>
+    ${question.stem_ko ? `<p class="lede">${escapeHtml(question.stem_ko)}</p>` : ''}
+  `;
+}
+
+async function init() {
+  root.innerHTML = `
+    <section class="card">
+      <span class="chip">불러오는 중</span>
+      <h2>문법 토픽을 준비하고 있습니다</h2>
+      <p class="lede">잠시만 기다리면 토픽과 문항이 나타납니다.</p>
+    </section>
+  `;
+
+  const payload = await loadGrammar();
+  const topics = Array.isArray(payload?.items) ? payload.items : [];
+
+  if (!topics.length) {
+    root.innerHTML = `
+      <section class="card">
+        <span class="chip">비어 있음</span>
+        <h2>문법 데이터가 아직 없습니다</h2>
+        <p class="lede">다음 단계에서 <code>data/grammar.json</code>이 채워지면 퀴즈가 표시됩니다.</p>
+      </section>
+    `;
+    return;
+  }
+
+  const state = {
+    topicIndex: 0,
+    questionIndex: 0,
+    answered: null
+  };
+
+  function currentTopic() {
+    return topics[state.topicIndex] || null;
+  }
+
+  function currentQuestion() {
+    const topic = currentTopic();
+    return topic?.questions?.[state.questionIndex] || null;
+  }
+
+  function topicListMarkup() {
+    return topics
+      .map((topic, index) => {
+        const active = index === state.topicIndex ? 'aria-current="true"' : '';
+        const accuracy = topicAccuracy(topic.id);
+        const scoreLine = accuracy == null ? '기록 없음' : `${accuracy}%`;
+        return `
+          <button type="button" class="topic-button" data-topic-index="${index}" ${active}>
+            <strong>${escapeHtml(topic.title)}</strong>
+            <span>${escapeHtml(topic.level)} ${escapeHtml(topic.sublevel)}</span>
+            <small>${escapeHtml(scoreLine)}</small>
+          </button>
+        `;
+      })
+      .join('');
+  }
+
+  function renderFeedback(question, result) {
+    const solution = Array.isArray(result.solution) ? result.solution.join(' · ') : '';
+    if (result.correct) {
+      return `
+        <section class="card" style="background: rgba(72, 140, 90, 0.12);">
+          <span class="chip">정답</span>
+          <p class="lede">좋습니다. ${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
+        </section>
+      `;
+    }
+
+    if (result.accentOnly) {
+      return `
+        <section class="card" style="background: rgba(138, 79, 29, 0.12);">
+          <span class="chip">악센트 주의</span>
+          <p class="lede">철자는 맞지만 악센트가 빠졌습니다. 정답 예시: ${escapeHtml(solution)}</p>
+          <p class="lede">${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
+        </section>
+      `;
+    }
+
+    return `
+      <section class="card" style="background: rgba(185, 74, 58, 0.12);">
+        <span class="chip">오답</span>
+        <p class="lede">정답 예시: ${escapeHtml(solution || '정답을 준비 중입니다.')}</p>
+        <p class="lede">${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
+      </section>
+    `;
+  }
+
+  function evaluateFill(question, values) {
+    const caseSensitive = question.case_sensitive ?? false;
+    const accentSensitive = question.accent_sensitive ?? true;
+    const accepted = Array.isArray(question.accepted_answers) ? question.accepted_answers : [];
+
+    const exact = accepted.find((answerSet) => {
+      if (!Array.isArray(answerSet) || answerSet.length !== values.length) {
+        return false;
+      }
+      return values.every(
+        (value, index) =>
+          normalizeAnswer(value, { caseSensitive, accentSensitive: true }) ===
+          normalizeAnswer(answerSet[index], { caseSensitive, accentSensitive: true })
+      );
+    });
+
+    if (exact) {
+      return { correct: true, solution: exact };
+    }
+
+    if (accentSensitive) {
+      const accentMatch = accepted.find((answerSet) => {
+        if (!Array.isArray(answerSet) || answerSet.length !== values.length) {
+          return false;
+        }
+        return values.every(
+          (value, index) =>
+            normalizeAnswer(value, { caseSensitive, accentSensitive: false }) ===
+            normalizeAnswer(answerSet[index], { caseSensitive, accentSensitive: false })
+        );
+      });
+
+      if (accentMatch) {
+        return { correct: false, accentOnly: true, solution: accentMatch };
+      }
+    }
+
+    return { correct: false, solution: accepted[0] || [] };
+  }
+
+  function evaluateChoice(question, selectedIndex) {
+    const correct = Number(selectedIndex) === Number(question.answer_index);
+    return {
+      correct,
+      solution:
+        Array.isArray(question.choices) && question.choices.length
+          ? [question.choices[question.answer_index]]
+          : []
+    };
+  }
+
+  function submitAnswer(event) {
+    event.preventDefault();
+    if (state.answered) {
+      return;
+    }
+
+    const topic = currentTopic();
+    const question = currentQuestion();
+    if (!topic || !question) {
+      return;
+    }
+
+    let result;
+    if (question.type === 'fill') {
+      const blankCount = (question.stem.match(/___/g) || []).length || 1;
+      const values = [];
+      for (let index = 0; index < blankCount; index += 1) {
+        const input = root.querySelector(`[data-blank-index="${index}"]`);
+        values.push(input?.value ?? '');
+      }
+      result = evaluateFill(question, values);
+    } else {
+      const selected = root.querySelector('input[name="choice-answer"]:checked');
+      result = evaluateChoice(question, selected?.value);
+    }
+
+    state.answered = result;
+    updateScore(topic.id, result.correct);
+    render();
+  }
+
+  function advance() {
+    const topic = currentTopic();
+    if (!topic) {
+      return;
+    }
+    const lastQuestion = state.questionIndex >= (topic.questions?.length || 1) - 1;
+    if (lastQuestion) {
+      state.topicIndex = (state.topicIndex + 1) % topics.length;
+      state.questionIndex = 0;
+    } else {
+      state.questionIndex += 1;
+    }
+    state.answered = null;
+    render();
+  }
+
+  function selectTopic(index) {
+    state.topicIndex = index;
+    state.questionIndex = 0;
+    state.answered = null;
+    render();
+  }
+
+  function renderQuestion(question) {
+    if (!question) {
+      return `
+        <section class="card">
+          <span class="chip">빈 상태</span>
+          <h2>문항이 없습니다</h2>
+        </section>
+      `;
+    }
+
+    if (question.type === 'fill') {
+      const blankCount = (question.stem.match(/___/g) || []).length || 1;
+      const blanks = Array.from({ length: blankCount }, (_, index) => `
+        <label style="display:grid;gap:6px;">
+          <span class="eyebrow">빈칸 ${index + 1}</span>
+          <input
+            type="text"
+            data-blank-index="${index}"
+            autocomplete="off"
+            spellcheck="false"
+            style="padding:0.85rem 1rem;border-radius:16px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;"
+          />
+        </label>
+      `).join('');
+
+      return `
+        <form id="grammar-form" class="stack">
+          <section class="card">
+            <span class="chip">빈칸 채우기</span>
+            <h2>${escapeHtml(question.id)}</h2>
+            ${renderStem(question)}
+            <div class="stack">${blanks}</div>
+          </section>
+          ${state.answered ? renderFeedback(question, state.answered) : ''}
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <button type="submit" class="link">${state.answered ? '다시 채점' : '정답 확인'}</button>
+            ${state.answered ? `<button type="button" class="link" id="grammar-next">다음 문제</button>` : ''}
+          </div>
+        </form>
+      `;
+    }
+
+    const choices = Array.isArray(question.choices)
+      ? question.choices
+          .map(
+            (choice, index) => `
+              <label class="card" style="display:flex;gap:12px;align-items:flex-start;cursor:pointer;">
+                <input type="radio" name="choice-answer" value="${index}" style="margin-top:4px;" />
+                <span>${escapeHtml(choice)}</span>
+              </label>
+            `
+          )
+          .join('')
+      : '';
+
+    return `
+      <form id="grammar-form" class="stack">
+        <section class="card">
+          <span class="chip">객관식</span>
+          <h2>${escapeHtml(question.id)}</h2>
+          ${renderStem(question)}
+          <div class="stack">${choices}</div>
+        </section>
+        ${state.answered ? renderFeedback(question, state.answered) : ''}
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <button type="submit" class="link">${state.answered ? '다시 채점' : '정답 확인'}</button>
+          ${state.answered ? `<button type="button" class="link" id="grammar-next">다음 문제</button>` : ''}
+        </div>
+      </form>
+    `;
+  }
+
+  function render() {
+    const topic = currentTopic();
+    const question = currentQuestion();
+
+    root.innerHTML = `
+      <div style="display:grid;grid-template-columns:minmax(240px,280px) 1fr;gap:16px;align-items:start;">
+        <aside class="card" style="display:grid;gap:12px;">
+          <span class="chip">토픽</span>
+          <h2 style="margin-bottom:0;">학습 목록</h2>
+          <div style="display:grid;gap:10px;">${topicListMarkup()}</div>
+        </aside>
+        <section class="stack">
+          <section class="card">
+            <span class="chip">${escapeHtml(topic?.level || 'B1-B2')} · ${escapeHtml(topic?.sublevel || '')}</span>
+            <h2 style="margin-bottom:8px;">${escapeHtml(topic?.title || '토픽')}</h2>
+            <p class="lede">${escapeHtml(topic?.explanation_ko || '문법 해설을 준비 중입니다.')}</p>
+            <p class="lede">문항 ${state.questionIndex + 1} / ${topic?.questions?.length || 0}</p>
+          </section>
+          ${renderQuestion(question)}
+        </section>
+      </div>
+    `;
+
+    root.querySelectorAll('[data-topic-index]').forEach((button) => {
+      button.addEventListener('click', () => {
+        selectTopic(Number(button.dataset.topicIndex));
+      });
+    });
+
+    const form = document.getElementById('grammar-form');
+    form?.addEventListener('submit', submitAnswer);
+
+    const next = document.getElementById('grammar-next');
+    next?.addEventListener('click', advance);
+  }
+
+  render();
+}

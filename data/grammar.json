@@ -1,0 +1,516 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "g001",
+      "title": "Ser y estar en contexto",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "explanation_ko": "ser은 본질·정체성·영구적인 특징을 말할 때, estar는 상태·위치를 말할 때 자주 씁니다.",
+      "questions": [
+        {
+          "id": "g001-q1",
+          "type": "fill",
+          "stem": "Madrid ___ una ciudad muy viva.",
+          "stem_ko": "마드리드는 매우 활기찬 도시입니다.",
+          "accepted_answers": [
+            [
+              "es"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "정체성이나 특징을 말하므로 ser를 씁니다."
+        },
+        {
+          "id": "g001-q2",
+          "type": "choice",
+          "stem": "Mi casa ___ cerca del metro.",
+          "stem_ko": "우리 집은 지하철 근처에 있습니다.",
+          "choices": [
+            "está",
+            "es",
+            "era",
+            "será"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "위치이므로 estar가 맞습니다."
+        },
+        {
+          "id": "g001-q3",
+          "type": "choice",
+          "stem": "Hoy estoy ___ porque dormí poco.",
+          "stem_ko": "오늘은 잠을 적게 자서 피곤합니다.",
+          "choices": [
+            "cansado",
+            "profesor",
+            "coreano",
+            "de Madrid"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "일시적인 상태를 말하므로 estar와 상태 형용사를 씁니다."
+        }
+      ]
+    },
+    {
+      "id": "g002",
+      "title": "Pretérito imperfecto vs indefinido",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "explanation_ko": "불완전과거는 배경·습관·진행 중이던 상황, 부정과거는 완료된 사건을 말합니다.",
+      "questions": [
+        {
+          "id": "g002-q1",
+          "type": "fill",
+          "stem": "Cuando ___ pequeño, ___ al fútbol todos los días.",
+          "stem_ko": "어렸을 때 저는 매일 축구를 했습니다.",
+          "accepted_answers": [
+            [
+              "era",
+              "jugaba"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "어릴 때의 배경과 습관이므로 불완전과거를 씁니다."
+        },
+        {
+          "id": "g002-q2",
+          "type": "choice",
+          "stem": "Ayer ___ tarde al trabajo.",
+          "stem_ko": "어제 저는 직장에 늦게 도착했습니다.",
+          "choices": [
+            "llegué",
+            "llegaba",
+            "llego",
+            "llegaré"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "Ayer는 완료된 시점이므로 부정과거가 맞습니다."
+        },
+        {
+          "id": "g002-q3",
+          "type": "choice",
+          "stem": "Mientras ___, sonó el teléfono.",
+          "stem_ko": "제가 공부하고 있던 중에 전화가 울렸습니다.",
+          "choices": [
+            "estudiaba",
+            "estudié",
+            "estudio",
+            "estudiaré"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "진행 중인 배경 행동은 불완전과거로 표현합니다."
+        }
+      ]
+    },
+    {
+      "id": "g003",
+      "title": "Por y para",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "explanation_ko": "por는 원인·경유·교환·기간, para는 목적·기한·수혜자를 말할 때 자주 씁니다.",
+      "questions": [
+        {
+          "id": "g003-q1",
+          "type": "fill",
+          "stem": "Gracias ___ tu ayuda.",
+          "stem_ko": "네 도움에 고마워.",
+          "accepted_answers": [
+            [
+              "por"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "감사의 원인을 나타내므로 por를 씁니다."
+        },
+        {
+          "id": "g003-q2",
+          "type": "choice",
+          "stem": "Estudio español ___ viajar.",
+          "stem_ko": "저는 여행하기 위해 스페인어를 공부합니다.",
+          "choices": [
+            "por",
+            "para",
+            "porque",
+            "desde"
+          ],
+          "answer_index": 1,
+          "explanation_ko": "목적을 말하므로 para가 맞습니다."
+        },
+        {
+          "id": "g003-q3",
+          "type": "choice",
+          "stem": "Este regalo es ___ mi madre.",
+          "stem_ko": "이 선물은 어머니를 위한 것입니다.",
+          "choices": [
+            "para",
+            "por",
+            "desde",
+            "hacia"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "수혜자를 나타내므로 para를 씁니다."
+        }
+      ]
+    },
+    {
+      "id": "g004",
+      "title": "Subjuntivo presente",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "explanation_ko": "희망, 요구, 감정, 의심 같은 표현 뒤에는 접속법 현재가 자주 옵니다.",
+      "questions": [
+        {
+          "id": "g004-q1",
+          "type": "fill",
+          "stem": "Espero que mañana ___ buen tiempo.",
+          "stem_ko": "내일 날씨가 좋기를 바랍니다.",
+          "accepted_answers": [
+            [
+              "haga"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "희망 표현 뒤에서는 접속법 현재가 자연스럽습니다."
+        },
+        {
+          "id": "g004-q2",
+          "type": "choice",
+          "stem": "Quiero que tú ___ conmigo.",
+          "stem_ko": "네가 나와 함께 오기를 원합니다.",
+          "choices": [
+            "vienes",
+            "vengas",
+            "vendrás",
+            "ven"
+          ],
+          "answer_index": 1,
+          "explanation_ko": "원하는 행동을 말할 때 접속법이 필요합니다."
+        },
+        {
+          "id": "g004-q3",
+          "type": "choice",
+          "stem": "Es importante que todos ___ a tiempo.",
+          "stem_ko": "모두가 제시간에 도착하는 것이 중요합니다.",
+          "choices": [
+            "llegan",
+            "lleguen",
+            "llegaron",
+            "llegaban"
+          ],
+          "answer_index": 1,
+          "explanation_ko": "평가 표현 뒤의 주어가 달라지면 접속법을 씁니다."
+        }
+      ]
+    },
+    {
+      "id": "g005",
+      "title": "Condicional para hipótesis",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "explanation_ko": "가정이나 조언을 부드럽게 말할 때 조건법을 자주 씁니다.",
+      "questions": [
+        {
+          "id": "g005-q1",
+          "type": "fill",
+          "stem": "Si tuviera tiempo, ___ más.",
+          "stem_ko": "시간이 있다면 더 많이 여행할 텐데요.",
+          "accepted_answers": [
+            [
+              "viajaría"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "가정문에서 결과를 말하므로 조건법이 어울립니다."
+        },
+        {
+          "id": "g005-q2",
+          "type": "choice",
+          "stem": "Yo en tu lugar ___ con calma.",
+          "stem_ko": "내가 네 입장이라면 차분하게 대답할 거야.",
+          "choices": [
+            "respondería",
+            "respondo",
+            "responderé",
+            "respondí"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "조언을 부드럽게 제안할 때 조건법을 씁니다."
+        },
+        {
+          "id": "g005-q3",
+          "type": "choice",
+          "stem": "¿___ ayudarme con esta frase?",
+          "stem_ko": "이 문장을 도와주실 수 있을까요?",
+          "choices": [
+            "Podrías",
+            "Puedes",
+            "Pudiste",
+            "Podías"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "정중한 부탁에는 조건법 podrías가 자연스럽습니다."
+        }
+      ]
+    },
+    {
+      "id": "g006",
+      "title": "Imperativo formal e informal",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "explanation_ko": "명령형은 상대와 상황에 따라 tú, usted, vosotros, ustedes 형태가 달라집니다.",
+      "questions": [
+        {
+          "id": "g006-q1",
+          "type": "fill",
+          "stem": "Señora, ___ aquí, por favor.",
+          "stem_ko": "부인, 여기서 서명해 주세요.",
+          "accepted_answers": [
+            [
+              "firme"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "usted에게 정중하게 말할 때는 접속법 현재 형태의 명령형을 씁니다."
+        },
+        {
+          "id": "g006-q2",
+          "type": "choice",
+          "stem": "Carlos, ___ la puerta, por favor.",
+          "stem_ko": "카를로스, 문 좀 닫아 줘.",
+          "choices": [
+            "cierra",
+            "cierre",
+            "cierras",
+            "cerró"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "tú에게 하는 긍정 명령은 보통 현재 3인칭 단수와 같은 형태입니다."
+        },
+        {
+          "id": "g006-q3",
+          "type": "choice",
+          "stem": "No ___ el móvil durante la clase.",
+          "stem_ko": "수업 중에는 휴대폰을 사용하지 마세요.",
+          "choices": [
+            "uses",
+            "usa",
+            "usas",
+            "usaste"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "부정 명령에서는 tú도 접속법 현재 형태를 씁니다."
+        }
+      ]
+    },
+    {
+      "id": "g007",
+      "title": "Pronombres de objeto",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "explanation_ko": "직접목적어는 lo/la/los/las, 간접목적어는 le/les로 받을 수 있으며, 둘이 함께 나오면 le가 se로 바뀝니다.",
+      "questions": [
+        {
+          "id": "g007-q1",
+          "type": "fill",
+          "stem": "El libro es interesante. ___ compré ayer.",
+          "stem_ko": "그 책은 흥미롭습니다. 저는 어제 그것을 샀습니다.",
+          "accepted_answers": [
+            [
+              "lo"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "el libro는 남성 단수 직접목적어이므로 lo로 받습니다."
+        },
+        {
+          "id": "g007-q2",
+          "type": "choice",
+          "stem": "A María ___ envié un mensaje.",
+          "stem_ko": "마리아에게 메시지를 보냈습니다.",
+          "choices": [
+            "le",
+            "la",
+            "lo",
+            "las"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "메시지를 받은 사람은 간접목적어이므로 le를 씁니다."
+        },
+        {
+          "id": "g007-q3",
+          "type": "choice",
+          "stem": "El informe se ___ mandé a mi jefe.",
+          "stem_ko": "그 보고서를 제 상사에게 보냈습니다.",
+          "choices": [
+            "lo",
+            "le",
+            "la",
+            "los"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "le lo는 함께 쓰지 않고 se lo로 바뀝니다."
+        }
+      ]
+    },
+    {
+      "id": "g008",
+      "title": "Oraciones de relativo",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "explanation_ko": "관계절은 명사를 더 자세히 설명합니다. que는 넓게 쓰이고, donde는 장소, quien은 사람을 가리킬 때 씁니다.",
+      "questions": [
+        {
+          "id": "g008-q1",
+          "type": "fill",
+          "stem": "La cafetería ___ está en la esquina es muy tranquila.",
+          "stem_ko": "모퉁이에 있는 그 카페는 매우 조용합니다.",
+          "accepted_answers": [
+            [
+              "que"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "앞의 명사를 설명하는 기본 관계사는 que입니다."
+        },
+        {
+          "id": "g008-q2",
+          "type": "choice",
+          "stem": "El barrio ___ vivo tiene muchos árboles.",
+          "stem_ko": "제가 사는 동네에는 나무가 많습니다.",
+          "choices": [
+            "donde",
+            "quien",
+            "cuyo",
+            "cuando"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "장소를 설명하므로 donde가 자연스럽습니다."
+        },
+        {
+          "id": "g008-q3",
+          "type": "choice",
+          "stem": "La persona con ___ hablé fue muy amable.",
+          "stem_ko": "제가 이야기한 사람은 매우 친절했습니다.",
+          "choices": [
+            "quien",
+            "donde",
+            "cuyo",
+            "cuando"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "전치사 con 뒤에서 사람을 가리키므로 quien을 씁니다."
+        }
+      ]
+    },
+    {
+      "id": "g009",
+      "title": "Pluscuamperfecto",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "explanation_ko": "대과거는 과거의 한 시점보다 더 이전에 이미 완료된 일을 말할 때 씁니다.",
+      "questions": [
+        {
+          "id": "g009-q1",
+          "type": "fill",
+          "stem": "Cuando llegué, la clase ya ___.",
+          "stem_ko": "제가 도착했을 때 수업은 이미 시작되어 있었습니다.",
+          "accepted_answers": [
+            [
+              "había empezado"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "도착보다 수업 시작이 먼저 일어났으므로 대과거를 씁니다."
+        },
+        {
+          "id": "g009-q2",
+          "type": "choice",
+          "stem": "No pude entrar porque ___ las llaves.",
+          "stem_ko": "열쇠를 잃어버렸기 때문에 들어갈 수 없었습니다.",
+          "choices": [
+            "había perdido",
+            "perdía",
+            "perdí",
+            "pierdo"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "들어갈 수 없었던 과거보다 열쇠를 잃은 일이 더 먼저입니다."
+        },
+        {
+          "id": "g009-q3",
+          "type": "choice",
+          "stem": "Ella ya ___ el correo antes de la reunión.",
+          "stem_ko": "그녀는 회의 전에 이미 이메일을 보내 두었습니다.",
+          "choices": [
+            "había enviado",
+            "enviaba",
+            "envió",
+            "enviará"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "회의 전 완료를 강조하므로 대과거가 맞습니다."
+        }
+      ]
+    },
+    {
+      "id": "g010",
+      "title": "Conectores de causa y consecuencia",
+      "level": "B2",
+      "sublevel": "B2.2",
+      "explanation_ko": "원인과 결과를 연결할 때 porque, debido a, por eso, por lo tanto 등을 문맥에 맞게 씁니다.",
+      "questions": [
+        {
+          "id": "g010-q1",
+          "type": "fill",
+          "stem": "El vuelo se canceló ___ mal tiempo.",
+          "stem_ko": "악천후 때문에 항공편이 취소되었습니다.",
+          "accepted_answers": [
+            [
+              "debido a"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "명사구 mal tiempo 앞에는 debido a가 자연스럽습니다."
+        },
+        {
+          "id": "g010-q2",
+          "type": "choice",
+          "stem": "No había plazas; ___, tuvimos que buscar otro hotel.",
+          "stem_ko": "자리가 없었습니다. 그래서 우리는 다른 호텔을 찾아야 했습니다.",
+          "choices": [
+            "por lo tanto",
+            "aunque",
+            "en cambio",
+            "a pesar de"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "앞 문장의 결과를 말하므로 por lo tanto가 맞습니다."
+        },
+        {
+          "id": "g010-q3",
+          "type": "choice",
+          "stem": "Llegué temprano ___ quería repasar antes del examen.",
+          "stem_ko": "시험 전에 복습하고 싶어서 일찍 도착했습니다.",
+          "choices": [
+            "porque",
+            "sin embargo",
+            "en cuanto a",
+            "aun así"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "동사절로 원인을 설명하므로 porque를 씁니다."
+        }
+      ]
+    }
+  ]
+}

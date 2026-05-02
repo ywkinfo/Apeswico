@@ -1,0 +1,967 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "r001",
+      "title": "Un día en el mercado",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tokens": [
+        {
+          "es": "Ayer",
+          "ko": "어제"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "fui",
+          "ko": "갔습니다 (ir, 부정과거 1인칭)"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "al",
+          "ko": "~로, ~에"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "mercado",
+          "ko": "시장"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "y",
+          "ko": "그리고"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "compré",
+          "ko": "샀습니다 (comprar, 부정과거 1인칭)"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "frutas",
+          "ko": "과일들"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "frescas",
+          "ko": "신선한"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "El",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "vendedor",
+          "ko": "판매자"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "me",
+          "ko": "나에게"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "recomendó",
+          "ko": "추천했습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "mangos",
+          "ko": "망고들"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "muy",
+          "ko": "매우"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "dulces",
+          "ko": "달콤한"
+        },
+        {
+          "es": ".",
+          "ko": null
+        }
+      ],
+      "translation_ko": "어제 시장에 가서 신선한 과일을 샀습니다. 판매자는 아주 달콤한 망고를 추천해 주었습니다."
+    },
+    {
+      "id": "r002",
+      "title": "Viaje en tren",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tokens": [
+        {
+          "es": "En",
+          "ko": "~에서"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "el",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "tren",
+          "ko": "기차"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "conocí",
+          "ko": "만났습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "a",
+          "ko": "~에게, ~로"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "una",
+          "ko": "한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "pareja",
+          "ko": "부부, 커플"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "que",
+          "ko": "~하는, ~인"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "viajaba",
+          "ko": "여행하고 있었습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "a",
+          "ko": "~에게, ~로"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Sevilla",
+          "ko": "세비야"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Hablamos",
+          "ko": "우리는 이야기했습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "del",
+          "ko": "~에 관한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "clima",
+          "ko": "날씨"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "y",
+          "ko": "그리고"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "de",
+          "ko": "~에 관해"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "los",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "sitios",
+          "ko": "장소들"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "que",
+          "ko": "~하는, ~인"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "querían",
+          "ko": "원했습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "visitar",
+          "ko": "방문하다"
+        },
+        {
+          "es": ".",
+          "ko": null
+        }
+      ],
+      "translation_ko": "기차 안에서 세비야로 여행하던 부부를 만났습니다. 우리는 날씨와 그들이 방문하고 싶어 했던 장소들에 대해 이야기했습니다."
+    },
+    {
+      "id": "r003",
+      "title": "Cocinar juntos",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tokens": [
+        {
+          "es": "Hoy",
+          "ko": "오늘"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "cocino",
+          "ko": "요리합니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "una",
+          "ko": "한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "sopa",
+          "ko": "수프"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "de",
+          "ko": "~의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "verduras",
+          "ko": "채소"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "con",
+          "ko": "~와 함께"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "mi",
+          "ko": "나의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "hermana",
+          "ko": "언니/여동생"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Primero",
+          "ko": "먼저"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "cortamos",
+          "ko": "우리는 자릅니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "las",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "zanahorias",
+          "ko": "당근들"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "y",
+          "ko": "그리고"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "luego",
+          "ko": "그 다음에"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "añadimos",
+          "ko": "우리는 넣습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "sal",
+          "ko": "소금"
+        },
+        {
+          "es": ".",
+          "ko": null
+        }
+      ],
+      "translation_ko": "오늘 저는 동생과 채소 수프를 만듭니다. 먼저 당근을 자르고 그 다음에 소금을 넣습니다."
+    },
+    {
+      "id": "r004",
+      "title": "Una reunión breve",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tokens": [
+        {
+          "es": "En",
+          "ko": "~에서"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "la",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "oficina",
+          "ko": "사무실"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "tuvimos",
+          "ko": "우리는 가졌습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "una",
+          "ko": "한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "reunión",
+          "ko": "회의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "breve",
+          "ko": "짧은"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Mi",
+          "ko": "나의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "jefa",
+          "ko": "상사"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "explicó",
+          "ko": "설명했습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "el",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "plan",
+          "ko": "계획"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "y",
+          "ko": "그리고"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "todos",
+          "ko": "모두"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "hicieron",
+          "ko": "했습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "preguntas",
+          "ko": "질문들"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "concretas",
+          "ko": "구체적인"
+        },
+        {
+          "es": ".",
+          "ko": null
+        }
+      ],
+      "translation_ko": "사무실에서 짧은 회의를 했습니다. 제 상사는 계획을 설명했고 모두가 구체적인 질문을 했습니다."
+    },
+    {
+      "id": "r005",
+      "title": "Paseo por el barrio",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tokens": [
+        {
+          "es": "Por",
+          "ko": "~동안, ~을 통해"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "la",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "tarde",
+          "ko": "오후"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "paseé",
+          "ko": "산책했습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "por",
+          "ko": "~동안, ~을 통해"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "mi",
+          "ko": "나의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "barrio",
+          "ko": "동네"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "y",
+          "ko": "그리고"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "saludé",
+          "ko": "인사했습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "a",
+          "ko": "~에게"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "la",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "panadera",
+          "ko": "빵집 아주머니"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Después",
+          "ko": "그 후에"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "leí",
+          "ko": "읽었습니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "una",
+          "ko": "한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "noticia",
+          "ko": "기사, 소식"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "sobre",
+          "ko": "~에 관한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "el",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "museo",
+          "ko": "박물관"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "del",
+          "ko": "~의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "centro",
+          "ko": "도심"
+        },
+        {
+          "es": ".",
+          "ko": null
+        }
+      ],
+      "translation_ko": "오후에 동네를 산책하며 빵집 아주머니께 인사했습니다. 그 후 도심 박물관에 관한 기사를 읽었습니다."
+    },
+    {
+      "id": "r006",
+      "title": "Hábitos sostenibles",
+      "level": "B2",
+      "sublevel": "B2.2",
+      "tokens": [
+        {
+          "es": "Cada",
+          "ko": "매"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "mañana",
+          "ko": "아침"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "llevo",
+          "ko": "가져갑니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "una",
+          "ko": "한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "botella",
+          "ko": "병"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "reutilizable",
+          "ko": "재사용 가능한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "al",
+          "ko": "~로"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "trabajo",
+          "ko": "직장"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Aunque",
+          "ko": "비록 ~이지만"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "parece",
+          "ko": "보입니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "un",
+          "ko": "하나의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "gesto",
+          "ko": "행동"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "pequeño",
+          "ko": "작은"
+        },
+        {
+          "es": ",",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "me",
+          "ko": "나에게"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "ayuda",
+          "ko": "도움이 됩니다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "a",
+          "ko": "~하는 데"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "gastar",
+          "ko": "소비하다, 쓰다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "menos",
+          "ko": "더 적게"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "plástico",
+          "ko": "플라스틱"
+        },
+        {
+          "es": ".",
+          "ko": null
+        }
+      ],
+      "translation_ko": "매일 아침 저는 직장에 재사용 가능한 물병을 가져갑니다. 작은 행동처럼 보이지만 플라스틱을 덜 쓰는 데 도움이 됩니다."
+    }
+  ]
+}
