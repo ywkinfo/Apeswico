@@ -14,38 +14,32 @@
     <div class="page">
       <header class="masthead">
         <div>
-          <p class="eyebrow">Flashcards shell</p>
+          <p class="eyebrow">Flashcards</p>
           <h1>어휘 SRS</h1>
           <p class="lede">
-            지금은 카드 교체와 평가 로직이 들어갈 자리만 잡아 둔 셸입니다.
-            다음 단계에서 공용 저장소와 SRS 엔진을 연결합니다.
+            SM-2 큐로 어휘를 복습하고, 카드 뒷면에서 해당 단어가 쓰인
+            독해와 상황극 맥락을 확인합니다.
           </p>
         </div>
-        <nav class="nav" aria-label="주요 모드">
-          <a href="index.html">홈</a>
-          <a href="flashcards.html" aria-current="page">플래시카드</a>
-          <a href="grammar.html">문법</a>
-          <a href="reading.html">독해</a>
-          <a href="situations.html">상황극</a>
-        </nav>
+        <div class="header-tools">
+          <nav class="nav" aria-label="주요 모드">
+            <a href="index.html">홈</a>
+            <a href="flashcards.html" aria-current="page">플래시카드</a>
+            <a href="grammar.html">문법</a>
+            <a href="reading.html">독해</a>
+            <a href="situations.html">상황극</a>
+          </nav>
+          <form class="global-search" role="search" data-global-search>
+            <label class="sr-only" for="global-search-flashcards">통합 검색</label>
+            <input id="global-search-flashcards" type="search" placeholder="검색" autocomplete="off" />
+            <div class="search-results" data-search-results hidden></div>
+          </form>
+        </div>
       </header>
 
-      <main class="stack" id="flashcards-shell">
-        <section class="card">
-          <span class="chip">마운트 지점</span>
-          <h2>flashcards-app</h2>
-          <div id="flashcards-app" class="placeholder">
-            카드 앞면, 뒷면, 평가 버튼, 단축키 안내가 이곳에 렌더링됩니다.
-          </div>
-        </section>
-
-        <section class="card mount">
-          <span class="chip">미리보기 레이아웃</span>
-          <h2>학습 흐름</h2>
-          <div class="placeholder">문제 카드 → 뒤집기 → 평가 → 다음 카드</div>
-        </section>
-      </main>
+      <main class="stack" id="flashcards-app"></main>
     </div>
     <script type="module" src="js/flashcards.js"></script>
+    <script type="module" src="js/search.js"></script>
   </body>
 </html>

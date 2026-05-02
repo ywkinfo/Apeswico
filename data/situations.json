@@ -7,6 +7,9 @@
       "level": "B1",
       "sublevel": "B1.1",
       "scene_ko": "마드리드의 작은 카페에서 커피와 간단한 아침 식사를 주문한다.",
+      "grammar_focus": [
+        "g003"
+      ],
       "dialogue": [
         {
           "speaker": "Cliente",
@@ -67,6 +70,10 @@
       "level": "B1",
       "sublevel": "B1.2",
       "scene_ko": "낯선 동네에서 박물관 가는 길을 묻는다.",
+      "grammar_focus": [
+        "g001",
+        "g006"
+      ],
       "dialogue": [
         {
           "speaker": "Turista",
@@ -127,6 +134,13 @@
       "level": "B1",
       "sublevel": "B1.2",
       "scene_ko": "호텔 프런트에서 체크인하고 아침 식사 시간을 확인한다.",
+      "grammar_focus": [
+        "g001"
+      ],
+      "vocab_focus": [
+        "v029",
+        "v066"
+      ],
       "dialogue": [
         {
           "speaker": "Recepcionista",
@@ -187,6 +201,14 @@
       "level": "B2",
       "sublevel": "B2.1",
       "scene_ko": "친구와 이번 주말 만날 계획을 조율한다.",
+      "grammar_focus": [
+        "g003"
+      ],
+      "vocab_focus": [
+        "v005",
+        "v053",
+        "v180"
+      ],
       "dialogue": [
         {
           "speaker": "Amiga",
@@ -247,6 +269,13 @@
       "level": "B2",
       "sublevel": "B2.1",
       "scene_ko": "병원에서 감기 증상과 지속 시간을 설명한다.",
+      "grammar_focus": [
+        "g006"
+      ],
+      "vocab_focus": [
+        "v083",
+        "v085"
+      ],
       "dialogue": [
         {
           "speaker": "Doctora",
@@ -307,6 +336,14 @@
       "level": "B2",
       "sublevel": "B2.1",
       "scene_ko": "임대 아파트에서 난방 문제가 생겨 집주인에게 정중하게 수리를 요청한다.",
+      "grammar_focus": [
+        "g010"
+      ],
+      "vocab_focus": [
+        "v026",
+        "v070",
+        "v022"
+      ],
       "dialogue": [
         {
           "speaker": "Inquilina",
@@ -367,6 +404,11 @@
       "level": "B2",
       "sublevel": "B2.2",
       "scene_ko": "구직 면접에서 이전 경험과 강점을 간결하게 설명한다.",
+      "vocab_focus": [
+        "v062",
+        "v064",
+        "v111"
+      ],
       "dialogue": [
         {
           "speaker": "Entrevistadora",
@@ -427,6 +469,13 @@
       "level": "B1",
       "sublevel": "B1.2",
       "scene_ko": "우체국에서 해외로 소포를 보내며 배송 기간과 비용을 묻는다.",
+      "grammar_focus": [
+        "g003",
+        "g006"
+      ],
+      "vocab_focus": [
+        "v129"
+      ],
       "dialogue": [
         {
           "speaker": "Cliente",
@@ -487,6 +536,10 @@
       "level": "B1",
       "sublevel": "B1.2",
       "scene_ko": "언어 교환 모임에서 처음 만난 사람과 자연스럽게 대화를 시작한다.",
+      "grammar_focus": [
+        "g001",
+        "g003"
+      ],
       "dialogue": [
         {
           "speaker": "Estudiante",
@@ -547,6 +600,15 @@
       "level": "B2",
       "sublevel": "B2.1",
       "scene_ko": "기차가 지연되어 역 직원에게 대체 방법을 묻는다.",
+      "grammar_focus": [
+        "g003",
+        "g006"
+      ],
+      "vocab_focus": [
+        "v030",
+        "v074",
+        "v076"
+      ],
       "dialogue": [
         {
           "speaker": "Viajera",

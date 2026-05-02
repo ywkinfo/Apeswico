@@ -14,38 +14,32 @@
     <div class="page">
       <header class="masthead">
         <div>
-          <p class="eyebrow">Grammar shell</p>
+          <p class="eyebrow">Grammar</p>
           <h1>문법 퀴즈</h1>
           <p class="lede">
-            토픽 선택과 문항 풀이가 들어갈 셸입니다. 다음 단계에서 정답 판단
-            규칙과 악센트 피드백을 연결합니다.
+            토픽별 문제를 풀고, 같은 문법이 실제 독해와 상황극에서 쓰인
+            예를 이어서 확인합니다.
           </p>
         </div>
-        <nav class="nav" aria-label="주요 모드">
-          <a href="index.html">홈</a>
-          <a href="flashcards.html">플래시카드</a>
-          <a href="grammar.html" aria-current="page">문법</a>
-          <a href="reading.html">독해</a>
-          <a href="situations.html">상황극</a>
-        </nav>
+        <div class="header-tools">
+          <nav class="nav" aria-label="주요 모드">
+            <a href="index.html">홈</a>
+            <a href="flashcards.html">플래시카드</a>
+            <a href="grammar.html" aria-current="page">문법</a>
+            <a href="reading.html">독해</a>
+            <a href="situations.html">상황극</a>
+          </nav>
+          <form class="global-search" role="search" data-global-search>
+            <label class="sr-only" for="global-search-grammar">통합 검색</label>
+            <input id="global-search-grammar" type="search" placeholder="검색" autocomplete="off" />
+            <div class="search-results" data-search-results hidden></div>
+          </form>
+        </div>
       </header>
 
-      <main class="stack" id="grammar-shell">
-        <section class="card">
-          <span class="chip">마운트 지점</span>
-          <h2>grammar-app</h2>
-          <div id="grammar-app" class="placeholder">
-            토픽 목록, 문제 카드, 해설 영역이 이곳에 렌더링됩니다.
-          </div>
-        </section>
-
-        <section class="card">
-          <span class="chip">문항 흐름</span>
-          <h2>토픽 → 문제 → 해설</h2>
-          <div class="placeholder">토픽 선택 후 한 문제씩 진행하는 구조</div>
-        </section>
-      </main>
+      <main class="stack" id="grammar-app"></main>
     </div>
     <script type="module" src="js/grammar.js"></script>
+    <script type="module" src="js/search.js"></script>
   </body>
 </html>

@@ -51,3 +51,19 @@ export function loadReading() {
 export function loadSituations() {
   return loadJson('data/situations.json');
 }
+
+export async function loadAll() {
+  const [vocabulary, grammar, reading, situations] = await Promise.all([
+    loadVocabulary(),
+    loadGrammar(),
+    loadReading(),
+    loadSituations()
+  ]);
+
+  return {
+    vocabulary,
+    grammar,
+    reading,
+    situations
+  };
+}

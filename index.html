@@ -14,70 +14,32 @@
     <div class="page">
       <header class="masthead">
         <div>
-          <p class="eyebrow">GitHub Pages · Static learning shell</p>
+          <p class="eyebrow">Apeswico dashboard</p>
           <h1>Apeswico</h1>
           <p class="lede">
-            한국어 화자를 위한 B1-B2 스페인어 학습 앱의 첫 셸입니다.
-            다음 단계에서 공통 스타일, 저장소, 데이터 로딩을 붙여 학습
-            흐름을 완성합니다.
+            한국어 화자를 위한 B1-B2 스페인어 학습. 오늘의 복습, 약점,
+            다음 활동을 한 곳에서 확인합니다.
           </p>
         </div>
-        <nav class="nav" aria-label="주요 모드">
-          <a href="index.html" aria-current="page">홈</a>
-          <a href="flashcards.html">플래시카드</a>
-          <a href="grammar.html">문법</a>
-          <a href="reading.html">독해</a>
-          <a href="situations.html">상황극</a>
-        </nav>
+        <div class="header-tools">
+          <nav class="nav" aria-label="주요 모드">
+            <a href="index.html" aria-current="page">홈</a>
+            <a href="flashcards.html">플래시카드</a>
+            <a href="grammar.html">문법</a>
+            <a href="reading.html">독해</a>
+            <a href="situations.html">상황극</a>
+          </nav>
+          <form class="global-search" role="search" data-global-search>
+            <label class="sr-only" for="global-search-home">통합 검색</label>
+            <input id="global-search-home" type="search" placeholder="검색" autocomplete="off" />
+            <div class="search-results" data-search-results hidden></div>
+          </form>
+        </div>
       </header>
 
-      <main class="grid" id="home-shell">
-        <section class="card hero" aria-labelledby="home-hero-title">
-          <span class="tag">app-shell</span>
-          <h2 id="home-hero-title">학습 모드 네 개를 하나의 진입점으로 연결</h2>
-          <p class="lede">
-            지금은 셸만 존재하지만, 각 모드의 마운트 지점과 네비게이션을 미리
-            잡아 두어 다음 작업에서 바로 기능을 붙일 수 있게 했습니다.
-          </p>
-        </section>
-
-        <section class="mode-grid" aria-label="학습 모드">
-          <article class="card mode-card">
-            <span class="chip">모드 01</span>
-            <h2>Flashcards</h2>
-            <p>어휘 SRS 학습 영역. 앞/뒤 카드와 평가 버튼이 붙을 자리입니다.</p>
-            <a class="link" href="flashcards.html">플래시카드 열기</a>
-          </article>
-          <article class="card mode-card">
-            <span class="chip">모드 02</span>
-            <h2>Grammar</h2>
-            <p>토픽 선택과 문항 풀이가 들어갈 문법 학습 영역입니다.</p>
-            <a class="link" href="grammar.html">문법 열기</a>
-          </article>
-          <article class="card mode-card">
-            <span class="chip">모드 03</span>
-            <h2>Reading</h2>
-            <p>토큰 클릭 번역과 전체 번역 토글이 들어갈 독해 영역입니다.</p>
-            <a class="link" href="reading.html">독해 열기</a>
-          </article>
-          <article class="card mode-card">
-            <span class="chip">모드 04</span>
-            <h2>Situations</h2>
-            <p>대화, 핵심 표현, 새도잉 연습이 모이는 상황극 영역입니다.</p>
-            <a class="link" href="situations.html">상황극 열기</a>
-          </article>
-        </section>
-
-        <section class="card support-card">
-          <h2>다음에 붙는 공통 레이어</h2>
-          <ol>
-            <li>공용 스타일 시스템과 다크 모드</li>
-            <li>localStorage 래퍼와 JSON 데이터 로더</li>
-            <li>SM-2 lite SRS와 학습 상태 저장</li>
-            <li>각 학습 모드의 기능 스크립트</li>
-          </ol>
-        </section>
-      </main>
+      <main class="grid" id="home-shell"></main>
     </div>
+    <script type="module" src="js/dashboard.js"></script>
+    <script type="module" src="js/search.js"></script>
   </body>
 </html>

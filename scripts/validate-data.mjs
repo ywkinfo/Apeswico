@@ -19,6 +19,7 @@ const sublevels = new Set(['B1.1', 'B1.2', 'B2.1', 'B2.2']);
 const errors = [];
 const notes = [];
 const counts = {};
+const datasets = {};
 const contentTokenPattern = /[\p{L}\p{N}]/u;
 
 function parseMinimums(args) {
@@ -61,6 +62,22 @@ function assertText(file, id, value, field) {
   }
 }
 
+function assertOptionalIdArray(file, itemId, value, field) {
+  if (value == null) {
+    return [];
+  }
+  if (!Array.isArray(value)) {
+    fail(file, `${itemId}: ${field} must be an array`);
+    return [];
+  }
+  for (const [index, id] of value.entries()) {
+    if (typeof id !== 'string' || id.trim() === '') {
+      fail(file, `${itemId}.${field}[${index}]: reference id must be a non-empty string`);
+    }
+  }
+  return value;
+}
+
 function validateVocabulary(file, items) {
   const ids = new Set();
   for (const item of items) {
@@ -81,6 +98,7 @@ function validateGrammar(file, items) {
     ids.add(item.id);
     assertText(file, item.id, item.title, 'title');
     assertText(file, item.id, item.explanation_ko, 'explanation_ko');
+    assertOptionalIdArray(file, item.id, item.examples_in, 'examples_in');
     if (!Array.isArray(item.questions) || item.questions.length === 0) {
       fail(file, `${item.id}: questions required`);
       continue;
@@ -118,6 +136,7 @@ function validateReading(file, items) {
     if (ids.has(item.id)) fail(file, `duplicate id: ${item.id}`);
     ids.add(item.id);
     assertText(file, item.id, item.title, 'title');
+    assertOptionalIdArray(file, item.id, item.grammar_features, 'grammar_features');
     if (!Array.isArray(item.tokens)) fail(file, `${item.id}: tokens required`);
     if (Array.isArray(item.tokens)) {
       for (const [index, token] of item.tokens.entries()) {
@@ -141,6 +160,8 @@ function validateSituations(file, items) {
     ids.add(item.id);
     assertText(file, item.id, item.title, 'title');
     assertText(file, item.id, item.scene_ko, 'scene_ko');
+    assertOptionalIdArray(file, item.id, item.grammar_focus, 'grammar_focus');
+    assertOptionalIdArray(file, item.id, item.vocab_focus, 'vocab_focus');
     if (!Array.isArray(item.dialogue) || item.dialogue.length === 0) {
       fail(file, `${item.id}: dialogue required`);
     } else {
@@ -180,6 +201,58 @@ const validators = {
   'situations.json': validateSituations
 };
 
+function idsFor(name) {
+  return new Set((datasets[name]?.items || []).map((item) => item.id));
+}
+
+function validateIdReference(file, sourceId, field, targetId, allowed) {
+  const matchingSet = allowed.find((entry) => entry.pattern.test(targetId));
+  if (!matchingSet) {
+    fail(file, `${sourceId}.${field}: unsupported reference id ${targetId}`);
+    return;
+  }
+  if (!matchingSet.ids.has(targetId)) {
+    fail(file, `${sourceId}.${field}: unknown reference id ${targetId}`);
+  }
+}
+
+function validateCrossReferences() {
+  const vocabIds = idsFor('vocabulary');
+  const grammarIds = idsFor('grammar');
+  const readingIds = idsFor('reading');
+  const situationIds = idsFor('situations');
+
+  for (const item of datasets.grammar?.items || []) {
+    for (const id of assertOptionalIdArray('data/grammar.json', item.id, item.examples_in, 'examples_in')) {
+      validateIdReference('data/grammar.json', item.id, 'examples_in', id, [
+        { pattern: /^r\d+$/i, ids: readingIds },
+        { pattern: /^s\d+$/i, ids: situationIds }
+      ]);
+    }
+  }
+
+  for (const item of datasets.reading?.items || []) {
+    for (const id of assertOptionalIdArray('data/reading.json', item.id, item.grammar_features, 'grammar_features')) {
+      validateIdReference('data/reading.json', item.id, 'grammar_features', id, [
+        { pattern: /^g\d+$/i, ids: grammarIds }
+      ]);
+    }
+  }
+
+  for (const item of datasets.situations?.items || []) {
+    for (const id of assertOptionalIdArray('data/situations.json', item.id, item.grammar_focus, 'grammar_focus')) {
+      validateIdReference('data/situations.json', item.id, 'grammar_focus', id, [
+        { pattern: /^g\d+$/i, ids: grammarIds }
+      ]);
+    }
+    for (const id of assertOptionalIdArray('data/situations.json', item.id, item.vocab_focus, 'vocab_focus')) {
+      validateIdReference('data/situations.json', item.id, 'vocab_focus', id, [
+        { pattern: /^v\d+$/i, ids: vocabIds }
+      ]);
+    }
+  }
+}
+
 for (const relativePath of files) {
   const absolutePath = path.join(repoRoot, relativePath);
   if (!fs.existsSync(absolutePath)) {
@@ -202,12 +275,15 @@ for (const relativePath of files) {
   assertEnvelope(relativePath, data);
   if (Array.isArray(data.items)) {
     counts[path.basename(relativePath, '.json')] = data.items.length;
+    datasets[path.basename(relativePath, '.json')] = data;
     const validator = validators[path.basename(relativePath)];
     if (validator) {
       validator(relativePath, data.items);
     }
   }
 }
+
+validateCrossReferences();
 
 for (const [name, minimum] of Object.entries(minimums)) {
   const actual = counts[name] ?? 0;

@@ -14,38 +14,32 @@
     <div class="page">
       <header class="masthead">
         <div>
-          <p class="eyebrow">Situations shell</p>
+          <p class="eyebrow">Situations</p>
           <h1>상황극</h1>
           <p class="lede">
-            대화와 새도잉 연습이 들어갈 셸입니다. 다음 단계에서 핵심 표현과
-            한국어 해석 토글을 연결합니다.
+            실제 장면의 대화, 핵심 표현, 새도잉 문장을 연습하고 관련
+            어휘와 문법을 바로 확인합니다.
           </p>
         </div>
-        <nav class="nav" aria-label="주요 모드">
-          <a href="index.html">홈</a>
-          <a href="flashcards.html">플래시카드</a>
-          <a href="grammar.html">문법</a>
-          <a href="reading.html">독해</a>
-          <a href="situations.html" aria-current="page">상황극</a>
-        </nav>
+        <div class="header-tools">
+          <nav class="nav" aria-label="주요 모드">
+            <a href="index.html">홈</a>
+            <a href="flashcards.html">플래시카드</a>
+            <a href="grammar.html">문법</a>
+            <a href="reading.html">독해</a>
+            <a href="situations.html" aria-current="page">상황극</a>
+          </nav>
+          <form class="global-search" role="search" data-global-search>
+            <label class="sr-only" for="global-search-situations">통합 검색</label>
+            <input id="global-search-situations" type="search" placeholder="검색" autocomplete="off" />
+            <div class="search-results" data-search-results hidden></div>
+          </form>
+        </div>
       </header>
 
-      <main class="stack" id="situations-shell">
-        <section class="card">
-          <span class="chip">마운트 지점</span>
-          <h2>situations-app</h2>
-          <div id="situations-app" class="placeholder">
-            대화 목록, 핵심 표현, 새도잉 문장이 이곳에 렌더링됩니다.
-          </div>
-        </section>
-
-        <section class="card">
-          <span class="chip">연습 흐름</span>
-          <h2>씬 → 표현 → 새도잉</h2>
-          <div class="placeholder">장면을 고르고 짧게 따라 읽는 구조</div>
-        </section>
-      </main>
+      <main class="stack" id="situations-app"></main>
     </div>
     <script type="module" src="js/situations.js"></script>
+    <script type="module" src="js/search.js"></script>
   </body>
 </html>

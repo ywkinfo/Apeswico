@@ -7,6 +7,11 @@
       "level": "B1",
       "sublevel": "B1.1",
       "explanation_ko": "ser은 본질·정체성·영구적인 특징을 말할 때, estar는 상태·위치를 말할 때 자주 씁니다.",
+      "examples_in": [
+        "s002",
+        "s003",
+        "s009"
+      ],
       "questions": [
         {
           "id": "g001-q1",
@@ -58,6 +63,12 @@
       "level": "B1",
       "sublevel": "B1.2",
       "explanation_ko": "불완전과거는 배경·습관·진행 중이던 상황, 부정과거는 완료된 사건을 말합니다.",
+      "examples_in": [
+        "r001",
+        "r002",
+        "r004",
+        "r005"
+      ],
       "questions": [
         {
           "id": "g002-q1",
@@ -110,6 +121,13 @@
       "level": "B1",
       "sublevel": "B1.2",
       "explanation_ko": "por는 원인·경유·교환·기간, para는 목적·기한·수혜자를 말할 때 자주 씁니다.",
+      "examples_in": [
+        "r005",
+        "s001",
+        "s004",
+        "s009",
+        "s010"
+      ],
       "questions": [
         {
           "id": "g003-q1",
@@ -263,6 +281,12 @@
       "level": "B1",
       "sublevel": "B1.2",
       "explanation_ko": "명령형은 상대와 상황에 따라 tú, usted, vosotros, ustedes 형태가 달라집니다.",
+      "examples_in": [
+        "s002",
+        "s005",
+        "s008",
+        "s010"
+      ],
       "questions": [
         {
           "id": "g006-q1",
@@ -365,6 +389,9 @@
       "level": "B2",
       "sublevel": "B2.1",
       "explanation_ko": "관계절은 명사를 더 자세히 설명합니다. que는 넓게 쓰이고, donde는 장소, quien은 사람을 가리킬 때 씁니다.",
+      "examples_in": [
+        "r002"
+      ],
       "questions": [
         {
           "id": "g008-q1",
@@ -467,6 +494,10 @@
       "level": "B2",
       "sublevel": "B2.2",
       "explanation_ko": "원인과 결과를 연결할 때 porque, debido a, por eso, por lo tanto 등을 문맥에 맞게 씁니다.",
+      "examples_in": [
+        "r006",
+        "s006"
+      ],
       "questions": [
         {
           "id": "g010-q1",

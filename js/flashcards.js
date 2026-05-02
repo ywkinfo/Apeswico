@@ -1,10 +1,12 @@
 import { loadVocabulary } from './data.js';
+import { getGraph, getRelated } from './content-graph.js';
+import { recordVocabReview, touchDaily } from './learner.js';
 import {
   GRADE,
+  createCardState,
   getDueQueue,
   loadDailyProgress,
-  loadProgress,
-  recordReview
+  loadProgress
 } from './srs.js';
 
 const root = document.getElementById('flashcards-app');
@@ -54,6 +56,33 @@ function createButton(label, className, onClick) {
   return button;
 }
 
+function hashParam(name) {
+  return new URLSearchParams(location.hash.replace(/^#/, '')).get(name);
+}
+
+function readingExcerpt(item) {
+  const text = (item.tokens || []).map((token) => token.es).join('');
+  return text.split(/(?<=[.!?])\s+/u)[0] || text;
+}
+
+function situationExcerpt(item) {
+  const turn = (item.dialogue || [])[0];
+  return turn ? `${turn.es} / ${turn.ko}` : item.scene_ko;
+}
+
+function relatedHref(type, id) {
+  if (type === 'reading') {
+    return `reading.html#passage=${encodeURIComponent(id)}`;
+  }
+  if (type === 'situations') {
+    return `situations.html#situation=${encodeURIComponent(id)}`;
+  }
+  if (type === 'grammar') {
+    return `grammar.html#topic=${encodeURIComponent(id)}`;
+  }
+  return `flashcards.html#card=${encodeURIComponent(id)}`;
+}
+
 async function init() {
   root.innerHTML = `
     <section class="card">
@@ -63,7 +92,8 @@ async function init() {
     </section>
   `;
 
-  const payload = await loadVocabulary();
+  touchDaily('flashcards');
+  const [payload, graph] = await Promise.all([loadVocabulary(), getGraph()]);
   const deck = Array.isArray(payload?.items) ? payload.items : [];
 
   if (!deck.length) {
@@ -77,12 +107,24 @@ async function init() {
     return;
   }
 
+  const progress = loadProgress();
+  const linkedCardId = hashParam('card');
+  const linkedCard = linkedCardId ? deck.find((card) => card.id === linkedCardId) : null;
+  const queue = getDueQueue(deck, {
+    progress,
+    daily: loadDailyProgress(),
+    newLimit: 10
+  });
+  if (linkedCard && !queue.some((item) => item.card.id === linkedCard.id)) {
+    queue.unshift({
+      card: linkedCard,
+      progress: progress[linkedCard.id] || createCardState(linkedCard.id),
+      kind: 'linked'
+    });
+  }
+
   const state = {
-    queue: getDueQueue(deck, {
-      progress: loadProgress(),
-      daily: loadDailyProgress(),
-      newLimit: 10
-    }),
+    queue,
     index: 0,
     revealed: false,
     reviewed: 0,
@@ -159,7 +201,12 @@ async function init() {
       return;
     }
 
-    recordReview(item.card.id, grade);
+    recordVocabReview(item.card.id, grade, {
+      signal: {
+        level: item.card.level,
+        sublevel: item.card.sublevel
+      }
+    });
     state.reviewed += 1;
     state.counts[grade] += 1;
     state.index += 1;
@@ -175,13 +222,37 @@ async function init() {
     }
 
     const card = item.card;
+    const related = getRelated({ type: 'vocab', id: card.id }, graph);
+    const contexts = [
+      ...related.reading.slice(0, 2),
+      ...related.situations.slice(0, 2)
+    ];
     const sideLabel = state.revealed ? '뒷면' : '앞면';
     const body = state.revealed
       ? `
         <div class="stack">
           <p class="lede"><strong>뜻</strong> ${escapeHtml(card.ko)}</p>
-          <p class="lede"><strong>예문</strong> ${escapeHtml(card.example_es)} / ${escapeHtml(card.example_ko)}</p>
+          <div class="flashcard-example">
+            <span class="flashcard-example__label">예문</span>
+            <p class="flashcard-example__es">${escapeHtml(card.example_es)}</p>
+            <p class="flashcard-example__ko">${escapeHtml(card.example_ko)}</p>
+          </div>
           <p class="lede"><strong>메모</strong> ${escapeHtml(card.pos)} · ${escapeHtml(card.level)} ${escapeHtml(card.sublevel)}</p>
+          ${contexts.length ? `
+            <section class="context-panel">
+              <span class="chip">맥락에서 보기</span>
+              <div class="related-grid">
+                ${contexts
+                  .map((entry) => `
+                    <a class="related-card" href="${relatedHref(entry.type, entry.id)}">
+                      <strong>${escapeHtml(entry.item.title)}</strong>
+                      <span>${escapeHtml(entry.type === 'reading' ? readingExcerpt(entry.item) : situationExcerpt(entry.item))}</span>
+                    </a>
+                  `)
+                  .join('')}
+              </div>
+            </section>
+          ` : ''}
         </div>
       `
       : `

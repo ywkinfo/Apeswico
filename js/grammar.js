@@ -1,4 +1,6 @@
 import { loadGrammar } from './data.js';
+import { getGraph, getRelated } from './content-graph.js';
+import { recordEncounter, touchDaily } from './learner.js';
 import { get, namespace, set } from './storage.js';
 
 const root = document.getElementById('grammar-app');
@@ -79,6 +81,20 @@ function renderStem(question) {
   `;
 }
 
+function hashParam(name) {
+  return new URLSearchParams(location.hash.replace(/^#/, '')).get(name);
+}
+
+function readingExcerpt(item) {
+  const text = (item.tokens || []).map((token) => token.es).join('');
+  return text.split(/(?<=[.!?])\s+/u)[0] || text;
+}
+
+function situationExcerpt(item) {
+  const turn = (item.dialogue || [])[0];
+  return turn ? `${turn.es} / ${turn.ko}` : item.scene_ko;
+}
+
 async function init() {
   root.innerHTML = `
     <section class="card">
@@ -88,7 +104,8 @@ async function init() {
     </section>
   `;
 
-  const payload = await loadGrammar();
+  touchDaily('grammar');
+  const [payload, graph] = await Promise.all([loadGrammar(), getGraph()]);
   const topics = Array.isArray(payload?.items) ? payload.items : [];
 
   if (!topics.length) {
@@ -102,11 +119,19 @@ async function init() {
     return;
   }
 
+  const hashTopic = hashParam('topic');
+  const topicIndex = Math.max(0, topics.findIndex((topic) => topic.id === hashTopic));
+  const hashQuestion = hashParam('q');
+  const initialQuestion = Number.isFinite(Number(hashQuestion)) ? Math.max(0, Number(hashQuestion) - 1) : 0;
   const state = {
-    topicIndex: 0,
-    questionIndex: 0,
-    answered: null
+    topicIndex,
+    questionIndex: initialQuestion,
+    answered: null,
+    showExamples: false
   };
+  if (state.questionIndex >= (topics[state.topicIndex]?.questions?.length || 0)) {
+    state.questionIndex = 0;
+  }
 
   function currentTopic() {
     return topics[state.topicIndex] || null;
@@ -134,14 +159,44 @@ async function init() {
       .join('');
   }
 
-  function renderFeedback(question, result) {
+  function renderRelatedExamples(topic) {
+    const related = getRelated({ type: 'grammar', id: topic.id }, graph);
+    const examples = [...related.reading.slice(0, 2), ...related.situations.slice(0, 2)];
+    if (!examples.length || !state.showExamples) {
+      return '';
+    }
+    return `
+      <section class="card tinted-card--orange-soft">
+        <span class="chip">예문 더 보기</span>
+        <div class="content-list">
+          ${examples
+            .map((entry) => `
+              <a class="related-card" href="${entry.type === 'reading' ? `reading.html#passage=${encodeURIComponent(entry.id)}` : `situations.html#situation=${encodeURIComponent(entry.id)}`}">
+                <strong>${escapeHtml(entry.item.title)}</strong>
+                <span>${escapeHtml(entry.type === 'reading' ? readingExcerpt(entry.item) : situationExcerpt(entry.item))}</span>
+              </a>
+            `)
+            .join('')}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderFeedback(topic, question, result) {
     const solution = Array.isArray(result.solution) ? result.solution.join(' · ') : '';
+    const examplesToggle = `
+      <div class="action-row">
+        <button type="button" class="link link--secondary" id="grammar-examples-toggle">${state.showExamples ? '예문 접기' : '예문 더 보기'}</button>
+      </div>
+      ${renderRelatedExamples(topic)}
+    `;
     if (result.correct) {
       return `
         <section class="card tinted-card--green-strong">
           <span class="chip">정답</span>
           <p class="lede">좋습니다. ${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
         </section>
+        ${examplesToggle}
       `;
     }
 
@@ -152,6 +207,7 @@ async function init() {
           <p class="lede">철자는 맞지만 악센트가 빠졌습니다. 정답 예시: ${escapeHtml(solution)}</p>
           <p class="lede">${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
         </section>
+        ${examplesToggle}
       `;
     }
 
@@ -161,6 +217,7 @@ async function init() {
         <p class="lede">정답 예시: ${escapeHtml(solution || '정답을 준비 중입니다.')}</p>
         <p class="lede">${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
       </section>
+      ${examplesToggle}
     `;
   }
 
@@ -243,6 +300,14 @@ async function init() {
 
     state.answered = result;
     updateScore(topic.id, result.correct);
+    recordEncounter('grammar', topic.id, {
+      kind: 'grammar-answer',
+      questionId: question.id,
+      correct: result.correct,
+      level: topic.level,
+      sublevel: topic.sublevel,
+      mode: 'grammar'
+    });
     render();
   }
 
@@ -266,10 +331,50 @@ async function init() {
     state.topicIndex = index;
     state.questionIndex = 0;
     state.answered = null;
+    state.showExamples = false;
+    const topic = topics[index];
+    if (topic) {
+      recordEncounter('grammar', topic.id, {
+        kind: 'topic-view',
+        level: topic.level,
+        sublevel: topic.sublevel,
+        mode: 'grammar'
+      });
+    }
     render();
   }
 
-  function renderQuestion(question) {
+  function renderRelatedTopic(topic) {
+    const related = getRelated({ type: 'grammar', id: topic.id }, graph);
+    const examples = [...related.reading.slice(0, 3), ...related.situations.slice(0, 3)];
+    if (!examples.length) {
+      return '';
+    }
+    return `
+      <div class="related-grid" aria-label="이 문법이 쓰인 콘텐츠">
+        ${examples
+          .map((entry) => `
+            <a class="related-card" href="${entry.type === 'reading' ? `reading.html#passage=${encodeURIComponent(entry.id)}` : `situations.html#situation=${encodeURIComponent(entry.id)}`}">
+              <strong>${escapeHtml(entry.item.title)}</strong>
+              <span>${escapeHtml(entry.type === 'reading' ? readingExcerpt(entry.item) : situationExcerpt(entry.item))}</span>
+            </a>
+          `)
+          .join('')}
+      </div>
+    `;
+  }
+
+  function renderReinforceCta(topic) {
+    const relatedReading = getRelated({ type: 'grammar', id: topic.id }, graph).reading[0];
+    if (!relatedReading) {
+      return '';
+    }
+    return `
+      <a class="link" href="reading.html#passage=${encodeURIComponent(relatedReading.id)}">관련 독해로 강화하기</a>
+    `;
+  }
+
+  function renderQuestion(topic, question) {
     if (!question) {
       return `
         <section class="card">
@@ -302,10 +407,11 @@ async function init() {
             ${renderStem(question)}
             <div class="stack">${blanks}</div>
           </section>
-          ${state.answered ? renderFeedback(question, state.answered) : ''}
+          ${state.answered ? renderFeedback(topic, question, state.answered) : ''}
           <div class="button-row">
             <button type="submit" class="link">${state.answered ? '다시 채점' : '정답 확인'}</button>
             ${state.answered ? `<button type="button" class="link" id="grammar-next">다음 문제</button>` : ''}
+            ${state.answered ? renderReinforceCta(topic) : ''}
           </div>
         </form>
       `;
@@ -332,10 +438,11 @@ async function init() {
           ${renderStem(question)}
           <div class="stack">${choices}</div>
         </section>
-        ${state.answered ? renderFeedback(question, state.answered) : ''}
+        ${state.answered ? renderFeedback(topic, question, state.answered) : ''}
         <div class="button-row">
           <button type="submit" class="link">${state.answered ? '다시 채점' : '정답 확인'}</button>
           ${state.answered ? `<button type="button" class="link" id="grammar-next">다음 문제</button>` : ''}
+          ${state.answered ? renderReinforceCta(topic) : ''}
         </div>
       </form>
     `;
@@ -358,8 +465,9 @@ async function init() {
             <h2 class="heading--compact">${escapeHtml(topic?.title || '토픽')}</h2>
             <p class="lede">${escapeHtml(topic?.explanation_ko || '문법 해설을 준비 중입니다.')}</p>
             <p class="lede">문항 ${state.questionIndex + 1} / ${topic?.questions?.length || 0}</p>
+            ${topic ? renderRelatedTopic(topic) : ''}
           </section>
-          ${renderQuestion(question)}
+          ${renderQuestion(topic, question)}
         </section>
       </div>
     `;
@@ -375,6 +483,12 @@ async function init() {
 
     const next = document.getElementById('grammar-next');
     next?.addEventListener('click', advance);
+
+    const examplesToggle = document.getElementById('grammar-examples-toggle');
+    examplesToggle?.addEventListener('click', () => {
+      state.showExamples = !state.showExamples;
+      render();
+    });
   }
 
   render();

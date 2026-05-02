@@ -14,38 +14,32 @@
     <div class="page">
       <header class="masthead">
         <div>
-          <p class="eyebrow">Reading shell</p>
+          <p class="eyebrow">Reading</p>
           <h1>독해</h1>
           <p class="lede">
-            토큰 클릭 번역과 전체 번역 토글이 들어갈 셸입니다. 다음 단계에서
-            문장 단위 상호작용과 읽음 상태 저장을 연결합니다.
+            토큰을 클릭해 뜻을 확인하고, 지문이 강화하는 문법 포인트와
+            연결 어휘를 함께 봅니다.
           </p>
         </div>
-        <nav class="nav" aria-label="주요 모드">
-          <a href="index.html">홈</a>
-          <a href="flashcards.html">플래시카드</a>
-          <a href="grammar.html">문법</a>
-          <a href="reading.html" aria-current="page">독해</a>
-          <a href="situations.html">상황극</a>
-        </nav>
+        <div class="header-tools">
+          <nav class="nav" aria-label="주요 모드">
+            <a href="index.html">홈</a>
+            <a href="flashcards.html">플래시카드</a>
+            <a href="grammar.html">문법</a>
+            <a href="reading.html" aria-current="page">독해</a>
+            <a href="situations.html">상황극</a>
+          </nav>
+          <form class="global-search" role="search" data-global-search>
+            <label class="sr-only" for="global-search-reading">통합 검색</label>
+            <input id="global-search-reading" type="search" placeholder="검색" autocomplete="off" />
+            <div class="search-results" data-search-results hidden></div>
+          </form>
+        </div>
       </header>
 
-      <main class="stack" id="reading-shell">
-        <section class="card">
-          <span class="chip">마운트 지점</span>
-          <h2>reading-app</h2>
-          <div id="reading-app" class="placeholder">
-            토큰화된 본문, 툴팁 번역, 전체 번역 패널이 이곳에 렌더링됩니다.
-          </div>
-        </section>
-
-        <section class="card">
-          <span class="chip">상호작용</span>
-          <h2>클릭 번역</h2>
-          <div class="placeholder">스페인어 토큰을 누르면 한국어 뜻이 표시됩니다.</div>
-        </section>
-      </main>
+      <main class="stack" id="reading-app"></main>
     </div>
     <script type="module" src="js/reading.js"></script>
+    <script type="module" src="js/search.js"></script>
   </body>
 </html>

@@ -6,6 +6,9 @@
       "title": "Un día en el mercado",
       "level": "B1",
       "sublevel": "B1.1",
+      "grammar_features": [
+        "g002"
+      ],
       "tokens": [
         {
           "es": "Ayer",
@@ -139,6 +142,10 @@
       "title": "Viaje en tren",
       "level": "B1",
       "sublevel": "B1.2",
+      "grammar_features": [
+        "g002",
+        "g008"
+      ],
       "tokens": [
         {
           "es": "En",
@@ -469,6 +476,9 @@
       "title": "Una reunión breve",
       "level": "B2",
       "sublevel": "B2.1",
+      "grammar_features": [
+        "g002"
+      ],
       "tokens": [
         {
           "es": "En",
@@ -618,6 +628,10 @@
       "title": "Paseo por el barrio",
       "level": "B2",
       "sublevel": "B2.1",
+      "grammar_features": [
+        "g003",
+        "g002"
+      ],
       "tokens": [
         {
           "es": "Por",
@@ -799,6 +813,9 @@
       "title": "Hábitos sostenibles",
       "level": "B2",
       "sublevel": "B2.2",
+      "grammar_features": [
+        "g010"
+      ],
       "tokens": [
         {
           "es": "Cada",
