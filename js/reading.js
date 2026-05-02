@@ -97,16 +97,8 @@ async function init() {
   function tokenButton(token, index) {
     const button = document.createElement('button');
     button.type = 'button';
+    button.className = 'token-button';
     button.textContent = token.es;
-    button.style.border = 'none';
-    button.style.background = 'rgba(138, 79, 29, 0.12)';
-    button.style.color = 'var(--accent-strong)';
-    button.style.borderRadius = '999px';
-    button.style.padding = '0.12rem 0.5rem';
-    button.style.margin = '0 2px';
-    button.style.cursor = 'pointer';
-    button.style.font = 'inherit';
-    button.style.boxShadow = 'inset 0 0 0 1px rgba(138, 79, 29, 0.12)';
     button.addEventListener('click', () => {
       state.activeToken = { ...token, index };
       render();
@@ -132,7 +124,7 @@ async function init() {
   function renderTranslationPanel(item) {
     if (!state.activeToken) {
       return `
-        <section class="card" style="background: rgba(138, 79, 29, 0.08);">
+        <section class="card tinted-card--orange">
           <span class="chip">토큰</span>
           <p class="lede">스페인어 토큰을 클릭하면 한국어 뜻이 이곳에 표시됩니다.</p>
         </section>
@@ -140,7 +132,7 @@ async function init() {
     }
 
     return `
-      <section class="card" style="background: rgba(138, 79, 29, 0.08);">
+      <section class="card tinted-card--orange">
         <span class="chip">토큰 번역</span>
         <h2>${escapeHtml(state.activeToken.es)}</h2>
         <p class="lede">${escapeHtml(state.activeToken.ko)}</p>
@@ -153,19 +145,19 @@ async function init() {
     const readCount = state.readIds.size;
 
     root.innerHTML = `
-      <div style="display:grid;grid-template-columns:minmax(240px,280px) 1fr;gap:16px;align-items:start;">
-        <aside class="card" style="display:grid;gap:12px;">
+      <div class="split-layout">
+        <aside class="card split-layout__sidebar">
           <span class="chip">지문</span>
-          <h2 style="margin-bottom:0;">읽기 목록</h2>
-          <div style="display:grid;gap:10px;">${renderSidebar()}</div>
+          <h2 class="heading--flush">읽기 목록</h2>
+          <div class="split-layout__sidebar-list">${renderSidebar()}</div>
           <p class="lede">읽음 ${readCount} / ${items.length}</p>
         </aside>
         <section class="stack">
           <section class="card">
             <span class="chip">${escapeHtml(item.level)} · ${escapeHtml(item.sublevel)}</span>
-            <h2 style="margin-bottom:8px;">${escapeHtml(item.title)}</h2>
+            <h2 class="heading--compact">${escapeHtml(item.title)}</h2>
             <p class="lede">${escapeHtml(item.translation_ko)}</p>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+            <div class="action-row">
               <button type="button" class="link" id="reading-toggle">${state.showFullTranslation ? '전체 번역 숨기기' : '전체 번역 보기'}</button>
               <button type="button" class="link" id="reading-mark">읽음으로 표시</button>
             </div>
@@ -173,11 +165,11 @@ async function init() {
 
           <section class="card" aria-live="polite">
             <h2>본문</h2>
-            <p id="reading-text" class="lede" style="line-height:2.05;font-size:1.08rem;"></p>
+            <p id="reading-text" class="lede reading-body"></p>
           </section>
 
           ${state.showFullTranslation ? `
-            <section class="card" style="background: rgba(72, 140, 90, 0.08);">
+            <section class="card tinted-card--green">
               <span class="chip">전체 번역</span>
               <p class="lede">${escapeHtml(item.translation_ko)}</p>
             </section>

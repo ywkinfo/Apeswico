@@ -138,7 +138,7 @@ async function init() {
     const solution = Array.isArray(result.solution) ? result.solution.join(' · ') : '';
     if (result.correct) {
       return `
-        <section class="card" style="background: rgba(72, 140, 90, 0.12);">
+        <section class="card tinted-card--green-strong">
           <span class="chip">정답</span>
           <p class="lede">좋습니다. ${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
         </section>
@@ -147,7 +147,7 @@ async function init() {
 
     if (result.accentOnly) {
       return `
-        <section class="card" style="background: rgba(138, 79, 29, 0.12);">
+        <section class="card tinted-card--orange-strong">
           <span class="chip">악센트 주의</span>
           <p class="lede">철자는 맞지만 악센트가 빠졌습니다. 정답 예시: ${escapeHtml(solution)}</p>
           <p class="lede">${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
@@ -156,7 +156,7 @@ async function init() {
     }
 
     return `
-      <section class="card" style="background: rgba(185, 74, 58, 0.12);">
+      <section class="card tinted-card--red">
         <span class="chip">오답</span>
         <p class="lede">정답 예시: ${escapeHtml(solution || '정답을 준비 중입니다.')}</p>
         <p class="lede">${escapeHtml(question.explanation_ko || '설명을 준비 중입니다.')}</p>
@@ -282,14 +282,14 @@ async function init() {
     if (question.type === 'fill') {
       const blankCount = (question.stem.match(/___/g) || []).length || 1;
       const blanks = Array.from({ length: blankCount }, (_, index) => `
-        <label style="display:grid;gap:6px;">
+        <label class="field-label">
           <span class="eyebrow">빈칸 ${index + 1}</span>
           <input
             type="text"
             data-blank-index="${index}"
             autocomplete="off"
             spellcheck="false"
-            style="padding:0.85rem 1rem;border-radius:16px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:inherit;"
+            class="field-input"
           />
         </label>
       `).join('');
@@ -303,7 +303,7 @@ async function init() {
             <div class="stack">${blanks}</div>
           </section>
           ${state.answered ? renderFeedback(question, state.answered) : ''}
-          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <div class="button-row">
             <button type="submit" class="link">${state.answered ? '다시 채점' : '정답 확인'}</button>
             ${state.answered ? `<button type="button" class="link" id="grammar-next">다음 문제</button>` : ''}
           </div>
@@ -315,8 +315,8 @@ async function init() {
       ? question.choices
           .map(
             (choice, index) => `
-              <label class="card" style="display:flex;gap:12px;align-items:flex-start;cursor:pointer;">
-                <input type="radio" name="choice-answer" value="${index}" style="margin-top:4px;" />
+              <label class="card choice-row">
+                <input type="radio" name="choice-answer" value="${index}" class="choice-radio" />
                 <span>${escapeHtml(choice)}</span>
               </label>
             `
@@ -333,7 +333,7 @@ async function init() {
           <div class="stack">${choices}</div>
         </section>
         ${state.answered ? renderFeedback(question, state.answered) : ''}
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+        <div class="button-row">
           <button type="submit" class="link">${state.answered ? '다시 채점' : '정답 확인'}</button>
           ${state.answered ? `<button type="button" class="link" id="grammar-next">다음 문제</button>` : ''}
         </div>
@@ -346,16 +346,16 @@ async function init() {
     const question = currentQuestion();
 
     root.innerHTML = `
-      <div style="display:grid;grid-template-columns:minmax(240px,280px) 1fr;gap:16px;align-items:start;">
-        <aside class="card" style="display:grid;gap:12px;">
+      <div class="split-layout">
+        <aside class="card split-layout__sidebar">
           <span class="chip">토픽</span>
-          <h2 style="margin-bottom:0;">학습 목록</h2>
-          <div style="display:grid;gap:10px;">${topicListMarkup()}</div>
+          <h2 class="heading--flush">학습 목록</h2>
+          <div class="split-layout__sidebar-list">${topicListMarkup()}</div>
         </aside>
         <section class="stack">
           <section class="card">
             <span class="chip">${escapeHtml(topic?.level || 'B1-B2')} · ${escapeHtml(topic?.sublevel || '')}</span>
-            <h2 style="margin-bottom:8px;">${escapeHtml(topic?.title || '토픽')}</h2>
+            <h2 class="heading--compact">${escapeHtml(topic?.title || '토픽')}</h2>
             <p class="lede">${escapeHtml(topic?.explanation_ko || '문법 해설을 준비 중입니다.')}</p>
             <p class="lede">문항 ${state.questionIndex + 1} / ${topic?.questions?.length || 0}</p>
           </section>

@@ -95,9 +95,9 @@ async function init() {
   function renderDialogue(item) {
     return item.dialogue
       .map((turn) => `
-        <article class="card" style="background: rgba(138, 79, 29, 0.06);">
+        <article class="card tinted-card--orange-soft">
           <span class="chip">${escapeHtml(turn.speaker)}</span>
-          <p class="lede" style="font-size:1.05rem;">${escapeHtml(turn.es)}</p>
+          <p class="lede dialogue-line">${escapeHtml(turn.es)}</p>
           ${state.showKorean ? `<p class="lede">${escapeHtml(turn.ko)}</p>` : ''}
         </article>
       `)
@@ -111,11 +111,11 @@ async function init() {
     return `
       <section class="card">
         <span class="chip">핵심 표현</span>
-        <div style="display:grid;gap:10px;margin-top:12px;">
+        <div class="content-list">
           ${item.key_phrases
             .map(
               (phrase) => `
-                <div class="card" style="background: rgba(138, 79, 29, 0.06);">
+                <div class="card tinted-card--orange-soft">
                   <strong>${escapeHtml(phrase.es)}</strong>
                   <p class="lede">${escapeHtml(phrase.ko)}</p>
                   <p class="lede">${escapeHtml(phrase.note_ko || '')}</p>
@@ -135,14 +135,14 @@ async function init() {
     return `
       <section class="card">
         <span class="chip">새도잉</span>
-        <div style="display:grid;gap:10px;margin-top:12px;">
+        <div class="content-list">
           ${item.shadowing
             .map(
               (line) => {
                 const entry = typeof line === 'string' ? { es: line, ko: '' } : line;
                 return `
-                <div class="card" style="background: rgba(72, 140, 90, 0.08);">
-                  <p class="lede" style="font-size:1.08rem;margin-bottom:0;">${escapeHtml(entry.es)}</p>
+                <div class="card tinted-card--green">
+                  <p class="lede shadowing-line">${escapeHtml(entry.es)}</p>
                   ${state.showKorean && entry.ko ? `<p class="lede">${escapeHtml(entry.ko)}</p>` : ''}
                 </div>
               `;
@@ -159,19 +159,19 @@ async function init() {
     const doneCount = state.doneIds.size;
 
     root.innerHTML = `
-      <div style="display:grid;grid-template-columns:minmax(240px,280px) 1fr;gap:16px;align-items:start;">
-        <aside class="card" style="display:grid;gap:12px;">
+      <div class="split-layout">
+        <aside class="card split-layout__sidebar">
           <span class="chip">상황</span>
-          <h2 style="margin-bottom:0;">장면 목록</h2>
-          <div style="display:grid;gap:10px;">${renderSidebar()}</div>
+          <h2 class="heading--flush">장면 목록</h2>
+          <div class="split-layout__sidebar-list">${renderSidebar()}</div>
           <p class="lede">완료 ${doneCount} / ${items.length}</p>
         </aside>
         <section class="stack">
           <section class="card">
             <span class="chip">${escapeHtml(item.level)} · ${escapeHtml(item.sublevel)}</span>
-            <h2 style="margin-bottom:8px;">${escapeHtml(item.title)}</h2>
+            <h2 class="heading--compact">${escapeHtml(item.title)}</h2>
             <p class="lede">${escapeHtml(item.scene_ko)}</p>
-            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+            <div class="action-row">
               <button type="button" class="link" id="situation-toggle">${state.showKorean ? '한국어 숨기기' : '한국어 보기'}</button>
               <button type="button" class="link" id="situation-mark">완료로 표시</button>
             </div>
@@ -179,7 +179,7 @@ async function init() {
 
           <section class="card">
             <span class="chip">대화</span>
-            <div style="display:grid;gap:12px;margin-top:12px;">
+            <div class="content-list content-list--roomy">
               ${renderDialogue(item)}
             </div>
           </section>

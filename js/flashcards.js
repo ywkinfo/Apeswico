@@ -185,10 +185,10 @@ async function init() {
         </div>
       `
       : `
-        <div class="placeholder" style="min-height: 180px;">
+        <div class="placeholder placeholder--compact">
           <div>
             <p class="eyebrow">스페인어</p>
-            <h2 style="margin: 0;">${escapeHtml(card.es)}</h2>
+            <h2 class="heading--plain">${escapeHtml(card.es)}</h2>
           </div>
         </div>
       `;
@@ -198,17 +198,17 @@ async function init() {
         ${renderQueueSummary()}
         <section class="card" aria-live="polite">
           <span class="chip">${escapeHtml(item.kind === 'new' ? '신규' : '복습')} · ${sideLabel}</span>
-          <h2 style="margin-bottom: 8px;">${escapeHtml(card.es)}</h2>
+          <h2 class="heading--compact">${escapeHtml(card.es)}</h2>
           <p class="lede">${escapeHtml(card.pos)} · ${escapeHtml(card.level)} ${escapeHtml(card.sublevel)}</p>
           ${body}
-          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;">
+          <div class="grade-row">
             <button type="button" class="link" id="toggle-flashcard">${state.revealed ? '앞면 보기' : '뒷면 보기'}</button>
-            <button type="button" class="link" data-grade="${GRADE.AGAIN}" style="background:#b94a3a;">Again</button>
-            <button type="button" class="link" data-grade="${GRADE.HARD}" style="background:#8f5c2e;">Hard</button>
-            <button type="button" class="link" data-grade="${GRADE.GOOD}" style="background:#4f7f4d;">Good</button>
-            <button type="button" class="link" data-grade="${GRADE.EASY}" style="background:#315f88;">Easy</button>
+            <button type="button" class="link grade-btn--again" data-grade="${GRADE.AGAIN}">Again</button>
+            <button type="button" class="link grade-btn--hard" data-grade="${GRADE.HARD}">Hard</button>
+            <button type="button" class="link grade-btn--good" data-grade="${GRADE.GOOD}">Good</button>
+            <button type="button" class="link grade-btn--easy" data-grade="${GRADE.EASY}">Easy</button>
           </div>
-          <p class="lede" style="margin-top: 12px;">단축키: Space 뒤집기, 1 Again, 2 Hard, 3 Good, 4 Easy</p>
+          <p class="lede shortcut-hint">단축키: Space 뒤집기, 1 Again, 2 Hard, 3 Good, 4 Easy</p>
         </section>
       </div>
     `;
