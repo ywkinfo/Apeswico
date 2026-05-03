@@ -979,6 +979,696 @@
         }
       ],
       "translation_ko": "매일 아침 저는 직장에 재사용 가능한 물병을 가져갑니다. 작은 행동처럼 보이지만 플라스틱을 덜 쓰는 데 도움이 됩니다."
+    },
+    {
+      "id": "r007",
+      "title": "Pedro y el sueño de Madrid",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "grammar_features": [
+        "g002",
+        "g004",
+        "g005",
+        "g006",
+        "g009"
+      ],
+      "tokens": [
+        {
+          "es": "Cuando",
+          "ko": "~했을 때"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "era",
+          "ko": "~이었다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "niño",
+          "ko": "아이"
+        },
+        {
+          "es": ",",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Pedro",
+          "ko": "Pedro"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "tenía",
+          "ko": "가지고 있었다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "un",
+          "ko": "하나의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "sueño",
+          "ko": "꿈"
+        },
+        {
+          "es": ":",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "soñaba",
+          "ko": "꿈꾸곤 했다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "con",
+          "ko": "~을"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Madrid",
+          "ko": "마드리드"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "todas",
+          "ko": "모든"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "las",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "noches",
+          "ko": "밤들"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Su",
+          "ko": "그의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "abuela",
+          "ko": "할머니"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "le",
+          "ko": "그에게"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "decía",
+          "ko": "말하곤 했다"
+        },
+        {
+          "es": ":",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "\"",
+          "ko": null
+        },
+        {
+          "es": "No",
+          "ko": "하지 마라"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "olvides",
+          "ko": "잊지"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "de",
+          "ko": "~에서"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "dónde",
+          "ko": "어디"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "vienes",
+          "ko": "오는지"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": "\"",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Si",
+          "ko": "만약"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "tuviera",
+          "ko": "가지고 있다면"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "más",
+          "ko": "더 많은"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "valor",
+          "ko": "용기"
+        },
+        {
+          "es": ",",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "iría",
+          "ko": "갈 텐데"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "a",
+          "ko": "~로"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Madrid",
+          "ko": "마드리드"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "antes",
+          "ko": "전에"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "de",
+          "ko": "~의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "cumplir",
+          "ko": "채우다, 되다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "veinte",
+          "ko": "스무"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "años",
+          "ko": "살, 해"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Cuando",
+          "ko": "~했을 때"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "llegó",
+          "ko": "도착했다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "al",
+          "ko": "~에"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "hotel",
+          "ko": "호텔"
+        },
+        {
+          "es": ",",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "la",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "recepcionista",
+          "ko": "리셉션 직원"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "sonrió",
+          "ko": "미소 지었다"
+        },
+        {
+          "es": ":",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "\"",
+          "ko": null
+        },
+        {
+          "es": "Pase",
+          "ko": "들어오세요"
+        },
+        {
+          "es": ",",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "siéntese",
+          "ko": "앉으세요"
+        },
+        {
+          "es": ",",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "descanse",
+          "ko": "쉬세요"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": "\"",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "En",
+          "ko": "~에서"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "la",
+          "ko": "그"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "habitación",
+          "ko": "방"
+        },
+        {
+          "es": ",",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "encontró",
+          "ko": "발견했다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "una",
+          "ko": "한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "carta",
+          "ko": "편지"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "que",
+          "ko": "~한"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "su",
+          "ko": "그의"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "abuela",
+          "ko": "할머니"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "había",
+          "ko": "~했었다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "escrito",
+          "ko": "쓴"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "años",
+          "ko": "해들"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "antes",
+          "ko": "전에"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "Al",
+          "ko": "~에"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "final",
+          "ko": "마지막"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "leyó",
+          "ko": "읽었다"
+        },
+        {
+          "es": ":",
+          "ko": null
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "\"",
+          "ko": null
+        },
+        {
+          "es": "Sabía",
+          "ko": "알고 있었다"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "que",
+          "ko": "~라는 것을"
+        },
+        {
+          "es": " ",
+          "ko": null
+        },
+        {
+          "es": "vendrías",
+          "ko": "네가 올 것이라고"
+        },
+        {
+          "es": ".",
+          "ko": null
+        },
+        {
+          "es": "\"",
+          "ko": null
+        }
+      ],
+      "translation_ko": "어렸을 때 Pedro에게는 꿈이 하나 있었다. 그는 매일 밤 마드리드를 꿈꿨다. 그의 할머니는 그에게 말했다. \"네가 어디에서 왔는지 잊지 마라.\" 용기가 더 있었다면, 그는 스무 살이 되기 전에 마드리드에 갔을 것이다. 호텔에 도착했을 때, 리셉션 직원이 미소 지으며 말했다. \"들어오세요, 앉으세요, 쉬세요.\" 방에서 그는 할머니가 몇 년 전에 써 두었던 편지를 발견했다. 마지막에 그는 읽었다. \"네가 올 줄 알고 있었단다.\"",
+      "sentences": [
+        {
+          "id": "r007-l1",
+          "es": "Cuando era niño, Pedro tenía un sueño: soñaba con Madrid todas las noches.",
+          "ko": "어렸을 때 Pedro에게는 꿈이 하나 있었다. 그는 매일 밤 마드리드를 꿈꿨다.",
+          "grammar_id": "g002",
+          "stage_emoji": "🧒",
+          "stage_ko": "유년 - 반복된 과거",
+          "tense_ko": "Imperfecto",
+          "highlight": [
+            "era",
+            "soñaba"
+          ],
+          "question_number": 4
+        },
+        {
+          "id": "r007-l2",
+          "es": "Su abuela le decía: \"No olvides de dónde vienes.\"",
+          "ko": "그의 할머니는 그에게 말했다. \"네가 어디에서 왔는지 잊지 마라.\"",
+          "grammar_id": "g004",
+          "stage_emoji": "👵",
+          "stage_ko": "할머니의 가르침 - 당위",
+          "tense_ko": "Subjuntivo presente",
+          "highlight": [
+            "olvides"
+          ],
+          "question_number": 4
+        },
+        {
+          "id": "r007-l3",
+          "es": "Si tuviera más valor, iría a Madrid antes de cumplir veinte años.",
+          "ko": "용기가 더 있었다면, 그는 스무 살이 되기 전에 마드리드에 갔을 것이다.",
+          "grammar_id": "g005",
+          "stage_emoji": "💭",
+          "stage_ko": "꿈 - 비현실 가정",
+          "tense_ko": "Si + imperf. subj. + Condicional",
+          "highlight": [
+            "tuviera",
+            "iría"
+          ],
+          "question_number": 4
+        },
+        {
+          "id": "r007-l4",
+          "es": "Cuando llegó al hotel, la recepcionista sonrió: \"Pase, siéntese, descanse.\"",
+          "ko": "호텔에 도착했을 때, 리셉션 직원이 미소 지으며 말했다. \"들어오세요, 앉으세요, 쉬세요.\"",
+          "grammar_id": "g006",
+          "stage_emoji": "🏨",
+          "stage_ko": "도착 - 정중한 명령",
+          "tense_ko": "Imperativo formal",
+          "highlight": [
+            "Pase",
+            "siéntese",
+            "descanse"
+          ],
+          "question_number": 4
+        },
+        {
+          "id": "r007-l5",
+          "es": "En la habitación, encontró una carta que su abuela había escrito años antes.",
+          "ko": "방에서 그는 할머니가 몇 년 전에 써 두었던 편지를 발견했다.",
+          "grammar_id": "g009",
+          "stage_emoji": "📜",
+          "stage_ko": "발견 - 과거 이전 사건",
+          "tense_ko": "Pluscuamperfecto",
+          "highlight": [
+            "había",
+            "escrito"
+          ],
+          "question_number": 4
+        },
+        {
+          "id": "r007-l6",
+          "es": "Al final leyó: \"Sabía que vendrías.\"",
+          "ko": "마지막에 그는 읽었다. \"네가 올 줄 알고 있었단다.\"",
+          "grammar_id": "g005",
+          "stage_emoji": "💌",
+          "stage_ko": "반전 - 과거에서 본 미래",
+          "tense_ko": "Condicional (과거에서 본 미래)",
+          "highlight": [
+            "Sabía",
+            "vendrías"
+          ],
+          "question_number": 5
+        }
+      ]
     }
   ]
 }

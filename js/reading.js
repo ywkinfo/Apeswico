@@ -1,5 +1,5 @@
 import { loadReading } from './data.js';
-import { findVocabMatches, getGraph, getRelated } from './content-graph.js';
+import { findVocabMatches, getGraph, getRelated, normalizeText } from './content-graph.js';
 import { getProfile, recordEncounter, touchDaily } from './learner.js';
 import { createCardState, loadProgress, saveProgress } from './srs.js';
 import { get, namespace, set } from './storage.js';
@@ -32,6 +32,10 @@ function escapeHtml(value) {
   });
 }
 
+function escapeRegExp(value) {
+  return String(value ?? '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 function hashParam(name) {
   return new URLSearchParams(location.hash.replace(/^#/, '')).get(name);
 }
@@ -47,6 +51,46 @@ function firstSentence(item) {
 function situationExcerpt(item) {
   const turn = (item.dialogue || [])[0];
   return turn ? `${turn.es} / ${turn.ko}` : item.scene_ko;
+}
+
+function highlightedTokenSet(item) {
+  return new Set(
+    (item.sentences || [])
+      .flatMap((sentence) => sentence.highlight || [])
+      .map((entry) => normalizeText(entry))
+      .filter(Boolean)
+  );
+}
+
+function renderHighlightedSpan(text, highlights = []) {
+  const terms = highlights
+    .filter((entry) => typeof entry === 'string' && entry.trim())
+    .sort((a, b) => b.length - a.length)
+    .map(escapeRegExp);
+
+  if (!terms.length) {
+    return escapeHtml(text);
+  }
+
+  const pattern = new RegExp(`(?<![\\p{L}\\p{M}\\p{N}])(${terms.join('|')})(?![\\p{L}\\p{M}\\p{N}])`, 'giu');
+  const source = String(text ?? '');
+  let result = '';
+  let lastIndex = 0;
+  for (const match of source.matchAll(pattern)) {
+    result += escapeHtml(source.slice(lastIndex, match.index));
+    result += `<mark class="story-line__highlight">${escapeHtml(match[0])}</mark>`;
+    lastIndex = match.index + match[0].length;
+  }
+  result += escapeHtml(source.slice(lastIndex));
+  return result;
+}
+
+function grammarHrefForLine(line) {
+  const params = new URLSearchParams({ topic: line.grammar_id });
+  if (Number.isInteger(line.question_number) && line.question_number > 0) {
+    params.set('q', String(line.question_number));
+  }
+  return `grammar.html#${params.toString()}`;
 }
 
 function dueLabel(cardState) {
@@ -146,10 +190,10 @@ async function init() {
       .join('');
   }
 
-  function tokenButton(item, token, index) {
+  function tokenButton(item, token, index, highlighted = false) {
     const button = document.createElement('button');
     button.type = 'button';
-    button.className = 'token-button';
+    button.className = highlighted ? 'token-button token-button--highlight' : 'token-button';
     button.textContent = token.es;
     button.addEventListener('click', () => {
       const vocabMatches = findVocabMatches(token.es, graph, { limit: 4 });
@@ -180,16 +224,49 @@ async function init() {
   function renderTokens(item, container) {
     container.innerHTML = '';
     const fragment = document.createDocumentFragment();
+    const highlights = highlightedTokenSet(item);
 
     item.tokens.forEach((token, index) => {
       if (token.ko == null) {
         fragment.append(document.createTextNode(token.es));
         return;
       }
-      fragment.append(tokenButton(item, token, index));
+      fragment.append(tokenButton(item, token, index, highlights.has(normalizeText(token.es))));
     });
 
     container.append(fragment);
+  }
+
+  function renderStoryTimeline(item) {
+    if (!Array.isArray(item.sentences) || !item.sentences.length) {
+      return '';
+    }
+
+    const lines = item.sentences
+      .map((line) => `
+        <a
+          class="story-line"
+          href="${escapeHtml(grammarHrefForLine(line))}"
+          data-grammar-id="${escapeHtml(line.grammar_id)}"
+          data-sentence-id="${escapeHtml(line.id)}"
+          data-question-number="${escapeHtml(line.question_number || '')}"
+        >
+          <span class="story-line__stage">${escapeHtml(line.stage_emoji)} ${escapeHtml(line.stage_ko)}</span>
+          <p class="story-line__es">${renderHighlightedSpan(line.es, line.highlight)}</p>
+          <p class="story-line__ko">${escapeHtml(line.ko)}</p>
+          <span class="chip story-line__tense">${escapeHtml(line.tense_ko)} - ${escapeHtml(line.grammar_id)}</span>
+        </a>
+      `)
+      .join('');
+
+    return `
+      <section class="card story-timeline" aria-label="시제 타임라인">
+        <span class="chip">시제 타임라인</span>
+        <h2 class="heading--compact">한 인생 = 한 시제 지도</h2>
+        <p class="lede">각 문장을 누르면 해당 문법 토픽으로 이동합니다.</p>
+        <div class="story-timeline__lines">${lines}</div>
+      </section>
+    `;
   }
 
   function renderTranslationPanel(item) {
@@ -316,6 +393,8 @@ async function init() {
             </div>
           </section>
 
+          ${renderStoryTimeline(item)}
+
           <section class="card" aria-live="polite">
             <h2>본문</h2>
             <p id="reading-text" class="lede reading-body"></p>
@@ -356,6 +435,20 @@ async function init() {
 
     document.getElementById('reading-add-vocab')?.addEventListener('click', () => {
       addReadingVocab(item);
+    });
+
+    root.querySelectorAll('[data-sentence-id]').forEach((link) => {
+      link.addEventListener('click', () => {
+        recordEncounter('reading', item.id, {
+          kind: 'sentence-jump',
+          grammarId: link.dataset.grammarId,
+          sentenceId: link.dataset.sentenceId,
+          questionNumber: Number(link.dataset.questionNumber) || null,
+          level: item.level,
+          sublevel: item.sublevel,
+          mode: 'reading'
+        });
+      });
     });
   }
 

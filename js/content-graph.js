@@ -189,6 +189,42 @@ function tokenMatches(matcher, contentTokens, normalizedText) {
   return matcher.exampleTokens.some((token) => contentTokens.includes(token));
 }
 
+function tokenMatchScore(matcher, contentTokens, normalizedText) {
+  if (normalizedText === matcher.term) {
+    return 100;
+  }
+
+  if (matcher.phrase && normalizedText.includes(matcher.phrase)) {
+    return 90;
+  }
+
+  if (matcher.words.some((word) => normalizedText === word)) {
+    return 80;
+  }
+
+  if (matcher.words.some((word) => contentTokens.includes(word))) {
+    return 70;
+  }
+
+  if (
+    matcher.words.some(
+      (word) => word.length > 4 && contentTokens.some((token) => token === `${word}s` || token === `${word}es`)
+    )
+  ) {
+    return 60;
+  }
+
+  if (matcher.stem && contentTokens.some((token) => token.startsWith(matcher.stem) && token.length <= matcher.stem.length + 5)) {
+    return 50;
+  }
+
+  if (matcher.exampleTokens.some((token) => contentTokens.includes(token))) {
+    return 10;
+  }
+
+  return 0;
+}
+
 function readingText(item) {
   return (item.tokens || []).map((token) => token.es).join('');
 }
@@ -327,10 +363,16 @@ export function findVocabMatches(text, graph, { limit = 6 } = {}) {
   const matches = [];
   for (const matcher of graph?.matchers || []) {
     if (tokenMatches(matcher, contentTokens, normalized)) {
-      matches.push(matcher.item);
+      matches.push({
+        item: matcher.item,
+        score: tokenMatchScore(matcher, contentTokens, normalized)
+      });
     }
   }
-  return matches.slice(0, limit);
+  return matches
+    .sort((a, b) => b.score - a.score || a.item.id.localeCompare(b.item.id))
+    .slice(0, limit)
+    .map((entry) => entry.item);
 }
 
 function itemSearchText(type, item) {

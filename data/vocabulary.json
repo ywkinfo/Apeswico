@@ -2548,6 +2548,188 @@
         "expression",
         "formal"
       ]
+    },
+    {
+      "id": "v183",
+      "es": "sueño",
+      "ko": "꿈",
+      "pos": "sustantivo",
+      "example_es": "Madrid era el sueño de Pedro.",
+      "example_ko": "마드리드는 Pedro의 꿈이었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "dream"
+      ]
+    },
+    {
+      "id": "v184",
+      "es": "soñar con",
+      "ko": "...을 꿈꾸다",
+      "pos": "verbo",
+      "example_es": "Pedro soñaba con Madrid todas las noches.",
+      "example_ko": "Pedro는 매일 밤 마드리드를 꿈꿨습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "dream"
+      ]
+    },
+    {
+      "id": "v185",
+      "es": "abuela",
+      "ko": "할머니",
+      "pos": "sustantivo",
+      "example_es": "Su abuela le daba consejos importantes.",
+      "example_ko": "그의 할머니는 그에게 중요한 조언을 해 주었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "family"
+      ]
+    },
+    {
+      "id": "v186",
+      "es": "olvidar",
+      "ko": "잊다",
+      "pos": "verbo",
+      "example_es": "No olvides de dónde vienes.",
+      "example_ko": "네가 어디에서 왔는지 잊지 마세요.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "memory"
+      ]
+    },
+    {
+      "id": "v187",
+      "es": "valor",
+      "ko": "용기, 가치",
+      "pos": "sustantivo",
+      "example_es": "Si tuviera más valor, iría a Madrid.",
+      "example_ko": "용기가 더 있다면 마드리드에 갈 텐데요.",
+      "level": "B2",
+      "sublevel": "B2.1",
+      "tags": [
+        "noun",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v188",
+      "es": "recepcionista",
+      "ko": "접수 직원, 리셉션 직원",
+      "pos": "sustantivo",
+      "example_es": "La recepcionista sonrió al verlo llegar.",
+      "example_ko": "리셉션 직원은 그가 도착한 것을 보고 미소 지었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "noun",
+        "hotel"
+      ]
+    },
+    {
+      "id": "v189",
+      "es": "sonreír",
+      "ko": "미소 짓다",
+      "pos": "verbo",
+      "example_es": "La recepcionista sonrió con amabilidad.",
+      "example_ko": "리셉션 직원은 친절하게 미소 지었습니다.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "emotion"
+      ]
+    },
+    {
+      "id": "v190",
+      "es": "descansar",
+      "ko": "쉬다",
+      "pos": "verbo",
+      "example_es": "Descanse un momento en el hotel.",
+      "example_ko": "호텔에서 잠시 쉬세요.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "daily"
+      ]
+    },
+    {
+      "id": "v191",
+      "es": "sentarse",
+      "ko": "앉다",
+      "pos": "verbo",
+      "example_es": "Siéntese aquí, por favor.",
+      "example_ko": "여기에 앉으세요.",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "tags": [
+        "verb",
+        "daily"
+      ]
+    },
+    {
+      "id": "v192",
+      "es": "carta",
+      "ko": "편지",
+      "pos": "sustantivo",
+      "example_es": "Encontró una carta en la habitación.",
+      "example_ko": "그는 방에서 편지를 발견했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "communication"
+      ]
+    },
+    {
+      "id": "v193",
+      "es": "escribir",
+      "ko": "쓰다",
+      "pos": "verbo",
+      "example_es": "Su abuela había escrito la carta años antes.",
+      "example_ko": "그의 할머니는 몇 년 전에 그 편지를 써 두었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "communication"
+      ]
+    },
+    {
+      "id": "v194",
+      "es": "saber",
+      "ko": "알다",
+      "pos": "verbo",
+      "example_es": "Sabía que vendrías.",
+      "example_ko": "네가 올 줄 알고 있었습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "verb",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "v195",
+      "es": "hotel",
+      "ko": "호텔",
+      "pos": "sustantivo",
+      "example_es": "Pedro llegó al hotel de Madrid.",
+      "example_ko": "Pedro는 마드리드의 호텔에 도착했습니다.",
+      "level": "B1",
+      "sublevel": "B1.1",
+      "tags": [
+        "noun",
+        "travel"
+      ]
     }
   ]
 }

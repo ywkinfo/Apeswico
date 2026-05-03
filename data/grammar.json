@@ -67,7 +67,8 @@
         "r001",
         "r002",
         "r004",
-        "r005"
+        "r005",
+        "r007"
       ],
       "questions": [
         {
@@ -112,6 +113,21 @@
           ],
           "answer_index": 0,
           "explanation_ko": "진행 중인 배경 행동은 불완전과거로 표현합니다."
+        },
+        {
+          "id": "g002-q4",
+          "type": "fill",
+          "stem": "Cuando ___ niño, Pedro ___ con Madrid todas las noches.",
+          "stem_ko": "어렸을 때 Pedro는 매일 밤 마드리드를 꿈꿨습니다.",
+          "accepted_answers": [
+            [
+              "era",
+              "soñaba"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "어릴 때의 배경과 반복된 습관을 말하므로 두 동사 모두 불완전과거를 씁니다."
         }
       ]
     },
@@ -179,6 +195,9 @@
       "level": "B2",
       "sublevel": "B2.1",
       "explanation_ko": "희망, 요구, 감정, 의심 같은 표현 뒤에는 접속법 현재가 자주 옵니다.",
+      "examples_in": [
+        "r007"
+      ],
       "questions": [
         {
           "id": "g004-q1",
@@ -221,6 +240,20 @@
           ],
           "answer_index": 1,
           "explanation_ko": "평가 표현 뒤의 주어가 달라지면 접속법을 씁니다."
+        },
+        {
+          "id": "g004-q4",
+          "type": "choice",
+          "stem": "Es importante que no ___ tus raíces.",
+          "stem_ko": "자신의 뿌리를 잊지 않는 것이 중요합니다.",
+          "choices": [
+            "olvides",
+            "olvidas",
+            "olvidaste",
+            "olvidarás"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "Es importante que 뒤에서는 평가와 당위를 말하므로 접속법 현재 olvides가 자연스럽습니다."
         }
       ]
     },
@@ -229,7 +262,10 @@
       "title": "Condicional para hipótesis",
       "level": "B2",
       "sublevel": "B2.1",
-      "explanation_ko": "가정이나 조언을 부드럽게 말할 때 조건법을 자주 씁니다.",
+      "explanation_ko": "가정이나 조언을 부드럽게 말할 때 조건법을 자주 씁니다. 조건법은 가정·정중함뿐 아니라 과거 시점에서 본 미래도 표현합니다. 예: Sabía que vendrías.",
+      "examples_in": [
+        "r007"
+      ],
       "questions": [
         {
           "id": "g005-q1",
@@ -272,6 +308,34 @@
           ],
           "answer_index": 0,
           "explanation_ko": "정중한 부탁에는 조건법 podrías가 자연스럽습니다."
+        },
+        {
+          "id": "g005-q4",
+          "type": "choice",
+          "stem": "Si tuviera más valor, ___ a Madrid.",
+          "stem_ko": "용기가 더 있었다면 마드리드에 갔을 텐데요.",
+          "choices": [
+            "iría",
+            "voy",
+            "fui",
+            "iba"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "Si + 과거접속법(tuviera) 뒤에서 가정의 결과를 말하므로 조건법 iría를 씁니다."
+        },
+        {
+          "id": "g005-q5",
+          "type": "choice",
+          "stem": "Le dije que vendría mañana.",
+          "stem_ko": "나는 그에게 내일 올 것이라고 말했다.",
+          "choices": [
+            "과거 시점에서 본 미래를 말한다",
+            "현재의 확실한 미래만 말한다",
+            "완료된 과거 사건만 말한다",
+            "명령을 더 부드럽게 만든다"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "vendría는 말했던 과거 시점에서 아직 오지 않은 일을 바라보는 조건법, 즉 과거에서 본 미래입니다."
         }
       ]
     },
@@ -285,7 +349,9 @@
         "s002",
         "s005",
         "s008",
-        "s010"
+        "s010",
+        "r007",
+        "s011"
       ],
       "questions": [
         {
@@ -329,6 +395,20 @@
           ],
           "answer_index": 0,
           "explanation_ko": "부정 명령에서는 tú도 접속법 현재 형태를 씁니다."
+        },
+        {
+          "id": "g006-q4",
+          "type": "choice",
+          "stem": "Pase, siéntese, descanse.",
+          "stem_ko": "이 명령형은 어느 상대에게 쓰는 형태인가요?",
+          "choices": [
+            "usted 긍정 명령",
+            "tú 부정 명령",
+            "vosotros 긍정 명령",
+            "ustedes 부정 명령"
+          ],
+          "answer_index": 0,
+          "explanation_ko": "Pase, siéntese, descanse는 접속법 현재 3인칭 단수와 같은 usted 긍정 명령입니다."
         }
       ]
     },
@@ -443,6 +523,9 @@
       "level": "B2",
       "sublevel": "B2.1",
       "explanation_ko": "대과거는 과거의 한 시점보다 더 이전에 이미 완료된 일을 말할 때 씁니다.",
+      "examples_in": [
+        "r007"
+      ],
       "questions": [
         {
           "id": "g009-q1",
@@ -485,6 +568,23 @@
           ],
           "answer_index": 0,
           "explanation_ko": "회의 전 완료를 강조하므로 대과거가 맞습니다."
+        },
+        {
+          "id": "g009-q4",
+          "type": "fill",
+          "stem": "Cuando llegué, él ya ___.",
+          "stem_ko": "내가 도착했을 때 그는 이미 떠나 있었습니다.",
+          "accepted_answers": [
+            [
+              "había salido"
+            ],
+            [
+              "se había ido"
+            ]
+          ],
+          "case_sensitive": false,
+          "accent_sensitive": true,
+          "explanation_ko": "도착한 과거 시점보다 떠난 일이 더 먼저 완료되었으므로 대과거를 씁니다."
         }
       ]
     },

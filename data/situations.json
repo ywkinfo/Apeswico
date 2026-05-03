@@ -662,6 +662,66 @@
           "ko": "6시 지역 열차를 타실 수 있습니다."
         }
       ]
+    },
+    {
+      "id": "s011",
+      "title": "호텔 체크인 - 정중한 환영",
+      "level": "B1",
+      "sublevel": "B1.2",
+      "scene_ko": "마드리드 호텔에 도착해 리셉션에서 정중한 환영을 받는다.",
+      "grammar_focus": [
+        "g006"
+      ],
+      "vocab_focus": [
+        "v188",
+        "v189",
+        "v190",
+        "v191",
+        "v195"
+      ],
+      "dialogue": [
+        {
+          "speaker": "Recepcionista",
+          "es": "Buenas tardes, señor. Pase, siéntese, descanse un momento.",
+          "ko": "좋은 오후입니다, 손님. 들어오세요, 앉으세요, 잠시 쉬세요."
+        },
+        {
+          "speaker": "Pedro",
+          "es": "Muchas gracias. Tengo una reserva a nombre de Pedro. Es mi sueño conocer Madrid desde niño.",
+          "ko": "정말 감사합니다. Pedro 이름으로 예약했습니다. 어릴 때부터 마드리드를 아는 것이 제 꿈이었습니다."
+        },
+        {
+          "speaker": "Recepcionista",
+          "es": "Aquí tiene la llave. La habitación está en la segunda planta.",
+          "ko": "여기 열쇠가 있습니다. 방은 2층에 있습니다."
+        }
+      ],
+      "key_phrases": [
+        {
+          "es": "Pase, siéntese, descanse",
+          "ko": "들어오세요, 앉으세요, 쉬세요",
+          "note_ko": "usted 긍정 명령 3연속 - 호텔이나 식당에서 들을 수 있는 정중한 환영 표현입니다."
+        },
+        {
+          "es": "Tengo una reserva a nombre de Pedro",
+          "ko": "Pedro 이름으로 예약했습니다",
+          "note_ko": "호텔 체크인에서 예약자 이름을 말할 때 쓰는 기본 표현입니다."
+        }
+      ],
+      "shadowing": [
+        {
+          "es": "Pase, siéntese, descanse un momento.",
+          "ko": "들어오세요, 앉으세요, 잠시 쉬세요."
+        },
+        {
+          "es": "Tengo una reserva a nombre de Pedro.",
+          "ko": "Pedro 이름으로 예약했습니다."
+        },
+        {
+          "es": "Es mi sueño conocer Madrid desde niño.",
+          "ko": "어릴 때부터 마드리드를 아는 것이 제 꿈이었습니다."
+        }
+      ]
     }
   ]
 }

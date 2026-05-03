@@ -78,6 +78,19 @@ function assertOptionalIdArray(file, itemId, value, field) {
   return value;
 }
 
+function assertStringArray(file, itemId, value, field) {
+  if (!Array.isArray(value)) {
+    fail(file, `${itemId}: ${field} must be an array`);
+    return [];
+  }
+  for (const [index, entry] of value.entries()) {
+    if (typeof entry !== 'string' || entry.trim() === '') {
+      fail(file, `${itemId}.${field}[${index}]: value must be a non-empty string`);
+    }
+  }
+  return value;
+}
+
 function validateVocabulary(file, items) {
   const ids = new Set();
   for (const item of items) {
@@ -149,6 +162,31 @@ function validateReading(file, items) {
       }
     }
     assertText(file, item.id, item.translation_ko, 'translation_ko');
+    if (item.sentences != null) {
+      if (!Array.isArray(item.sentences)) {
+        fail(file, `${item.id}: sentences must be an array when present`);
+      } else {
+        const sentenceIds = new Set();
+        for (const [index, sentence] of item.sentences.entries()) {
+          const label = `${item.id}.sentences[${index}]`;
+          assertText(file, label, sentence?.id, 'id');
+          if (sentence?.id) {
+            if (sentenceIds.has(sentence.id)) fail(file, `${item.id}: duplicate sentence id ${sentence.id}`);
+            sentenceIds.add(sentence.id);
+          }
+          for (const field of ['es', 'ko', 'grammar_id', 'stage_emoji', 'stage_ko', 'tense_ko']) {
+            assertText(file, sentence?.id || label, sentence?.[field], field);
+          }
+          if (
+            sentence?.question_number != null &&
+            (!Number.isInteger(sentence.question_number) || sentence.question_number < 1)
+          ) {
+            fail(file, `${sentence?.id || label}: question_number must be a positive integer`);
+          }
+          assertStringArray(file, sentence?.id || label, sentence?.highlight, 'highlight');
+        }
+      }
+    }
   }
 }
 
@@ -205,6 +243,10 @@ function idsFor(name) {
   return new Set((datasets[name]?.items || []).map((item) => item.id));
 }
 
+function itemById(name, id) {
+  return (datasets[name]?.items || []).find((item) => item.id === id) || null;
+}
+
 function validateIdReference(file, sourceId, field, targetId, allowed) {
   const matchingSet = allowed.find((entry) => entry.pattern.test(targetId));
   if (!matchingSet) {
@@ -236,6 +278,26 @@ function validateCrossReferences() {
       validateIdReference('data/reading.json', item.id, 'grammar_features', id, [
         { pattern: /^g\d+$/i, ids: grammarIds }
       ]);
+    }
+    if (Array.isArray(item.sentences)) {
+      for (const sentence of item.sentences) {
+        if (typeof sentence?.grammar_id !== 'string' || sentence.grammar_id.trim() === '') {
+          continue;
+        }
+        validateIdReference('data/reading.json', sentence.id || item.id, 'grammar_id', sentence.grammar_id, [
+          { pattern: /^g\d+$/i, ids: grammarIds }
+        ]);
+        if (Number.isInteger(sentence.question_number)) {
+          const grammar = itemById('grammar', sentence.grammar_id);
+          const questionCount = grammar?.questions?.length || 0;
+          if (grammar && sentence.question_number > questionCount) {
+            fail(
+              'data/reading.json',
+              `${sentence.id || item.id}.question_number: ${sentence.question_number} exceeds ${sentence.grammar_id} question count ${questionCount}`
+            );
+          }
+        }
+      }
     }
   }
 
