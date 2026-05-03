@@ -237,6 +237,25 @@ async function init() {
     container.append(fragment);
   }
 
+  function renderHeroImage(item) {
+    if (!item.image?.src) {
+      return '';
+    }
+    return `
+      <figure class="reading-hero">
+        <img
+          class="reading-hero__img"
+          src="${escapeHtml(item.image.src)}"
+          alt="${escapeHtml(item.image.alt || item.title)}"
+          loading="lazy"
+          decoding="async"
+          width="1280"
+          height="720"
+        />
+      </figure>
+    `;
+  }
+
   function renderStoryTimeline(item) {
     if (!Array.isArray(item.sentences) || !item.sentences.length) {
       return '';
@@ -392,6 +411,8 @@ async function init() {
               <button type="button" class="link link--secondary" id="reading-add-vocab">새 단어 ${newVocabCount}개 SRS에 추가</button>
             </div>
           </section>
+
+          ${renderHeroImage(item)}
 
           ${renderStoryTimeline(item)}
 

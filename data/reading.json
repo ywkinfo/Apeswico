@@ -9,6 +9,11 @@
       "grammar_features": [
         "g002"
       ],
+      "image": {
+        "src": "assets/reading/r001.webp",
+        "alt": "아침 햇살이 비치는 스페인 시장에서 과일 가게 주인이 망고를 추천하고 있다.",
+        "prompt": "Photographic, photorealistic, natural light, 16:9, cinematic. A bustling Spanish open-air market in the morning, colorful fruit stands filled with fresh mangoes, oranges, and seasonal produce, a friendly vendor recommending fruit to a learner, lively local shoppers, warm Mediterranean street details, realistic documentary style, shallow depth of field."
+      },
       "tokens": [
         {
           "es": "Ayer",
@@ -146,6 +151,11 @@
         "g002",
         "g008"
       ],
+      "image": {
+        "src": "assets/reading/r002.webp",
+        "alt": "세비야로 향하는 스페인 기차 안에서 여행자가 부부와 이야기를 나누고 있다.",
+        "prompt": "Photographic, photorealistic, natural light, 16:9, cinematic. Inside a Spanish intercity train traveling toward Sevilla, a traveler chatting with a warm couple across the aisle, sunlit Andalusian landscape visible through the window, relaxed conversation about weather and places to visit, modern train seats, authentic Spain travel atmosphere, shallow depth of field."
+      },
       "tokens": [
         {
           "es": "En",
@@ -327,6 +337,11 @@
       "title": "Cocinar juntos",
       "level": "B1",
       "sublevel": "B1.1",
+      "image": {
+        "src": "assets/reading/r003.webp",
+        "alt": "스페인 가정집 주방에서 형제가 함께 당근을 자르며 채소 수프를 만들고 있다.",
+        "prompt": "Photographic, photorealistic, natural light, 16:9, cinematic. Two siblings cooking vegetable soup together in a cozy Spanish home kitchen, one cutting carrots on a wooden board while the other prepares a pot, terracotta tiles, fresh vegetables, herbs, and a small bowl of salt, bright midday window light, warm domestic realism."
+      },
       "tokens": [
         {
           "es": "Hoy",
@@ -479,6 +494,11 @@
       "grammar_features": [
         "g002"
       ],
+      "image": {
+        "src": "assets/reading/r004.webp",
+        "alt": "마드리드의 사무실 회의실에서 상사가 계획을 설명하고 동료들이 질문하고 있다.",
+        "prompt": "Photographic, photorealistic, natural light, 16:9, cinematic. A brief meeting in a modern Madrid office, a female manager explaining a plan beside a whiteboard while a small team asks concrete questions, notebooks and coffee cups on the table, city light through large windows, professional but human workplace atmosphere, realistic depth of field."
+      },
       "tokens": [
         {
           "es": "En",
@@ -632,6 +652,11 @@
         "g003",
         "g002"
       ],
+      "image": {
+        "src": "assets/reading/r005.webp",
+        "alt": "스페인 동네 거리에서 한 사람이 빵집 아주머니에게 인사하고 손에는 박물관 기사가 들려 있다.",
+        "prompt": "Photographic, photorealistic, natural light, 16:9, cinematic. A quiet afternoon walk through a Spanish neighborhood, a person greeting the baker at the doorway of a small panaderia, warm stone street, bakery window with fresh bread, a folded newspaper or phone showing a story about a city-center museum, local daily-life details, soft late-afternoon light."
+      },
       "tokens": [
         {
           "es": "Por",
@@ -816,6 +841,11 @@
       "grammar_features": [
         "g010"
       ],
+      "image": {
+        "src": "assets/reading/r006.webp",
+        "alt": "아침 스페인 도시 거리에서 직장인이 재사용 가능한 물병을 들고 출근하고 있다.",
+        "prompt": "Photographic, photorealistic, natural light, 16:9, cinematic. Morning commute in a Spanish city, a young professional carrying a reusable water bottle on the way to work, sunlit plaza, bike lane, metro entrance, small cafe terraces, subtle sustainability details without plastic waste, realistic urban Mediterranean atmosphere, clean documentary composition."
+      },
       "tokens": [
         {
           "es": "Cada",
@@ -992,6 +1022,11 @@
         "g006",
         "g009"
       ],
+      "image": {
+        "src": "assets/reading/r007.webp",
+        "alt": "마드리드의 호텔 방에서 Pedro가 할머니의 오래된 편지를 읽고 있다.",
+        "prompt": "Photographic, photorealistic, natural light, 16:9, cinematic. A young Spanish-speaking man in his late twenties sitting on a hotel bed in Madrid at golden hour, holding an old handwritten letter from his grandmother, soft window light, classic Madrid hotel interior with wooden furniture, emotional quiet discovery, warm cinematic tone, realistic depth of field."
+      },
       "tokens": [
         {
           "es": "Cuando",

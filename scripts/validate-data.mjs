@@ -162,6 +162,20 @@ function validateReading(file, items) {
       }
     }
     assertText(file, item.id, item.translation_ko, 'translation_ko');
+    if (item.image != null) {
+      if (typeof item.image !== 'object' || Array.isArray(item.image)) {
+        fail(file, `${item.id}: image must be an object`);
+      } else {
+        assertText(file, item.id, item.image.src, 'image.src');
+        assertText(file, item.id, item.image.alt, 'image.alt');
+        if (item.image.prompt != null) {
+          assertText(file, item.id, item.image.prompt, 'image.prompt');
+        }
+        if (typeof item.image.src === 'string' && item.image.src.startsWith('/')) {
+          fail(file, `${item.id}: image.src must be relative (no leading /)`);
+        }
+      }
+    }
     if (item.sentences != null) {
       if (!Array.isArray(item.sentences)) {
         fail(file, `${item.id}: sentences must be an array when present`);
