@@ -1,0 +1,930 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A1 입문 샘플 | 공항에서 시내까지 이동</title>
+    <meta name="description" content="Spanish Lab 맞춤 학습 서비스 A1 입문자용 샘플 페이지입니다." />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --bg-dark: #0a0f1d;
+        --bg-card: rgba(255, 255, 255, 0.03);
+        --border-card: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(255, 255, 255, 0.2);
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --accent-orange: #ff7a30;
+        --accent-purple: #8b5cf6;
+        --accent-blue: #3b82f6;
+        --accent-green: #10b981;
+        --accent-red: #ef4444;
+        --font-outfit: 'Outfit', 'Inter', sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        color: var(--text-primary);
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+        padding-bottom: 80px;
+      }
+
+      /* Glow Effects */
+      .glow-bg {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        top: -100px;
+        left: -100px;
+        z-index: -1;
+        pointer-events: none;
+      }
+      .glow-bg-right {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(255, 122, 48, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+        bottom: 200px;
+        right: -100px;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Header Banner */
+      .top-alert {
+        background: linear-gradient(90deg, rgba(255, 122, 48, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+        border-bottom: 1px solid var(--border-card);
+        color: #ffaa7d;
+        text-align: center;
+        padding: 12px 20px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: -0.02em;
+        backdrop-filter: blur(10px);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+        position: relative;
+      }
+
+      header.hero {
+        text-align: center;
+        padding: 60px 0 40px 0;
+      }
+
+      header.hero h1 {
+        font-family: var(--font-outfit);
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        background: linear-gradient(135deg, #fff 30%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 12px;
+      }
+
+      header.hero p.subtitle {
+        color: var(--text-secondary);
+        font-size: 1.15rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-family: var(--font-outfit);
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin: 50px 0 24px 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border-card);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      /* Expression Cards Grid */
+      .expressions-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-card);
+        border-radius: 16px;
+        padding: 24px;
+        backdrop-filter: blur(12px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: var(--border-hover);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .card-tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--accent-orange);
+        background: rgba(255, 122, 48, 0.1);
+        padding: 4px 8px;
+        border-radius: 6px;
+      }
+
+      .situation-context {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        background: rgba(255, 255, 255, 0.02);
+        padding: 8px 12px;
+        border-radius: 8px;
+        border-left: 3px solid var(--accent-blue);
+        margin-bottom: 16px;
+      }
+
+      .spanish-phrase {
+        font-family: var(--font-outfit);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+
+      .pronunciation {
+        color: var(--accent-purple);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 16px;
+      }
+
+      .translation-block {
+        margin-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 16px;
+      }
+
+      .translation-item {
+        margin-bottom: 8px;
+      }
+
+      .translation-label {
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 2px;
+      }
+
+      .translation-value {
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
+
+      .literal-btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text-primary);
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        margin-bottom: 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .literal-btn:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .literal-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+
+      .literal-content.open {
+        max-height: 100px;
+      }
+
+      /* Shadowing Section */
+      .drill-box {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(139, 92, 246, 0.05) 100%);
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        border-radius: 16px;
+        padding: 28px;
+        margin-top: 24px;
+        backdrop-filter: blur(12px);
+      }
+
+      .drill-list {
+        list-style: none;
+      }
+
+      .drill-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .drill-item:last-child {
+        border-bottom: none;
+      }
+
+      .drill-num {
+        width: 24px;
+        height: 24px;
+        background: var(--accent-purple);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .drill-texts {
+        flex: 1;
+      }
+
+      .drill-es {
+        font-family: var(--font-outfit);
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .drill-ko {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+      }
+
+      .play-btn {
+        background: rgba(255, 255, 255, 0.05);
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #fff;
+        transition: all 0.2s;
+      }
+
+      .play-btn:hover {
+        background: var(--accent-purple);
+        transform: scale(1.1);
+      }
+
+      /* Quiz Styles */
+      .quiz-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .quiz-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-card);
+        border-radius: 16px;
+        padding: 24px;
+        backdrop-filter: blur(12px);
+        transition: border-color 0.3s;
+      }
+
+      .quiz-question {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      .quiz-choices {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .choice-btn {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border-card);
+        color: var(--text-primary);
+        padding: 14px 20px;
+        border-radius: 10px;
+        text-align: left;
+        cursor: pointer;
+        font-size: 0.95rem;
+        transition: all 0.2s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .choice-btn:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .choice-btn.correct {
+        background: rgba(16, 185, 129, 0.15);
+        border-color: var(--accent-green);
+        color: #d1fae5;
+      }
+
+      .choice-btn.wrong {
+        background: rgba(239, 68, 68, 0.15);
+        border-color: var(--accent-red);
+        color: #fee2e2;
+      }
+
+      .quiz-feedback {
+        margin-top: 16px;
+        padding: 16px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        background: rgba(139, 92, 246, 0.05);
+        border-left: 4px solid var(--accent-purple);
+        display: none;
+      }
+
+      /* Footer Banner */
+      .bottom-promo {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, rgba(255, 255, 255, 0.03) 100%);
+        border: 1px solid var(--border-card);
+        border-radius: 16px;
+        padding: 32px;
+        text-align: center;
+        margin-top: 60px;
+        backdrop-filter: blur(12px);
+      }
+
+      .bottom-promo h3 {
+        font-family: var(--font-outfit);
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+      }
+
+      .bottom-promo p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      .btn-promo {
+        display: inline-block;
+        background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 12px 28px;
+        border-radius: 30px;
+        transition: all 0.3s;
+        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+      }
+
+      .btn-promo:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(139, 92, 246, 0.5);
+      }
+
+      @media (max-width: 600px) {
+        header.hero h1 {
+          font-size: 2.2rem;
+        }
+        .card {
+          padding: 20px;
+        }
+        .spanish-phrase {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow-bg"></div>
+    <div class="glow-bg-right"></div>
+
+    <div class="top-alert">
+      A1 입문 학습자용 샘플 — 채널 시청자 수준에 맞춘 예시입니다
+    </div>
+
+    <div class="container">
+      <header class="hero">
+        <h1>공항에서 시내까지 이동</h1>
+        <p class="subtitle">입국 후 기차, 버스, 택시를 이용해 안전하게 시내 목적지까지 찾아가는 필수 서바이벌 스페인어.</p>
+      </header>
+
+      <!-- 표현들 -->
+      <section>
+        <h2 class="section-title">
+          <span>✈️</span> 상황별 필수 표현 (9)
+        </h2>
+        <div class="expressions-grid">
+          
+          <!-- 카드 1 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">교통 수단 탐색</span>
+            </div>
+            <div class="situation-context">공항 입국장에서 나와 시내로 가는 버스 승강장의 위치를 물어볼 때</div>
+            <div class="spanish-phrase">¿Dónde está la parada del autobús del aeropuerto?</div>
+            <div class="pronunciation">[돈데 에스따 라 파라다 델 아우또부스 델 아에로푸에르또?]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">어디에 있습니까 / 정류장이 / 버스의 / 공항의?</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">공항버스 정류장이 어디에 있나요?</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 2 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">매표소 소통</span>
+            </div>
+            <div class="situation-context">매표소나 무인기에서 공항철도 티켓을 구매하려 할 때</div>
+            <div class="spanish-phrase">Quiero comprar un billete para el tren del aeropuerto.</div>
+            <div class="pronunciation">[끼에로 꼼쁘라르 운 비예떼 파라 엘 뜨렌 델 아에로푸에르또]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">나는 원한다 / 사는 것을 / 하나의 표를 / 기차를 위한 / 공항의.</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">공항철도 티켓을 한 장 사고 싶어요.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 3 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">택시 승차</span>
+            </div>
+            <div class="situation-context">택시를 타기 전에 기사에게 시내까지 요금이 얼마인지 미리 확인할 때</div>
+            <div class="spanish-phrase">¿Cuánto cuesta ir en taxi al centro de la ciudad?</div>
+            <div class="pronunciation">[꾸안또 꾸에스따 이르 엔 딱시 알 센뜨로 데 라 시우다드?]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">얼마나 / 비용이 듭니까 / 가는 것이 / 택시로 / 중심지로 / 도시의?</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">시내 중심가까지 택시로 가면 요금이 얼마나 나오나요?</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 4 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">수하물 처리</span>
+            </div>
+            <div class="situation-context">운전기사에게 내 여행 가방들을 트렁크에 넣어 달라고 요청할 때</div>
+            <div class="spanish-phrase">Por favor, ponga mis maletas en el maletero.</div>
+            <div class="pronunciation">[뽀르 파보르, 뽄가 미스 말레따스 엔 엘 말레떼로]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">부디 / 놓아주세요 / 나의 가방들을 / 트렁크 안에.</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">제 캐리어들을 트렁크에 넣어주세요.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 5 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">택시 이동</span>
+            </div>
+            <div class="situation-context">기사에게 목적지 주소록을 스마트폰 등으로 보여줄 때</div>
+            <div class="spanish-phrase">Por favor, lléveme a esta dirección.</div>
+            <div class="pronunciation">[뽀르 파보르, 예베메 아 에스따 디렉시온]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">부디 / 나를 데려다주세요 / 이 주소로.</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">이 주소로 가주세요.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 6 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">소요 시간</span>
+            </div>
+            <div class="situation-context">목적지까지 얼마나 오랜 시간이 걸리는지 확인하고 싶을 때</div>
+            <div class="spanish-phrase">¿Cuánto tiempo tardamos en llegar?</div>
+            <div class="pronunciation">[꾸안또 띠엠뽀 따르다모스 엔 예가르?]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">얼마나 많은 / 시간을 / 우리는 걸립니까 / 도착하는 데?</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">도착하는 데 얼마나 걸릴까요?</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 7 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">하차 안내</span>
+            </div>
+            <div class="situation-context">지정된 역이나 길거리에 도착했을 때 나를 불러달라고 요청할 때</div>
+            <div class="spanish-phrase">¿Me puede avisar cuando lleguemos a la Gran Vía?</div>
+            <div class="pronunciation">[메 뿌에데 아비사르 꾸안도 예게모스 아 라 그란 비아?]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">나에게 / 당신은 알릴 수 있습니까 / 언제 / 우리가 도착할 때 / 그란 비아에?</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">그란 비아에 도착하면 저에게 알려주실 수 있나요?</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 8 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">하차 시점</span>
+            </div>
+            <div class="situation-context">목적지 호텔 근처의 승강장에서 내리는 것이 맞는지 기사에게 재차 물어볼 때</div>
+            <div class="spanish-phrase">¿Es esta la parada para el hotel?</div>
+            <div class="pronunciation">[에스 에스따 라 파라다 파라 엘 오뗄?]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">입니까 / 이것이 / 정류장 / 호텔을 위한?</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">여기가 호텔로 가는 정류장인가요?</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 카드 9 -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-tag">지불 및 하차</span>
+            </div>
+            <div class="situation-context">하차 전에 신용카드로 결제 가능한지 승인을 요청할 때</div>
+            <div class="spanish-phrase">¿Puedo pagar con tarjeta de crédito?</div>
+            <div class="pronunciation">[뿌에도 빠가르 꼰 따르헤따 데 끄레디또?]</div>
+            
+            <button class="literal-btn" onclick="toggleLiteral(this)">
+              <span>ℹ️</span> 직역/구조 보기
+            </button>
+            <div class="literal-content">
+              <div class="translation-item">
+                <span class="translation-label">직역 (단어 순서대로)</span>
+                <span class="translation-value" style="color: var(--accent-orange);">나는 할 수 있습니까 / 지불하는 것을 / 신용카드로?</span>
+              </div>
+            </div>
+
+            <div class="translation-block">
+              <div class="translation-item">
+                <span class="translation-label">자연스러운 한국어</span>
+                <span class="translation-value">신용카드로 결제해도 될까요?</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 쉐도잉 드릴 -->
+      <section>
+        <h2 class="section-title">
+          <span>🗣️</span> 쉐도잉 & 스피킹 드릴 (입 열기 연습)
+        </h2>
+        <div class="drill-box">
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">
+            원어민의 억양과 발음을 떠올리며 각 표현을 천천히 3회씩 입 밖으로 내어 읽어 보세요.
+          </p>
+          <ul class="drill-list">
+            <li class="drill-item">
+              <div class="drill-num">1</div>
+              <div class="drill-texts">
+                <div class="drill-es">¿Dónde está la parada del autobús?</div>
+                <div class="drill-ko">[돈데 에스따 라 파라다 델 아우또부스?]</div>
+              </div>
+              <button class="play-btn" onclick="sayText('¿Dónde está la parada del autobús?')">▶</button>
+            </li>
+            <li class="drill-item">
+              <div class="drill-num">2</div>
+              <div class="drill-texts">
+                <div class="drill-es">Quiero comprar un billete.</div>
+                <div class="drill-ko">[끼에로 꼼쁘라르 운 비예떼]</div>
+              </div>
+              <button class="play-btn" onclick="sayText('Quiero comprar un billete.')">▶</button>
+            </li>
+            <li class="drill-item">
+              <div class="drill-num">3</div>
+              <div class="drill-texts">
+                <div class="drill-es">¿Cuánto cuesta ir al centro?</div>
+                <div class="drill-ko">[꾸안또 꾸에스따 이르 알 센뜨로?]</div>
+              </div>
+              <button class="play-btn" onclick="sayText('¿Cuánto cuesta ir al centro?')">▶</button>
+            </li>
+            <li class="drill-item">
+              <div class="drill-num">4</div>
+              <div class="drill-texts">
+                <div class="drill-es">Por favor, lléveme a esta dirección.</div>
+                <div class="drill-ko">[뽀르 파보르, 예베메 아 에스따 디렉시온]</div>
+              </div>
+              <button class="play-btn" onclick="sayText('Por favor, lléveme a esta dirección.')">▶</button>
+            </li>
+            <li class="drill-item">
+              <div class="drill-num">5</div>
+              <div class="drill-texts">
+                <div class="drill-es">¿Puedo pagar con tarjeta?</div>
+                <div class="drill-ko">[뿌에도 빠가르 꼰 따르헤따?]</div>
+              </div>
+              <button class="play-btn" onclick="sayText('¿Puedo pagar con tarjeta?')">▶</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 자가 진단 퀴즈 -->
+      <section>
+        <h2 class="section-title">
+          <span>📝</span> 미니 자가 진단 퀴즈
+        </h2>
+        <div class="quiz-container">
+          
+          <!-- 문제 1 -->
+          <div class="quiz-card" data-q="1">
+            <div class="quiz-question">Q1. 다음 중 "공항버스 정류장"을 묻는 질문으로 알맞은 단어는?</div>
+            <p style="color: var(--accent-purple); font-family: var(--font-outfit); font-size: 1.15rem; margin-bottom: 12px;">¿Dónde está la ______ del autobús?</p>
+            <div class="quiz-choices">
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">a) maleta</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">b) dirección</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'correct')">c) parada</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>정답: c) parada</strong><br>
+              'parada'는 정류장을 뜻합니다. 'maleta'는 짐 가방/캐리어, 'dirección'은 주소를 뜻합니다.
+            </div>
+          </div>
+
+          <!-- 문제 2 -->
+          <div class="quiz-card" data-q="2">
+            <div class="quiz-question">Q2. 택시 기사님께 "이 주소로 가주세요"라고 부탁할 때의 올바른 표현은?</div>
+            <div class="quiz-choices">
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">a) Quiero comprar un billete para el tren.</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'correct')">b) Por favor, lléveme a esta dirección.</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">c) ¿Cuánto cuesta ir en taxi?</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>정답: b) Por favor, lléveme a esta dirección.</strong><br>
+              'lléveme'는 '나를 데려다주세요', 'esta dirección'은 '이 주소'를 뜻합니다. a는 티켓 구매 의사, c는 요금 문의입니다.
+            </div>
+          </div>
+
+          <!-- 문제 3 -->
+          <div class="quiz-card" data-q="3">
+            <div class="quiz-question">Q3. 공항철도 매표 창구에서 "티켓을 한 장 사고 싶어요"라고 전달할 스페인어 표현은?</div>
+            <div class="quiz-choices">
+              <button class="choice-btn" onclick="checkAnswer(this, 'correct')">a) Quiero comprar un billete.</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">b) ¿Puedo pagar con tarjeta?</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">c) ¿Cuánto tiempo tardamos?</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>정답: a) Quiero comprar un billete.</strong><br>
+              'Quiero'는 '원한다', 'comprar'는 '사는 것을', 'billete'는 '티켓'입니다. b는 카드 결제 여부, c는 소요 시간을 묻는 말입니다.
+            </div>
+          </div>
+
+          <!-- 문제 4 -->
+          <div class="quiz-card" data-q="4">
+            <div class="quiz-question">Q4. "신용카드로 결제할 수 있나요?"를 위해 빈칸에 들어갈 알맞은 전치사는?</div>
+            <p style="color: var(--accent-purple); font-family: var(--font-outfit); font-size: 1.15rem; margin-bottom: 12px;">¿Puedo pagar ______ tarjeta de crédito?</p>
+            <div class="quiz-choices">
+              <button class="choice-btn" onclick="checkAnswer(this, 'correct')">a) con</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">b) en</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">c) por</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>정답: a) con</strong><br>
+              스페인어에서 지불 수단으로 카드를 말할 때 전치사는 'con(~로)'을 씁니다. (현금 결제는 보통 'en efectivo'라고 합니다.)
+            </div>
+          </div>
+
+          <!-- 문제 5 -->
+          <div class="quiz-card" data-q="5">
+            <div class="quiz-question">Q5. 목적지 시내까지 택시 요금이 "얼마나" 드는지 물어볼 때 쓰는 의문사는?</div>
+            <p style="color: var(--accent-purple); font-family: var(--font-outfit); font-size: 1.15rem; margin-bottom: 12px;">______ cuesta ir en taxi al centro de la ciudad?</p>
+            <div class="quiz-choices">
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">a) Dónde</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'correct')">b) Cuánto</button>
+              <button class="choice-btn" onclick="checkAnswer(this, 'wrong')">c) Cuándo</button>
+            </div>
+            <div class="quiz-feedback">
+              <strong>정답: b) Cuánto</strong><br>
+              'Cuánto cuesta'는 '얼마인가요?'라는 비용 문의 관용 문형입니다. 'Dónde'는 어디에, 'Cuándo'는 언제입니다.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 프로모션 푸터 -->
+      <footer class="bottom-promo">
+        <h3>스페인어 학습이 필요하신가요?</h3>
+        <p>Apeswico 메인 앱은 B1-B2 중급 단계의 회화, 문법, 상황극, 어휘 훈련을 지원하는 대화형 학습 서비스입니다.</p>
+        <a href="https://ywkinfo.github.io/Apeswico/" class="btn-promo">Apeswico 메인 사이트 방문하기</a>
+        <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 16px;">
+          * Apeswico는 B1-B2 중급용 기능/형식 참고용 예시 페이지입니다.
+        </div>
+      </footer>
+
+    </div>
+
+    <script>
+      // 직역 영역 여닫기
+      function toggleLiteral(btn) {
+        const content = btn.nextElementSibling;
+        content.classList.toggle('open');
+        if (content.classList.contains('open')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          btn.innerHTML = '<span>ℹ️</span> 직역 닫기';
+        } else {
+          content.style.maxHeight = '0px';
+          btn.innerHTML = '<span>ℹ️</span> 직역/구조 보기';
+        }
+      }
+
+      // 발음 재생 시뮬레이션 (브라우저 TTS 기능 연동)
+      function sayText(txt) {
+        if ('speechSynthesis' in window) {
+          const utterance = new SpeechSynthesisUtterance(txt);
+          utterance.lang = 'es-ES';
+          utterance.rate = 0.85;
+          window.speechSynthesis.speak(utterance);
+        } else {
+          alert('이 브라우저는 음성 합성(TTS) 기능을 지원하지 않습니다. 발음 기호를 보고 따라 읽어보세요!');
+        }
+      }
+
+      // 퀴즈 채점
+      function checkAnswer(btn, result) {
+        const card = btn.closest('.quiz-card');
+        const choices = card.querySelectorAll('.choice-btn');
+        const feedback = card.querySelector('.quiz-feedback');
+        
+        choices.forEach(b => {
+          b.disabled = true;
+          b.style.opacity = '0.6';
+        });
+
+        btn.style.opacity = '1';
+        if (result === 'correct') {
+          btn.classList.add('correct');
+        } else {
+          btn.classList.add('wrong');
+          // 정답 버튼도 활성화 표시
+          choices.forEach(b => {
+            if (b.innerText.startsWith('c) parada') || 
+                b.innerText.startsWith('b) Por favor') || 
+                b.innerText.startsWith('a) Quiero comprar') ||
+                b.innerText.startsWith('a) con') ||
+                b.innerText.startsWith('b) Cuánto')) {
+              b.classList.add('correct');
+              b.style.opacity = '1';
+            }
+          });
+        }
+        
+        feedback.style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
